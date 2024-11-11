@@ -1,7 +1,7 @@
 
 /*
 COPIAR CODIGO NO TERMINAL PARA INICIALIZAR O JSON SERVER
-npx json-server --watch codigo/db/db.json --port 3000
+npx json-server --watch TESTE1/codigo/db/db.json --port 3000
 */
 
 
@@ -87,8 +87,6 @@ function initializeTaskCreation() {
         const taskDetails = gatherTaskDetails();
         if (taskDetails) {
             await saveTaskToServer(taskDetails); 
-            addTaskToTable(taskDetails);
-            clearTaskInputs();
             sortTasksByTime();
         }
     });
@@ -228,7 +226,7 @@ function capitalizeFirstLetter(string) {
 // Função para carregar tarefas do JSON
 async function loadTasks(dayOfWeek) {
     try {
-        const response = await fetch('/codigo/db/db.json');
+        const response = await fetch('/TESTE1/codigo/db/db.json');
         if (!response.ok) throw new Error(`Erro ao carregar tarefas: status ${response.status}`);
 
         const data = await response.json();
@@ -370,7 +368,7 @@ function checkEmptyTasks() {
 // Função para carregar as tarefas do JSON
 async function loadTasks(dayOfWeek) {
     try {
-        const response = await fetch('/codigo/db/db.json');
+        const response = await fetch('/TESTE1/codigo/db/db.json');
         if (!response.ok) throw new Error(`Erro ao carregar tarefas: status ${response.status}`);
 
         const data = await response.json();
@@ -600,7 +598,7 @@ function updateTaskInTable(updatedTask) {
 
 async function updateTaskOnServer(task) {
     // Enviar a tarefa atualizada para o servidor
-    const response = await fetch('/codigo/db/db.json', {
+    const response = await fetch('/TESTE1/codigo/db/db.json', {
         method: 'POST', // Ou 'PUT' dependendo de como você está fazendo o update
         headers: {
             'Content-Type': 'application/json'
