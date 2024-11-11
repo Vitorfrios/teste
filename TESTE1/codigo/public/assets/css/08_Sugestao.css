@@ -1,0 +1,257 @@
+/*
+COPIAR CODIGO NO TERMINAL PARA INICIALIZAR O JSON SERVER
+npx json-server --watch codigo/db/db.json --port 3000
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E8F0F2;
+    margin: 0;
+    padding: 1px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 40vh;
+    background-color: #000;
+    color: #fff;
+    height: 96vh;
+    position: relative;
+    left: 0;
+    padding-top: 10px;
+    border-radius: 30px; 
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    color: #fff; 
+    text-decoration: none; 
+    display: block;
+    padding: 0.3em 1px; 
+}
+
+.sidebar ul li.active a {
+    color: #03d9ff;
+    padding-left: 15px; 
+}
+
+.sidebar ul li {
+    padding: 0.5em 1em; 
+    font-size: 1.41rem; 
+}
+
+.sidebar ul li i {
+    margin-right: 10px;
+}
+
+.sidebar ul li:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
+
+
+
+
+/* Main Content */
+.main-content {
+    margin-right: 25px;
+    padding: 10px;
+    flex: 1;
+    height:180px; 
+    overflow:block;
+    padding-top: 0;
+}
+
+/* Estilo para o contêiner principal */
+.header {
+    font-size: 50px; /* Aumentei o tamanho da fonte */
+    text-align: center;
+    margin-bottom: 20px; /* Aumentei a margem inferior */
+}
+
+/* Estilo para o contêiner de lista */
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 95vh; /* Para ocupar a altura total da página */
+}
+
+/* Estilo para os itens da lista */
+.nav-list li {
+    background-color: #76cad8;
+    border: 3px solid #00A4CC; /* Aumentei a espessura da borda */
+    color: #000000;
+    cursor: pointer;
+    padding: 30px; /* Aumentei o padding */
+    margin: 30px 0; /* Aumentei a distância entre os itens */
+    display: block;
+    width: 60%; /* Reduzi a largura para melhor ajustamento */
+    text-align: center;
+    border-radius: 30px;
+    list-style-type: none;
+    font-size: 22px; /* Aumentei o tamanho da fonte nos itens */
+}
+
+/* Para remover o fundo azul quando o link é clicado */
+.nav-list li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.nav-list li a:focus, .nav-list li a:active {
+    outline: none;
+}
+
+/* Para centralizar os links dentro do item da lista */
+.nav-list li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+/* Right Content */
+.right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10px;
+    gap: 1rem;
+    width: 425px;
+}
+
+/* Profile */
+.right-content .profile {
+    display: flex;
+    align-items: center;
+    border: 2px solid #00A4CC;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+
+.right-content .name,
+.right-content .profile img {
+    margin: 2px;
+    margin-left: 40px;
+}
+
+.right-content .profile img {
+    border-radius: 60%;
+    width: 40px;
+    height: 40px;
+}
+
+.right-content .profile a {
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Solutions Section */
+.solucoes {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    width: 99%;
+    margin-bottom: 20px;
+}
+
+.solucoes h3 {
+    font-size: 18px;
+    margin-bottom: 2px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+}
+
+.solucoes select {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+    border-radius: 30px;
+
+}
+
+.conteudo-exibicao {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    margin-right: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.conteudo-exibicao p {
+    margin: 10px 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+
+
+
+
+/* Responsividade */
+@media (max-width: 1024px) { 
+    .sidebar {
+        width: 200px; 
+    }
+
+    .main-content {
+        margin-left: 225px; 
+    }
+
+    .right-content/*remova a rigth-content e coloque as classes dela sem o perfil*/ {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) { 
+    .sidebar {
+        width: 100%; 
+        height: auto; 
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-right: 0; 
+    }
+
+    .right-content/*remova a rigth-content e coloque as classes dela sem o perfil*/{
+        width: 95%; 
+    }
+}
