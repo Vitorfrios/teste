@@ -101,3 +101,7 @@ foreach ($arquivo in $arquivos) {
 
 
 
+Get-ChildItem -Recurse -File | ForEach-Object {
+    git add $_.FullName
+    git commit -m "atualização teste $($_.Name)"
+}
