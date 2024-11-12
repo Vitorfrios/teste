@@ -186,18 +186,6 @@
     ],
     "adicionarTarefas": [
       {
-        "id": 1731191654879,
-        "name": "sdzfbadfhadh",
-        "time": "23:00",
-        "category": "Trabalho",
-        "priority": "Media",
-        "Udate": "0034-02-04",
-        "date": [
-          2
-        ],
-        "estimatedDuration": 234
-      },
-      {
         "id": 1731191654880,
         "name": "aerhdafbhafd",
         "time": "03:45",
@@ -220,11 +208,35 @@
           2
         ],
         "estimatedDuration": 345
+      },
+      {
+        "id": 1731191654882,
+        "name": "fsdgfdag",
+        "time": "04:34",
+        "category": "Trabalho",
+        "priority": "Baixa",
+        "Udate": "5345-03-04",
+        "date": [
+          3
+        ],
+        "estimatedDuration": 345
+      },
+      {
+        "id": 1731191654883,
+        "name": "sdfgfsg",
+        "time": "03:45",
+        "category": "Estudo",
+        "priority": "Baixa",
+        "Udate": "0345-05-31",
+        "date": [
+          3
+        ],
+        "estimatedDuration": 345
       }
     ],
     "grafico": {
-      "Trabalho": 8021,
-      "Estudo": 1680
+      "Trabalho": 8366,
+      "Estudo": 2025
     }
   },
   "telas": {
