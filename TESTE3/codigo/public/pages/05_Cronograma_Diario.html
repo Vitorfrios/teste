@@ -96,13 +96,13 @@ npx json-server --watch codigo/db/db.json --port 3000
                     <thead class="menu">  
                         <tr class="table-header">  
                             <th id="H">HORA</th>  
+                            <th id="Dom">DOM<span class="diaDom"></span></th>  
                             <th id="Seg">SEG<span class="diaSeg"></span></th>  
                             <th id="Ter">TER<span class="diaTer"></span></th>  
                             <th id="Qua">QUA<span class="diaQua"></span></th>  
                             <th id="Qui">QUI<span class="diaQui"></span></th>  
                             <th id="Sex">SEX<span class="diaSex"></span></th>  
                             <th id="Sab">SÁB<span class="diaSab"></span></th>  
-                            <th id="Dom">DOM<span class="diaDom"></span></th>  
                         </tr>  
                     </thead>  
                 </table>  
@@ -153,28 +153,36 @@ npx json-server --watch codigo/db/db.json --port 3000
                         <input type="time" id="edit-time" />
                     </div>
             
+
+            
                     <div class="form-group-N">
                         <label for="edit-descricao">Descrição:</label>
                         <textarea id="edit-descricao"></textarea>
+                    </div>
+                    
+                    <div class="form-group-N">
+                        <label for="edit-estimatedDuration">Duração da tarefa (minutos):</label>
+                        <input type="number" id="edit-estimatedDuration" />
                     </div>
             
                     <div class="form-group-N">
                         <label for="edit-prioridade">Prioridade:</label>
                         <select id="edit-prioridade">
-                            <option value="alta">Alta</option>
-                            <option value="media">Média</option>
-                            <option value="baixa">Baixa</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Média">Média</option>
+                            <option value="Baixa">Baixa</option>
                         </select>
                     </div>
-            
+                    
                     <div class="form-group-N">
                         <label for="edit-categoria">Categoria:</label>
                         <select id="edit-categoria">
-                            <option value="trabalho">Trabalho</option>
-                            <option value="lazer">Lazer</option>
-                            <option value="estudo">Estudo</option>
+                            <option value="Trabalho">Trabalho</option>
+                            <option value="Lazer">Lazer</option>
+                            <option value="Estudo">Estudo</option>
                         </select>
                     </div>
+                    
             
                     <div class="form-group-N">
                         <label for="edit-dates">Dias:</label>
@@ -191,6 +199,7 @@ npx json-server --watch codigo/db/db.json --port 3000
                     <button id="btn-salvar">Salvar</button>
                 </div>
             </div>
+
             
         
             

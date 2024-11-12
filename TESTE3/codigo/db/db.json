@@ -35,241 +35,17 @@
   "mes_calendar": [
     {
       "id": "2686",
-      "value": 3,
+      "value": 11,
       "year": 2024
     }
   ],
-  "tarefas": {
-    "listaDeTarefas": [
-      {
-        "id": 1,
-        "name": "Projeto App",
-        "description": "Desenvolver a aplicação mobile",
-        "date": [
-          4,
-          5
-        ],
-        "time": "09:00",
-        "category": "Trabalho",
-        "priority": "Alta",
-        "estimatedDuration": 300
-      },
-      {
-        "id": 2,
-        "name": "Reunião de equipe",
-        "description": "Discutir progresso do projeto",
-        "date": [
-          2
-        ],
-        "time": "04:00",
-        "category": "Trabalho",
-        "priority": "Alta",
-        "estimatedDuration": 60
-      },
-      {
-        "id": 3,
-        "name": "Planejamento de semana",
-        "description": "Definir tarefas para a semana",
-        "date": [
-          3,
-          1
-        ],
-        "time": "14:00",
-        "category": "Estudo",
-        "priority": "Média",
-        "estimatedDuration": 120
-      },
-      {
-        "id": 4,
-        "name": "Revisão de metas",
-        "description": "Avaliar metas do mês anterior",
-        "date": [
-          1
-        ],
-        "time": "11:00",
-        "category": "Trabalho",
-        "priority": "Baixa",
-        "estimatedDuration": 60
-      },
-      {
-        "id": 5,
-        "name": "Revisão de código",
-        "description": "Revisar código com o time",
-        "date": [
-          5,
-          7
-        ],
-        "time": "10:00",
-        "category": "Estudo",
-        "priority": "Alta",
-        "estimatedDuration": 120
-      },
-      {
-        "id": 6,
-        "name": "Estudo de CSS",
-        "description": "Aprimorar conhecimentos em CSS",
-        "date": [
-          6,
-          4,
-          2
-        ],
-        "time": "15:00",
-        "category": "Estudo",
-        "priority": "Baixa",
-        "estimatedDuration": 180
-      },
-      {
-        "id": 7,
-        "name": "Aula de JavaScript",
-        "description": "Aula prática de JavaScript",
-        "date": [
-          3,
-          6
-        ],
-        "time": "13:00",
-        "category": "Estudo",
-        "priority": "Média",
-        "estimatedDuration": 120
-      },
-      {
-        "id": 8,
-        "name": "Exercícios físicos",
-        "description": "Fazer exercícios na academia",
-        "date": [
-          7,
-          1
-        ],
-        "time": "07:00",
-        "category": "Lazer",
-        "priority": "Alta",
-        "estimatedDuration": 60
-      },
-      {
-        "id": 9,
-        "name": "Leitura de livro",
-        "description": "Ler um capítulo do livro escolhido",
-        "date": [
-          4,
-          3
-        ],
-        "time": "18:00",
-        "category": "Lazer",
-        "priority": "Baixa",
-        "estimatedDuration": 60
-      },
-      {
-        "id": 10,
-        "name": "Apresentação de projeto",
-        "description": "Apresentar projeto para a equipe",
-        "date": [
-          2,
-          6
-        ],
-        "time": "16:00",
-        "category": "Trabalho",
-        "priority": "Alta",
-        "estimatedDuration": 60
-      },
-      {
-        "id": 11,
-        "name": "Feedback da equipe",
-        "description": "Reunião para feedback do projeto",
-        "date": [
-          5,
-          7
-        ],
-        "time": "10:00",
-        "category": "Trabalho",
-        "priority": "Média",
-        "estimatedDuration": 60
-      }
-    ],
-    "adicionarTarefas": [
-      {
-        "id": 1731191654878,
-        "name": "egsv",
-        "time": "23:45",
-        "category": "Estudo",
-        "priority": "Baixa",
-        "Udate": "0043-05-31",
-        "date": [
-          1
-        ],
-        "estimatedDuration": 435
-      },
-      {
-        "id": 1731191654879,
-        "name": "sdzfbadfhadh",
-        "time": "23:00",
-        "category": "Trabalho",
-        "priority": "Media",
-        "Udate": "0034-02-04",
-        "date": [
-          2
-        ],
-        "estimatedDuration": 234
-      },
-      {
-        "id": 1731191654880,
-        "name": "aerhdafbhafd",
-        "time": "03:45",
-        "category": "Trabalho",
-        "priority": "Baixa",
-        "Udate": "0054-04-23",
-        "date": [
-          3
-        ],
-        "estimatedDuration": 4345
-      },
-      {
-        "id": 1731191654881,
-        "name": "5345",
-        "time": "04:50",
-        "category": "Trabalho",
-        "priority": "Media",
-        "Udate": "0035-05-14",
-        "date": [
-          2
-        ],
-        "estimatedDuration": 345
-      },
-      {
-        "id": 1731191654882,
-        "name": "125433",
-        "time": "12:40",
-        "category": "Trabalho",
-        "priority": "Media",
-        "Udate": "0033-04-15",
-        "date": [
-          2
-        ],
-        "estimatedDuration": 1543
-      },
-      {
-        "id": 1731191654883,
-        "name": "413545",
-        "time": "13:40",
-        "category": "Estudo",
-        "priority": "Media",
-        "Udate": "0345-05-14",
-        "date": [
-          2
-        ],
-        "estimatedDuration": 1245
-      }
-    ],
-    "grafico": {
-      "Trabalho": 8021,
-      "Estudo": 1680
-    }
-  },
   "telas": {
     "tela2": [
       {
         "num": 1,
         "titulo": "Planeje e Organize Seu Tempo",
-        "text1": "Cronograma: Organize seus estudos com um plano semanal.",
-        "text2": "Metas Diárias: Defina objetivos claros para cada sessão de estudo.",
+        "text1": "Cronograma: Organize seus Estudos com um plano semanal.",
+        "text2": "Metas Diárias: Defina objetivos claros para cada sessão de Estudo.",
         "text3": "Avaliação: Revise suas metas regularmente para manter o foco.",
         "text4": "Flexibilidade: Esteja aberto a ajustar o cronograma conforme necessário.",
         "text5": "Use Aplicativos: Utilize tecnologia para planejamento."
@@ -308,7 +84,7 @@
         "text2": "Ensine: Explicar o conteúdo solidifica o conhecimento.",
         "text3": "Autoavaliação: Teste seu conhecimento com quizzes.",
         "text4": "Mapas Mentais: Crie diagramas para visualizar conexões entre conceitos.",
-        "text5": "Dicas de Revisão: Varie o método de estudo para tornar a revisão mais interessante."
+        "text5": "Dicas de Revisão: Varie o método de Estudo para tornar a revisão mais interessante."
       }
     ],
     "tela3": [
@@ -445,7 +221,7 @@
         "Escreva o nome da tarefa",
         "Escolha os dias de repetição de tarefas (se quiser)",
         "Escolha a hora, o dia e a prioridade da tarefa",
-        "Escolha as categorias (lazer/trabalho/estudo)",
+        "Escolha as categorias (Lazer/Trabalho/Estudo)",
         "Área de mostragem de tarefas",
         "Clique no calendário para exibir as tarefas",
         "Mostra um gráfico com base no tempo gasto em cada categoria"
@@ -463,15 +239,15 @@
       "topicos": [
         "Menu navegação de 4 opções:",
         "Ajuda com horários",
-        "Dicas de estudo",
+        "Dicas de Estudo",
         "Dicas para descansar"
       ]
     },
-    "dicas-estudo": {
+    "dicas-Estudo": {
       "topicos": [
         "Clique na roleta para exibir as 4 dicas",
-        "Técnicas de estudo",
-        "Organizar tempo de estudo"
+        "Técnicas de Estudo",
+        "Organizar tempo de Estudo"
       ]
     },
     "descansar-dormir": {
@@ -496,7 +272,7 @@
         "Exibir gráfico de tarefas concluídas",
         "Exibir gráfico de tarefas não concluídas",
         "Exibir tempo gasto por categoria: Trabalho, Lazer, Estudo",
-        "Exibir gráfico de média entre trabalho, lazer e estudo"
+        "Exibir gráfico de média entre Trabalho, Lazer e Estudo"
       ]
     },
     "suporte-feedback": {
@@ -515,12 +291,12 @@
     }
   },
   "conteudo2": {
-    "dicas-estudo": {
+    "dicas-Estudo": {
       "topicos": [
         "Clique na roleta para exibir as 4 dicas",
-        "Técnicas de estudo",
-        "Organizar tempo de estudo",
-        "Criar cronograma de estudos",
+        "Técnicas de Estudo",
+        "Organizar tempo de Estudo",
+        "Criar cronograma de Estudos",
         "Gerenciar prazos de tarefas",
         "Fazer intervalos regulares"
       ]
@@ -556,12 +332,12 @@
         "Escreva o Nome da tarefa: Define o título da tarefa.",
         "Escolha os dias de repetição de tarefas (se quiser)",
         "Escolha a hora da tarefa: Seleciona o horário de início/fim.",
-        "Escolha as categorias (lazer/trabalho/estudo)",
+        "Escolha as categorias (Lazer/Trabalho/Estudo)",
         "Prioridade: Define a prioridade entre:",
         "  - Alta Prioridade",
         "  - Média Prioridade",
         "  - Baixa Prioridade",
-        "Categoria: Classifica a tarefa em categorias (trabalho, pessoal, etc.).",
+        "Categoria: Classifica a tarefa em categorias (Trabalho, pessoal, etc.).",
         "Clique no calendário para exibir as tarefas",
         "Mostra um gráfico com base no tempo gasto em cada categoria"
       ]
@@ -585,19 +361,19 @@
         "Exibir gráfico de tarefas concluídas",
         "Exibir gráfico de tarefas não concluídas",
         "Exibir tempo gasto por categoria: Trabalho, Lazer, Estudo",
-        "Exibir gráfico de média entre trabalho, lazer e estudo"
+        "Exibir gráfico de média entre Trabalho, Lazer e Estudo"
       ]
     },
     "Sugestao": {
       "titulo": "Ver Sugestões",
       "conteudo": "Otimização de tempo, ajustando prioridades e rotina.",
       "subtopicos": {
-        "dicas-estudo": {
+        "dicas-Estudo": {
           "titulo": "Dicas de Estudo",
           "conteudo": [
             "Clique na roleta para exibir as 4 dicas",
-            "Técnicas de estudo",
-            "Organizar tempo de estudo"
+            "Técnicas de Estudo",
+            "Organizar tempo de Estudo"
           ]
         },
         "descansar-dormir": {
@@ -621,757 +397,1447 @@
       }
     }
   },
-  "tasks_calendar": [
-    {
-      "name": "Reunião Estratégica",
-      "time": [
-        "09:00"
-      ],
-      "description": "Discutir as metas do próximo trimestre.",
-      "priority": "baixa",
-      "category": "lazer",
-      "dates": [
-        3,
-        4
-      ],
-      "id": "task_1"
-    },
-    {
-      "id": "task_2",
-      "name": "Desenvolvimento de Software",
-      "description": "Implementar novas funcionalidades no sistema.",
-      "time": [
-        "16:00"
-      ],
-      "priority": "baixa",
-      "category": "trabalho",
-      "dates": [
-        6
-      ]
-    },
-    {
-      "id": "task_3",
-      "name": "Revisão de Código",
-      "description": "Analisar o código para melhorias.",
-      "time": [
-        "00:00"
-      ],
-      "priority": "alta",
-      "category": "trabalho",
-      "dates": [
-        6
-      ]
-    },
-    {
-      "id": "task_4",
-      "name": "Leitura de Artigo",
-      "description": "Ler um artigo sobre tendências de mercado.",
-      "time": [
-        "08:00"
-      ],
-      "priority": "baixa",
-      "category": "estudo",
-      "dates": [
-        2
-      ]
-    },
-    {
-      "name": "Café com Amigos",
-      "time": [
-        "18:00"
-      ],
-      "description": "Encontrar amigos para um café.",
-      "priority": "media",
-      "category": "lazer",
-      "dates": [
-        2,
-        5
-      ],
-      "id": "task_5"
-    },
-    {
-      "id": "task_6",
-      "name": "Análise de Performance",
-      "description": "Avaliar o desempenho da equipe.",
-      "time": [
-        "15:00"
-      ],
-      "priority": "alta",
-      "category": "trabalho",
-      "dates": [
-        3
-      ]
-    },
-    {
-      "name": "Sessão de Brainstorming",
-      "time": [
-        "16:00"
-      ],
-      "description": "Gerar novas ideias para o projeto.",
-      "priority": "alta",
-      "category": "lazer",
-      "dates": [
-        1,
-        2
-      ],
-      "id": "task_7"
-    },
-    {
-      "name": "Jantar em Família",
-      "time": [
-        "20:00"
-      ],
-      "description": "Preparar um jantar especial para a família.",
-      "priority": "media",
-      "category": "lazer",
-      "dates": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "id": "task_8"
-    },
-    {
-      "id": "task_9",
-      "name": "Treinamento de Equipe",
-      "description": "Realizar um treinamento sobre novas ferramentas.",
-      "time": [
-        "12:00"
-      ],
-      "priority": "media",
-      "category": "lazer",
-      "dates": [
-        1
-      ]
-    },
-    {
-      "id": "task_10",
-      "name": "Feedback de Clientes",
-      "description": "Coletar feedback dos clientes sobre o serviço.",
-      "time": [
-        "23:00"
-      ],
-      "priority": "baixa",
-      "category": "lazer",
-      "dates": [
-        2
-      ]
+  "tarefas": {
+    "adicionarTarefas": [
+      {
+        "name": "adfsdfd",
+        "time": "12:03",
+        "category": "Trabalho",
+        "priority": "Media",
+        "Udate": "3234-04-12",
+        "date": [
+          2
+        ],
+        "estimatedDuration": 23
+      }
+    ],
+    "grafico": {
+      "Trabalho": 4283,
+      "Estudo": 2640,
+      "Lazer": 1420
     },
     
-    {
-      "name": "Planejamento de Viagem",
-      "time": [
-        "23:00"
-      ],
-      "description": "Organizar os detalhes da próxima viagem.",
-      "priority": "baixa",
-      "category": "lazer",
-      "dates": [
-        1,
-        5
-      ],
-      "id": "task_11"
-    },
-    {
-      "id": "task_12",
-      "name": "Reunião de Alinhamento",
-      "description": "Alinhar as expectativas do projeto com a equipe.",
-      "time": [
-        "11:00"
-      ],
-      "priority": "media",
-      "category": "lazer",
-      "dates": [
-        6
-      ]
-    },
-    {
-      "id": "task_13",
-      "name": "Estudo de Caso",
-      "description": "Analisar um estudo de caso relevante.",
-      "time": [
-        "10:00"
-      ],
-      "priority": "baixa",
-      "category": "lazer",
-      "dates": [
-        1
-      ]
-    },
-    {
-      "id": "task_14",
-      "name": "Estudo de Caso",
-      "description": "Analisar um estudo de caso relevante.",
-      "time": [
-        "10:00"
-      ],
-      "priority": "baixa",
-      "category": "lazer",
-      "dates": [
-        5
-      ]
-    },
-    {
-      "id": "task_15",
-      "name": "Caminhada Matinal",
-      "description": "Fazer uma caminhada para começar o dia.",
-      "time": [
-        "06:00"
-      ],
-      "priority": "baixa",
-      "category": "lazer",
-      "dates": [
-        5
-      ]
-    },
-    {
-      "name": "Revisão de Documentos",
-      "time": [
-        "23:00"
-      ],
-      "description": "Revisar os documentos importantes antes da reunião.",
-      "priority": "media",
-      "category": "lazer",
-      "dates": [
-        4
-      ],
-      "id": "task_16"
-    },
-    {
-      "name": "Workshop de Criatividade",
-      "time": [
-        "14:00"
-      ],
-      "description": "Participar de um workshop para estimular a criatividade.",
-      "priority": "alta",
-      "category": "trabalho",
-      "dates": [
-        6
-      ],
-      "id": "task_17"
-    },
-    {
-      "id": "task_18",
-      "name": "Análise de Resultados",
-      "description": "Analisar os resultados da última campanha.",
-      "time": [
-        "22:00"
-      ],
-      "priority": "baixa",
-      "category": "trabalho",
-      "dates": [
-        5,
-        6
-      ]
-    },
-    {
-      "id": "task_19",
-      "name": "Sessão de Meditação",
-      "description": "Praticar meditação para relaxar.",
-      "time": [
-        "06:00"
-      ],
-      "priority": "media",
-      "category": "lazer",
-      "dates": [
-        2
-      ]
-    },
-    {
-      "name": "Apresentação",
-      "time": [
-        "03:00"
-      ],
-      "description": "Preparar a apresentação para a conferência.",
-      "priority": "baixa",
-      "category": "lazer",
-      "dates": [
-        1,
-        3
-      ],
-      "id": "task_20"
-    },
-    {
-      "name": "Almoço com Clientes",
-      "time": [
-        "12:00"
-      ],
-      "description": "Almoçar com clientes para discutir parcerias.",
-      "priority": "baixa",
-      "category": "lazer",
-      "dates": [
-        2,
-        4,
-        7
-      ],
-      "id": "task_21"
-    },
-    {
-      "name": "Estudo de Mercado",
-      "time": [
-        "13:00"
-      ],
-      "description": "Realizar um estudo sobre as tendências do mercado.",
-      "priority": "media",
-      "category": "lazer",
-      "dates": [
-        3,
-        6
-      ],
-      "id": "task_22"
-    },
-    {
-      "id": "task_23",
-      "name": "Reunião de Feedback",
-      "description": "Coletar feedback da equipe sobre o projeto.",
-      "time": [
-        "14:00"
-      ],
-      "priority": "media",
-      "category": "lazer",
-      "dates": [
-        1
-      ]
-    },
-    {
-      "id": "task_24",
-      "name": "Leitura de Relatório",
-      "description": "Ler o relatório de desempenho do último trimestre.",
-      "time": [
-        "15:00"
-      ],
-      "priority": "baixa",
-      "category": "estudo",
-      "dates": [
-        4
-      ]
-    },
-    {
-      "name": "Jantar de Networking",
-      "time": [
-        "19:00"
-      ],
-      "description": "Participar de um jantar para fazer networking.",
-      "priority": "alta",
-      "category": "lazer",
-      "dates": [
-        6
-      ],
-      "id": "task_25"
-    },
-    {
-      "id": "task_26",
-      "name": "Revisão de Projetos",
-      "description": "Revisar os projetos em andamento.",
-      "time": [
-        "02:00"
-      ],
-      "priority": "alta",
-      "category": "trabalho",
-      "dates": [
-        7
-      ]
-    },
-    {
-      "id": "task_27",
-      "name": "Desenvolvimento de Prototipo",
-      "description": "Criar um protótipo para o novo produto.",
-      "time": [
-        "15:00"
-      ],
-      "priority": "alta",
-      "category": "trabalho",
-      "dates": [
-        1,
-        7
-      ]
-    },
-    {
-      "name": "Análise de Vendas",
-      "time": [
-        "19:00"
-      ],
-      "description": "Analisar os dados de vendas do último mês.",
-      "priority": "media",
-      "category": "estudo",
-      "dates": [
-        4
-      ],
-      "id": "task_28"
-    },
-    {
-      "name": "Reunião de Alinhamento de Equipe",
-      "time": [
-        "18:00"
-      ],
-      "description": "Alinhar as atividades da equipe para a semana.",
-      "priority": "baixa",
-      "category": "trabalho",
-      "dates": [
-        4
-      ],
-      "id": "task_29"
-    },
-    {
-      "id": "task_30",
-      "name": "Reunião de Estratégia",
-      "description": "Discutir as metas e objetivos do projeto.",
-      "time": [
-        "10:00"
-      ],
-      "priority": "media",
-      "category": "trabalho",
-      "dates": [
-        5
-      ]
-    },
-    {
-      "id": "task_31",
-      "name": "Sessão de Cinema",
-      "description": "Assistir a um filme com amigos.",
-      "time": [
-        "20:00"
-      ],
-      "priority": "baixa",
-      "category": "lazer",
-      "dates": [
-        7
-      ]
-    },
-    {
-      "id": "task_32",
-      "name": "Análise de Desempenho",
-      "description": "Avaliar o desempenho da equipe no último mês.",
-      "time": [
-        "23:00"
-      ],
-      "priority": "baixa",
-      "category": "trabalho",
-      "dates": [
-        3
-      ]
-    },
-    {
-      "name": "Café da tarde",
-      "time": [
-        "14:00"
-      ],
-      "description": "Reunir-se para um café da manhã descontraído.",
-      "priority": "baixa",
-      "category": "lazer",
-      "dates": [
-        4,
-        7
-      ],
-      "id": "task_33"
-    },
-    {
-      "id": "task_34",
-      "name": "Leitura de Livro",
-      "description": "Dedicar tempo para ler um novo livro.",
-      "time": [
-        "05:00"
-      ],
-      "priority": "baixa",
-      "category": "estudo",
-      "dates": [
-        7
-      ]
-    },
-    {
-      "id": "task_35",
-      "name": "Treinamento de Habilidades",
-      "description": "Participar de um treinamento para desenvolver novas habilidades.",
-      "time": [
-        "17:00"
-      ],
-      "priority": "media",
-      "category": "lazer",
-      "dates": [
-        5,
-        7
-      ]
-    },
-    {
-      "name": "Revisão de Materiais",
-      "time": [
-        "12:00"
-      ],
-      "description": "Revisar materiais para a apresentação.",
-      "priority": "baixa",
-      "category": "lazer",
-      "dates": [
-        3,
-        5
-      ],
-      "id": "task_36"
-    },
-    {
-      "id": "task_37",
-      "name": "Exercício Matinal",
-      "description": "Fazer uma sessão de exercícios para começar o dia.",
-      "time": [
-        "05:00"
-      ],
-      "priority": "alta",
-      "category": "lazer",
-      "dates": [
-        2
-      ]
-    },
-    {
-      "id": "task_38",
-      "name": "Preparação de Relatório",
-      "description": "Preparar um relatório para a reunião de amanhã.",
-      "time": [
-        "15:00"
-      ],
-      "priority": "baixa",
-      "category": "trabalho",
-      "dates": [
-        5
-      ]
-    },
-    {
-      "name": "Estudo de Caso",
-      "time": [
-        "07:00"
-      ],
-      "description": "Analisar um estudo de caso relevante para o projeto.",
-      "priority": "alta",
-      "category": "estudo",
-      "dates": [
-        2
-      ],
-      "id": "task_39"
-    },
-    {
-      "name": "Reunião",
-      "time": [
-        "07:00"
-      ],
-      "description": "Alinhar as atividades da equipe para a semana.",
-      "priority": "alta",
-      "category": "trabalho",
-      "dates": [
-        1
-      ],
-      "id": "task_40"
-    },
-    {
-      "id": "task_41",
-      "name": "Feedback de Clientes",
-      "description": "Coletar feedback dos clientes sobre o serviço.",
-      "time": [
-        "18:00"
-      ],
-      "priority": "media",
-      "category": "trabalho",
-      "dates": [
-        7
-      ]
-    },
-    {
-      "id": "task_42",
-      "name": "Sessão de Meditação",
-      "description": "Praticar meditação para relaxar a mente.",
-      "time": [
-        "03:00"
-      ],
-      "priority": "media",
-      "category": "lazer",
-      "dates": [
-        5,
-        6
-      ]
-    },
-    {
-      "name": "Almoço de Networking",
-      "time": [
-        "18:00"
-      ],
-      "description": "Almoçar com colegas para discutir novas oportunidades.",
-      "priority": "media",
-      "category": "lazer",
-      "dates": [
-        6
-      ],
-      "id": "task_43"
-    },
-    {
-      "id": "task_44",
-      "name": "Planejamento de Projetos",
-      "description": "Planejar os próximos passos do projeto atual.",
-      "time": [
-        "16:00"
-      ],
-      "priority": "alta",
-      "category": "trabalho",
-      "dates": [
-        4,
-        5
-      ]
-    },
-    {
-      "id": "task_45",
-      "name": "Revisão de Tarefas",
-      "description": "Revisar as tarefas pendentes da semana.",
-      "time": [
-        "01:00"
-      ],
-      "priority": "baixa",
-      "category": "trabalho",
-      "dates": [
-        7
-      ]
-    },
-    {
-      "id": "task_46",
-      "name": "Caminhada Noturna",
-      "description": "Fazer uma caminhada para relaxar após o trabalho.",
-      "time": [
-        "18:00"
-      ],
-      "priority": "media",
-      "category": "lazer",
-      "dates": [
-        1
-      ]
-    },
-    {
-      "name": "Estudo Tecnologico",
-      "time": [
-        "05:00"
-      ],
-      "description": "Dedicar tempo para aprender sobre novas tecnologias.",
-      "priority": "baixa",
-      "category": "lazer",
-      "dates": [
-        6
-      ],
-      "id": "task_47"
-    },
-    {
-      "id": "task_48",
-      "name": "Reunião de Planejamento",
-      "description": "Definir as metas para o próximo mês.",
-      "time": [
-        "03:00"
-      ],
-      "priority": "media",
-      "category": "trabalho",
-      "dates": [
-        4
-      ]
-    },
-    {
-      "name": "Análise de Dados",
-      "time": [
-        "07:00"
-      ],
-      "description": "Analisar os dados de vendas do último mês.",
-      "priority": "alta",
-      "category": "estudo",
-      "dates": [
-        5
-      ],
-      "id": "task_49"
-    },
-    {
-      "id": "task_50",
-      "name": "Reunião de Encerramento",
-      "description": "Encerrar o projeto e discutir os resultados.",
-      "time": [
-        "19:00"
-      ],
-      "priority": "baixa",
-      "category": "trabalho",
-      "dates": [
-        5
-      ]
-    },
-    {
-      "name": "Revisão de Conteúdo",
-      "time": [
-        "09:00"
-      ],
-      "description": "Revisar o conteúdo para o blog.",
-      "priority": "alta",
-      "category": "estudo",
-      "dates": [
-        2,
-        5
-      ],
-      "id": "task_51"
-    },
-    {
-      "id": "task_52",
-      "name": "Análise de Feedback",
-      "description": "Analisar o feedback recebido dos usuários.",
-      "time": [
-        "16:00"
-      ],
-      "priority": "media",
-      "category": "estudo",
-      "dates": [
-        7
-      ]
-    },
-    {
-      "id": "task_53",
-      "name": "Desenvolvimento de Habilidades",
-      "description": "Trabalhar no desenvolvimento de habilidades pessoais.",
-      "time": [
-        "17:00"
-      ],
-      "priority": "alta",
-      "category": "estudo",
-      "dates": [
-        2
-      ]
-    },
-    {
-      "name": "Planejamento",
-      "time": [
-        "13:00"
-      ],
-      "description": "Planejar os estudos para a próxima semana.",
-      "priority": "baixa",
-      "category": "estudo",
-      "dates": [
-        2,
-        5
-      ],
-      "id": "task_54"
-    },
-    {
-      "id": "task_55",
-      "name": "Reunião de Revisão",
-      "description": "Revisar o progresso do projeto com a equipe.",
-      "time": [
-        "07:00"
-      ],
-      "priority": "baixa",
-      "category": "trabalho",
-      "dates": [
-        6,
-        7
-      ]
-    },
-    {
-      "name": "Análise de Resultados ",
-      "time": [
-        "11:00"
-      ],
-      "description": "Analisar os resultados finais do projeto.",
-      "priority": "media",
-      "category": "trabalho",
-      "dates": [
-        2
-      ],
-      "id": "task_56"
-    }
-  ]
+    "listaDeTarefas": [
+      {
+        "id": 1,
+        "name": "Projeto App",
+        "description": "Desenvolvimento do aplicativo.",
+        "time": "12:30",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          7,
+          6,
+          1
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 2,
+        "name": "Planejamento de semana",
+        "description": "Planejar as atividades da semana.",
+        "time": "14:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          4,
+          1
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 3,
+        "name": "Revisão de metas",
+        "description": "Revisar as metas estabelecidas.",
+        "time": "05:15",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          1,
+          3
+        ],
+        "estimatedDuration": 30
+      },
+      {
+        "id": 4,
+        "name": "Reunião de Início de Projeto",
+        "description": "Iniciar o projeto com a equipe.",
+        "time": "10:00",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          4,
+          2
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 5,
+        "name": "Sessão de Brainstorming",
+        "description": "Brainstorming para novas ideias.",
+        "time": "14:15",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          4,
+          2,
+          5
+        ],
+        "estimatedDuration": 45
+      },
+      {
+        "id": 6,
+        "name": "Jantar em Família",
+        "description": "Jantar com a família.",
+        "time": "08:30",
+        "priority": "Baixa",
+        "category": "Lazer",
+        "date": [
+          2,
+          1,
+          6
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 7,
+        "name": "Reunião de Feedback",
+        "description": "Coletar feedback sobre o projeto.",
+        "time": "07:15",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          1,
+          3
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 8,
+        "name": "Caminhada Noturna",
+        "description": "Caminhada para relaxar.",
+        "time": "01:00",
+        "priority": "Baixa",
+        "category": "Lazer",
+        "date": [
+          5,
+          3
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 9,
+        "name": "Reunião",
+        "description": "Reunião de alinhamento.",
+        "time": "21:15",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          1,
+          4
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 10,
+        "name": "Reunião de Avaliação",
+        "description": "Avaliar o desempenho da equipe.",
+        "time": "18:30",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          4,
+          1,
+          7
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 11,
+        "name": "Estudo de UX",
+        "description": "Aprimorar conhecimentos em design de experiência do usuário.",
+        "time": "03:30",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          7,
+          2
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 12,
+        "name": "Feedback de Projeto",
+        "description": "Coletar feedback sobre o projeto atual.",
+        "time": "03:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          6,
+          2,
+          5
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 13,
+        "name": "Café da Manhã com Clientes",
+        "description": "Reunião informal com clientes para discutir projetos.",
+        "time": "11:45",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          7,
+          5
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 14,
+        "name": "Análise de Resultados de Vendas",
+        "description": "Analisar os resultados das vendas do mês.",
+        "time": "17:15",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          1,
+          2,
+          6
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 15,
+        "name": "Revisão de Código",
+        "description": "Revisar o código desenvolvido pela equipe.",
+        "time": "06:45",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          3,
+          5
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 16,
+        "name": "Reunião de Kickoff",
+        "description": "Iniciar o projeto com a equipe.",
+        "time": "01:15",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          6,
+          7,
+          1
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 17,
+        "name": "Estudo de UX",
+        "description": "Aprimorar conhecimentos em design de experiência do usuário.",
+        "time": "00:30",
+        "priority": "Média",
+        "category": "Lazer",
+        "date": [
+          4,
+          1,
+          6
+        ],
+        "estimatedDuration": 820
+      },
+      {
+        "id": 18,
+        "name": "Feedback de Projeto",
+        "description": "Coletar feedback sobre o projeto atual.",
+        "time": "23:45",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          3,
+          6
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 19,
+        "name": "Café da Manhã com Clientes",
+        "description": "Reunião informal com clientes para discutir projetos.",
+        "time": "18:15",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          1,
+          6
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 20,
+        "name": "Revisão de Código",
+        "description": "Revisar o código desenvolvido pela equipe.",
+        "time": "02:30",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          7,
+          1
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 21,
+        "name": "Análise de Mercado",
+        "description": "Analisar o mercado para identificar oportunidades.",
+        "time": "17:45",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          4,
+          3,
+          2
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 22,
+        "name": "Revisão de Metas",
+        "description": "Revisar as metas estabelecidas.",
+        "time": "19:00",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          4,
+          5
+        ],
+        "estimatedDuration": 30
+      },
+      {
+        "id": 23,
+        "name": "Análise de Concorrência",
+        "description": "Analisar a concorrência e suas estratégias.",
+        "time": "10:30",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          7,
+          3,
+          2
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 24,
+        "name": "Estudo de SEO",
+        "description": "Aprimorar conhecimentos em SEO.",
+        "time": "18:00",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          5,
+          2
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 25,
+        "name": "Workshop de Inovação",
+        "description": "Participar de um workshop sobre inovação.",
+        "time": "02:00",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          3,
+          7,
+          1
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 26,
+        "name": "Reunião de Alinhamento",
+        "description": "Alinhar as expectativas da equipe.",
+        "time": "09:45",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          7,
+          1
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 27,
+        "name": "Workshop de Criatividade",
+        "description": "Participar de um workshop para estimular a criatividade.",
+        "time": "05:45",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          3,
+          7,
+          2
+        ],
+        "estimatedDuration": 90
+      },
+      {
+        "id": 28,
+        "name": "Feedback de Clientes",
+        "description": "Coletar feedback dos clientes sobre os serviços.",
+        "time": "22:45",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          6,
+          5,
+          7
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 29,
+        "name": "Análise de Resultados",
+        "description": "Analisar os resultados das atividades realizadas.",
+        "time": "20:30",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          4,
+          2,
+          5
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 30,
+        "name": "Estudo de Novas Tecnologias",
+        "description": "Aprimorar conhecimentos sobre novas tecnologias.",
+        "time": "12:15",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          5,
+          3
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 31,
+        "name": "Workshop de Criatividade",
+        "description": "Participar de um workshop para estimular a criatividade.",
+        "time": "11:00",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          5,
+          2,
+          3
+        ],
+        "estimatedDuration": 90
+      },
+      {
+        "id": 32,
+        "name": "Planejamento de Metas",
+        "description": "Definir as metas para o próximo período.",
+        "time": "23:30",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          4,
+          1
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 33,
+        "name": "Reunião de Alinhamento",
+        "description": "Alinhar as expectativas da equipe.",
+        "time": "06:15",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          1,
+          5,
+          4
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 34,
+        "name": "Revisão de Documentos",
+        "description": "Revisar documentos importantes.",
+        "time": "16:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          2,
+          1
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 35,
+        "name": "Reunião de Revisão de Projetos",
+        "description": "Revisar o andamento dos projetos em curso.",
+        "time": "22:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          5,
+          6
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 36,
+        "name": "Estudo de Tendências",
+        "description": "Estudar as tendências do mercado.",
+        "time": "05:30",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          3,
+          1
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 37,
+        "name": "Reunião de Planejamento",
+        "description": "Planejar as atividades da semana.",
+        "time": "13:30",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date ": [
+          3
+        ],
+        "estimatedDuration": 60,
+        "date": [
+          3,
+          5,
+          7
+        ]
+      },
+      {
+        "id": 38,
+        "name": "Almoço de Integração",
+        "description": "Almoço para integrar a equipe.",
+        "time": "19:45",
+        "priority": "Baixa",
+        "category": "Lazer",
+        "date": [
+          6,
+          2
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 39,
+        "name": "Reunião de Resultados",
+        "description": "Discutir os resultados das atividades.",
+        "time": "13:15",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          6,
+          5,
+          3
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 40,
+        "name": "Estudo de Marketing Digital",
+        "description": "Aprimorar conhecimentos em marketing digital.",
+        "time": "09:30",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          7,
+          2,
+          4
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 41,
+        "name": "Análise de Resultados",
+        "description": "Analisar os resultados das atividades realizadas.",
+        "time": "10:30",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          7,
+          1,
+          3
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 42,
+        "name": "Reunião de Planejamento de Conteúdo",
+        "description": "Planejar o conteúdo a ser produzido.",
+        "time": "17:30",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          4,
+          5
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 43,
+        "name": "Feedback de Performance",
+        "description": "Coletar feedback sobre a performance da equipe.",
+        "time": "12:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          1,
+          5
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 44,
+        "name": "Reunião de Estratégia",
+        "description": "Definir a estratégia para o próximo período.",
+        "time": "12:00",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          4,
+          7
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 45,
+        "name": "Revisão de Documentos Legais",
+        "description": "Revisar documentos legais importantes.",
+        "time": "12:30",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          6,
+          1
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 46,
+        "name": "Reunião de Planejamento Estratégico",
+        "description": "Planejar a estratégia da empresa.",
+        "time": "09:00",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          5,
+          6,
+          4
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 47,
+        "name": "Almoço de Integração",
+        "description": "Almoço para integrar a equipe.",
+        "time": "12:30",
+        "priority": "Baixa",
+        "category": "Lazer",
+        "date": [
+          6,
+          4,
+          2
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 48,
+        "name": "Reunião de Resultados",
+        "description": "Discutir os resultados das atividades.",
+        "time": "15:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          3,
+          1,
+          7
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 49,
+        "name": "Estudo de Análise de Dados",
+        "description": "Aprimorar conhecimentos em análise de dados.",
+        "time": "10:30",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          7,
+          1,
+          6
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 50,
+        "name": "Feedback de Clientes",
+        "description": "Coletar feedback dos clientes sobre os serviços.",
+        "time": "14:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          6,
+          3
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 51,
+        "name": "Reunião de Alinhamento de Equipe",
+        "description": "Alinhar as expectativas da equipe.",
+        "time": "11:15",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          7,
+          6
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 52,
+        "name": "Revisão de Projetos em Andamento",
+        "description": "Revisar o andamento dos projetos em curso.",
+        "time": "10:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          6,
+          3
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 53,
+        "name": "Reunião de Feedback",
+        "description": "Coletar feedback sobre o projeto.",
+        "time": "14:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          1,
+          3,
+          2
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 54,
+        "name": "Estudo de SEO",
+        "description": "Aprimorar conhecimentos em SEO.",
+        "time": "16:00",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          2,
+          3
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 55,
+        "name": "Caminhada Matinal",
+        "description": "Caminhada para começar o dia.",
+        "time": "08:30",
+        "priority": "Baixa",
+        "category": "Lazer",
+        "date": [
+          1,
+          6
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 56,
+        "name": "Café da Manhã com o Time",
+        "description": "Reunião informal com a equipe.",
+        "time": "08:30",
+        "priority": "Baixa",
+        "category": "Lazer",
+        "date": [
+          5,
+          3,
+          6
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 57,
+        "name": "Reunião de Kickoff",
+        "description": "Iniciar o projeto com a equipe.",
+        "time": "09:00",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          1,
+          4,
+          2
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 58,
+        "name": "Revisão de Metas",
+        "description": "Revisar as metas estabelecidas.",
+        "time": "09:30",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          1,
+          4
+        ],
+        "estimatedDuration": 30
+      },
+      {
+        "id": 59,
+        "name": "Análise de Resultados",
+        "description": "Analisar os resultados das atividades realizadas.",
+        "time": "10:30",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          1,
+          3
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 60,
+        "name": "Estudo de Marketing Digital",
+        "description": "Aprimorar conhecimentos em marketing digital.",
+        "time": "09:30",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          5,
+          4,
+          7
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 61,
+        "name": "Reunião de Planejamento de Marketing",
+        "description": "Planejar as estratégias de marketing.",
+        "time": "09:00",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          1,
+          3
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 62,
+        "name": "Estudo de Análise de Dados",
+        "description": "Aprimorar conhecimentos em análise de dados.",
+        "time": "10:30",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          6,
+          1,
+          3
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 63,
+        "name": "Feedback de Performance",
+        "description": "Coletar feedback sobre a performance da equipe.",
+        "time": "12:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          4,
+          2
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 64,
+        "name": "Reunião de Feedback de Clientes",
+        "description": "Coletar feedback dos clientes sobre os serviços.",
+        "time": "14:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          2,
+          3,
+          1
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 65,
+        "name": "Reunião de Revisão de Projetos",
+        "description": "Revisar o andamento dos projetos em curso.",
+        "time": "14:30",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          7,
+          4
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 66,
+        "name": "Workshop de Desenvolvimento Pessoal",
+        "description": "Participar de um workshop sobre desenvolvimento pessoal.",
+        "time": "09:45",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          1,
+          6,
+          7
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 67,
+        "name": "Reunião de Alinhamento",
+        "description": "Alinhar as expectativas da equipe.",
+        "time": "11:15",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          2,
+          6
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 68,
+        "name": "Análise de Resultados de Vendas",
+        "description": "Analisar os resultados das vendas do mês.",
+        "time": "11:30",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          4,
+          7
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 69,
+        "name": "Reunião de Início de Projeto",
+        "description": "Iniciar o projeto com a equipe.",
+        "time": "10:00",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          5,
+          1
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 70,
+        "name": "Sessão de Brainstorming",
+        "description": "Brainstorming para novas ideias.",
+        "time": "10:15",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          7,
+          3
+        ],
+        "estimatedDuration": 45
+      },
+      {
+        "id": 71,
+        "name": "Jantar em Família",
+        "description": "Jantar com a família.",
+        "time": "11:00",
+        "priority": "Baixa",
+        "category": "Lazer",
+        "date": [
+          1,
+          4
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 72,
+        "name": "Reunião de Feedback",
+        "description": "Coletar feedback sobre o projeto.",
+        "time": "14:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          1,
+          4,
+          5
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 73,
+        "name": "Caminhada Noturna",
+        "description": "Caminhada para relaxar.",
+        "time": "18:00",
+        "priority": "Baixa",
+        "category": "Lazer",
+        "date": [
+          3,
+          1,
+          7
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 74,
+        "name": "Reunião",
+        "description": "Re união de alinhamento.",
+        "time": "21:00",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          3,
+          7,
+          6
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 75,
+        "name": "Reunião de Avaliação",
+        "description": "Avaliar o desempenho da equipe.",
+        "time": "15:30",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          2,
+          6
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 76,
+        "name": "Reunião de Planejamento de Conteúdo",
+        "description": "Planejar o conteúdo a ser produzido.",
+        "time": "09:00",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          7,
+          1,
+          6
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 77,
+        "name": "Estudo de UX",
+        "description": "Aprimorar conhecimentos em design de experiência do usuário.",
+        "time": "10:30",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          6,
+          1,
+          2
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 78,
+        "name": "Feedback de Projeto",
+        "description": "Coletar feedback sobre o projeto atual.",
+        "time": "11:30",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          2,
+          4
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 79,
+        "name": "Café da Manhã com Clientes",
+        "description": "Reunião informal com clientes para discutir projetos.",
+        "time": "09:15",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          3,
+          6
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 80,
+        "name": "Revisão de Código",
+        "description": "Revisar o código desenvolvido pela equipe.",
+        "time": "10:00",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          4,
+          3
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 81,
+        "name": "Análise de Mercado",
+        "description": "Analisar o mercado para identificar oportunidades.",
+        "time": "12:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          3,
+          1
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 82,
+        "name": "Revisão de Metas",
+        "description": "Revisar as metas estabelecidas.",
+        "time": "09:30",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          6,
+          2
+        ],
+        "estimatedDuration": 30
+      },
+      {
+        "id": 83,
+        "name": "Análise de Concorrência",
+        "description": "Analisar a concorrência e suas estratégias.",
+        "time": "11:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          2,
+          6,
+          5
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 84,
+        "name": "Estudo de SEO",
+        "description": "Aprimorar conhecimentos em SEO.",
+        "time": "16:00",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          3,
+          7
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 85,
+        "name": "Workshop de Inovação",
+        "description": "Participar de um workshop sobre inovação.",
+        "time": "13:00",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          3,
+          6,
+          5
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 86,
+        "name": "Reunião de Alinhamento",
+        "description": "Alinhar as expectativas da equipe.",
+        "time": "11:15",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          1,
+          7,
+          3
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 87,
+        "name": "Workshop de Criatividade",
+        "description": "Participar de um workshop para estimular a criatividade.",
+        "time": "09:45",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          1,
+          4,
+          2
+        ],
+        "estimatedDuration": 90
+      },
+      {
+        "id": 88,
+        "name": "Feedback de Clientes",
+        "description": "Coletar feedback dos clientes sobre os serviços.",
+        "time": "14:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          5,
+          7,
+          1
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 89,
+        "name": "Análise de Resultados",
+        "description": "Analisar os resultados das atividades realizadas.",
+        "time": "10:30",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          4,
+          3,
+          2
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 90,
+        "name": "Estudo de Novas Tecnologias",
+        "description": "Aprimorar conhecimentos sobre novas tecnologias.",
+        "time": "15:30",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          4,
+          3,
+          5
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 91,
+        "name": "Reunião de Kickoff",
+        "description": "Iniciar o projeto com a equipe.",
+        "time": "09:00",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          7,
+          5,
+          4
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 92,
+        "name": "Estudo de UX",
+        "description": "Aprimorar conhecimentos em design de experiência do usuário.",
+        "time": "10:30",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          4,
+          3
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 93,
+        "name": "Feedback de Projeto",
+        "description": "Coletar feedback sobre o projeto atual.",
+        "time": "11:30",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          1,
+          7,
+          3
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 94,
+        "name": "Café da Manhã com Clientes",
+        "description": "Reunião informal com clientes para discutir projetos.",
+        "time": "09:15",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          5,
+          3
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 95,
+        "name": "Revisão de Código",
+        "description": "Revisar o código desenvolvido pela equipe.",
+        "time": "10:00",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          4,
+          7,
+          2
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 96,
+        "name": "Análise de Mercado",
+        "description": "Analisar o mercado para identificar oportunidades.",
+        "time": "12:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          4,
+          2,
+          3
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 97,
+        "name": "Revisão de Metas",
+        "description": "Revisar as metas estabelecidas.",
+        "time": "09:30",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          2,
+          1,
+          4
+        ],
+        "estimatedDuration": 30
+      },
+      {
+        "id": 98,
+        "name": "Análise de Concorrência",
+        "description": "Analisar a concorrência e suas estratégias.",
+        "time": "11:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          5,
+          1,
+          3
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 99,
+        "name": "Estudo de SEO",
+        "description": "Aprimorar conhecimentos em SEO.",
+        "time": "16:00",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          2,
+          6
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 100,
+        "name": "Workshop de Inovação",
+        "description": "Participar de um workshop sobre inovação.",
+        "time": "13:00",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          6,
+          4,
+          1
+        ],
+        "estimatedDuration": 120
+      },
+      {
+        "id": 101,
+        "name": "Reunião de Alinhamento",
+        "description": "Alinhar as expectativas da equipe.",
+        "time": "11:15",
+        "priority": "Alta",
+        "category": "Trabalho",
+        "date": [
+          3,
+          6
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 102,
+        "name": "Workshop de Criatividade",
+        "description": "Participar de um workshop para estimular a criatividade.",
+        "time": "09:45",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          7,
+          6,
+          3
+        ],
+        "estimatedDuration": 90
+      },
+      {
+        "id": 103,
+        "name": "Feedback de Clientes",
+        "description": "Coletar feedback dos clientes sobre os serviços.",
+        "time": "14:00",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          1,
+          3
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 104,
+        "name": "Análise de Resultados",
+        "description": "Analisar os resultados das atividades realizadas.",
+        "time": "10:30",
+        "priority": "Média",
+        "category": "Trabalho",
+        "date": [
+          2,
+          6
+        ],
+        "estimatedDuration": 60
+      },
+      {
+        "id": 105,
+        "name": "Estudo de Novas Tecnologias",
+        "description": "Aprimorar conhecimentos sobre novas tecnologias.",
+        "time": "15:30",
+        "priority": "Média",
+        "category": "Estudo",
+        "date": [
+          4,
+          5,
+          2
+        ],
+        "estimatedDuration": 120
+      }
+    ]
+  }
 }
