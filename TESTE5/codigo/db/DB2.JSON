@@ -1,0 +1,40 @@
+
+{
+    "tasks_calendar": [
+      {
+        "name": "Reunião Estratégica",
+        "time": ["09:00"],
+        "description": "Discutir as metas do próximo trimestre.",
+        "priority": "baixa",
+        "category": "lazer",
+        "dates": [3, 4],
+        "id": "task_1"
+      }
+    ],
+    "tarefas": {
+      "listaDeTarefas": [
+        {
+          "id": 1,
+          "name": "Projeto App",
+          "description": "Desenvolver a aplicação mobile",
+          "date": [4, 5],
+          "time": "09:00",
+          "category": "Trabalho",
+          "priority": "Alta",
+          "estimatedDuration": 300
+        }
+      ],
+      "adicionarTarefas": [
+        {
+          "id": 1731191654878,
+          "name": "egsv",
+          "time": "23:45",
+          "category": "Estudo",
+          "priority": "Baixa",
+          "Udate": "0043-05-31",
+          "date": [1],
+          "estimatedDuration": 435
+        }
+      ]
+    }
+  }

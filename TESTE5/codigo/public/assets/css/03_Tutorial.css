@@ -1,0 +1,178 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E6F2EF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container principal */
+.main-content {
+    width: 80%;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content .h1 h1,h3{
+    text-align: center;
+}
+.main-content .h1 h3{
+    margin-top: 0;
+    margin-bottom: 1px;
+}
+
+/* Container para o topo */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.h1 h1 {
+    font-size: 3em;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 0;
+}
+
+/* Botão de iniciar app */
+.iniciarApp button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #000;
+    background-color: #76cad8;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.iniciarApp button:hover {
+    background-color: #A9CCE3;
+}
+
+
+/* Container para tutorial */
+.tuto {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #7ED6DF;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+}
+
+
+
+/* Botões das opções */
+.Dpage {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 60%;
+    
+}
+
+.Dpage button {
+    padding: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    background-color: #76cad8;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: left; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-right: 60px;
+}
+
+.Dpage button:hover {
+    background-color: #A9CCE3;
+}
+
+/* Setas */
+.set {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; 
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+}
+
+.set img {
+    height: 60px;
+    width: 60px;
+    object-fit: contain; 
+    margin-left: 10px; 
+    margin-right: 60px;
+}
+
+
+
+
+
+
+/* Área de descrição */
+.descricao {
+    width: 50%;
+    padding: 15px;
+    background-color: #aabcdc;
+    border-radius: 10px;
+    color: #333;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.descricao h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+
+.descricao p {
+    font-size: 20px;
+}
+
+.descricao ul li {
+    padding: 10px;
+    font-size: 20px; 
+}
+
+#subtopicoBotoes {
+    text-align: center; 
+}
+
+#subtopicoBotoes button {
+    font-size: 15px; 
+}
+
+
+#subtopicoConteudo h3 {
+    font-size: 20px; 
+}
+
+#subtopicoConteudo .h3 {
+    font-size: 20px; 
+}
+#subtopicoConteudo ul li{
+    font-size: 24px; 
+    padding: 3px;
+}
+
