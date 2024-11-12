@@ -9,7 +9,7 @@ npx json-server --watch codigo/db/db.json --port 3000
 // Marcar a aba ativa na sidebar
 document.addEventListener("DOMContentLoaded", function() {
     function highlightActiveItem() {
-        const currentPage = window.location.pathname.split("/").pop(); // Pega o nome do arquivo da URL
+        const currentPage = window.location.pathname.split("/").pop(); 
 
         const items = document.querySelectorAll('.sidebar ul li');
         items.forEach(item => {
@@ -68,7 +68,6 @@ function enviarFeedback() {
         data: new Date().toISOString()
     };
 
-    // Envia os dados para o json-server
     fetch('http://localhost:3000/feedback', {
         method: 'POST',
         headers: {
@@ -98,7 +97,7 @@ function exibirConteudo() {
         return;
     }
 
-    fetch('/codigo/db/db.json')
+    fetch('/TESTE1/codigo/db/db.json')
         .then(response => response.json())
         .then(data => {
             const conteudoExibicao = document.getElementById('conteudo-exibicao');

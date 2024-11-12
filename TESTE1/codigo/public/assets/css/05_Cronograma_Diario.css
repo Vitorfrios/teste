@@ -159,7 +159,7 @@ body {
     font-size: 25px; 
     border-radius: 30px;
 }
-/* Estilos para a estrutura geral */
+
 /* Estilos para a estrutura geral */
 .table-container {
     height: 500px;
@@ -186,12 +186,12 @@ body {
 /* Conteúdo das células */
 .hed th,
 #schedule td {
-    width: 180px; /* Largura para cada dia da semana */
+    width: 180px; 
     text-align: center;
     border: 1px solid #000;
     padding: 8px;
     height: 40px;
-    margin: 0; /* Remove margens para alinhamento */
+    margin: 0; 
     box-sizing: border-box;
     font-size: 18px;
     border-top: 0;
@@ -202,7 +202,7 @@ body {
 /* Coluna de hora */
 th#H,
 td#HOUR {
-    width: 70px; /* Largura específica para 'Hora' */
+    width: 70px;
 }
 
 /* Configurações gerais da tabela */
@@ -223,14 +223,14 @@ td#HOUR {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 9998;  /* Garantir que o overlay fique atrás do modal */
-    width: 500px;  /* Largura média do modal */
-    height: auto;  /* Deixar a altura automática para o conteúdo */
-    max-height: 85vh;  /* Máxima altura de 80% da tela */
+    z-index: 9998;  
+    width: 500px;  
+    height: auto;  
+    max-height: 85vh;  
     padding: 20px;
-    border-radius: 8px;  /* Bordas arredondadas */
-    display: none;  /* Inicialmente oculto */
-    overflow-y: auto;  /* Permite rolagem se o conteúdo ultrapassar o limite */
+    border-radius: 8px;  
+    display: none;  
+    overflow-y: auto; 
 }
 
 /* Estilo do conteúdo dentro do modal */
@@ -243,7 +243,7 @@ td#HOUR {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box; /* Faz com que o padding seja considerado no cálculo do tamanho */
+    box-sizing: border-box; 
 }
 
 /* Estilo para o cabeçalho do modal */
@@ -252,8 +252,8 @@ td#HOUR {
     margin-bottom: 20px;
     text-align: center;
     font-size: 25px;
-    color: #00A4CC; /* Cor de destaque */
-    flex-shrink: 0; /* Impede que o título encolha */
+    color: #00A4CC; 
+    flex-shrink: 0; 
 }
 
 /* Estilo para o botão de fechar */
@@ -276,7 +276,7 @@ td#HOUR {
     align-items: flex-start;
     margin-bottom: 10px;
     width: 100%;
-    flex-grow: 1; /* Permite que os campos cresçam para ocupar o espaço disponível */
+    flex-grow: 1; 
 }
 
 .form-group-N label {
@@ -310,7 +310,7 @@ td#HOUR {
     cursor: pointer;
     margin-top: 5px;
     font-size: 20px;
-    flex-shrink: 0; /* Impede que o botão encolha */
+    flex-shrink: 0; 
 }
 
 #btn-salvar:hover {
@@ -320,22 +320,22 @@ td#HOUR {
 /* Estilo para os dias da semana */
 #edit-dates {
     display: flex;
-    justify-content: space-between; /* Distribui os dias uniformemente na linha */
+    justify-content: space-between; 
     margin-top: 10px;
     width: 100%;
 }
 
 #edit-dates label {
     font-size: 20px;
-    text-align: center; /* Alinha o texto no centro */
+    text-align: center; 
     display: flex;
-    flex-direction: column; /* Coloca o dia e o checkbox na vertical */
-    align-items: center; /* Centraliza o checkbox abaixo do dia */
-    width: 12%; /* Ajuste para caber em 7 dias */
+    flex-direction: column; 
+    align-items: center; 
+    width: 12%; 
 }
 
 #edit-dates input {
-    margin-top: 5px; /* Espaço entre o dia e o checkbox */
+    margin-top: 5px; 
 }
 
 

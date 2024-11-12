@@ -9,7 +9,7 @@ npx json-server --watch codigo/db/db.json --port 3000
 // Marcar a aba ativa na sidebar
 document.addEventListener("DOMContentLoaded", function() {
     function highlightActiveItem() {
-        const currentPage = window.location.pathname.split("/").pop(); // Pega o nome do arquivo da URL
+        const currentPage = window.location.pathname.split("/").pop(); 
 
         const items = document.querySelectorAll('.sidebar ul li');
         items.forEach(item => {

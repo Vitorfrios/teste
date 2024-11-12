@@ -248,18 +248,18 @@ body {
     margin: 0 auto; 
 }
 .task-table tbody {
-    display: block; /* Faz com que o tbody se comporte como um bloco */
-    max-height: 150px; /* Define uma altura máxima */
-    overflow-y: auto; /* Permite a rolagem vertical quando necessário */
+    display: block; 
+    max-height: 150px; 
+    overflow-y: auto; 
 }
 
 /* Oculta a barra de rolagem em navegadores WebKit (Chrome, Safari) */
 
 
 .task-table tr {
-    display: table; /* Faz com que cada linha se comporte como uma linha de tabela */
-    table-layout: fixed; /* Mantém o layout da tabela */
-    width: 100%; /* Garante que a largura da linha corresponda à tabela */
+    display: table; 
+    table-layout: fixed; 
+    width: 100%; 
 }
 
 .task-table th {
@@ -282,18 +282,18 @@ body {
 
 }
 .remove-task {
-    background-color: #B0C4DE; /* Cor de fundo inicial */
-    border: none; /* Remove a borda padrão */
-    color: black; /* Cor do texto */
-    padding: 8px 16px; /* Ajusta o preenchimento */
-    cursor: pointer; /* Muda o cursor para "mãozinha" */
-    font-size: 22px; /* Tamanho da fonte */
-    border-radius: 30px; /* Arredonda as bordas */
+    background-color: #B0C4DE; 
+    border: none; 
+    color: black; 
+    padding: 8px 16px; 
+    cursor: pointer; 
+    font-size: 22px; 
+    border-radius: 30px; 
 }
 
 /* Muda a cor de fundo ao passar o mouse */
 .remove-task:hover {
-    background-color: #D3DDE8; /* Cor mais clara no hover */
+    background-color: #D3DDE8; 
 }
 
 
@@ -301,15 +301,15 @@ body {
 
 /* Estilos para o Modal */
 .modal {
-    display: none; /* Esconde o modal inicialmente */
+    display: none; 
     position: fixed;
-    z-index: 1; /* Fica acima do conteúdo */
+    z-index: 1; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Adiciona rolagem se necessário */
-    background-color: rgba(0, 0, 0, 0.4); /* Fundo semitransparente */
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
 }
 
 .modal-content {

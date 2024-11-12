@@ -9,7 +9,7 @@ npx json-server --watch codigo/db/db.json --port 3000
 // Marcar a aba ativa na sidebar
 document.addEventListener("DOMContentLoaded", function() {
     function highlightActiveItem() {
-        const currentPage = window.location.pathname.split("/").pop(); // Pega o nome do arquivo da URL
+        const currentPage = window.location.pathname.split("/").pop(); 
 
         const items = document.querySelectorAll('.sidebar ul li');
         items.forEach(item => {
@@ -43,29 +43,24 @@ async function carregarDadosUsuario() {
     try {
         const usuarioResponse = await fetch('http://localhost:3000/usuarios/1');
         const configResponse = await fetch('http://localhost:3000/configuracoes?usuarioId=1');
-        const senhaResponse = await fetch('http://localhost:3000/senhas?usuarioId=1');  // Obtendo a senha do usuário
-
+        const senhaResponse = await fetch('http://localhost:3000/senhas?usuarioId=1');  
         if (!usuarioResponse.ok || !configResponse.ok || !senhaResponse.ok) throw new Error('Erro ao buscar dados');
 
         const usuario = await usuarioResponse.json();
         const configuracao = await configResponse.json();
         const senha = await senhaResponse.json();
 
-        // Exibindo os dados nos elementos <span>
-        document.getElementById('nome-completo').textContent = usuario.nome || 'N/A';
+                document.getElementById('nome-completo').textContent = usuario.nome || 'N/A';
         document.getElementById('email').textContent = usuario.email || 'N/A';
         document.getElementById('nome-usuario').textContent = usuario.login || 'N/A';
 
-        // Atualizando o estado do checkbox de notificações
-        document.getElementById('notification-toggle').checked = configuracao[0]?.notificacoes || false;
+               document.getElementById('notification-toggle').checked = configuracao[0]?.notificacoes || false;
 
-        // Preenchendo o formulário de edição com os dados atuais (exceto senha)
-        document.getElementById('edit-nome').value = usuario.nome || '';
+                document.getElementById('edit-nome').value = usuario.nome || '';
         document.getElementById('edit-email').value = usuario.email || '';
         document.getElementById('edit-login').value = usuario.login || '';
 
-        // Preenche o campo de senha se disponível
-        document.getElementById('new-password').value = senha[0]?.senha || '';
+                document.getElementById('new-password').value = senha[0]?.senha || '';
     } catch (error) {
         console.error('Erro ao carregar os dados do usuário:', error);
     }
@@ -104,8 +99,7 @@ async function salvarDadosEditados() {
         });
         if (!response.ok) throw new Error('Erro ao salvar dados');
 
-        // Atualizar os valores nos spans imediatamente após salvar
-        document.getElementById('nome-completo').textContent = novoNome;
+                document.getElementById('nome-completo').textContent = novoNome;
         document.getElementById('email').textContent = novoEmail;
         document.getElementById('nome-usuario').textContent = novoLogin;
 
@@ -115,15 +109,13 @@ async function salvarDadosEditados() {
     }
 }
 
-// Função para salvar a nova senha sem alterar os outros dados
 
 // Função para salvar a nova senha sem alterar os outros dados
 async function salvarNovaSenha() {
     const novaSenha = document.getElementById('new-password').value;
 
     try {
-        // Verifica se já existe uma senha para o usuarioIdS = 1
-        const senhaResponse = await fetch('http://localhost:3000/senhas?usuarioIdS=1');
+                const senhaResponse = await fetch('http://localhost:3000/senhas?usuarioIdS=1');
         const senhaExistente = await senhaResponse.json();
 
         if (!senhaResponse.ok) {
@@ -131,20 +123,14 @@ async function salvarNovaSenha() {
         }
 
         if (senhaExistente.length > 0) {
-            // Se a senha já existir, pega o id da senha
-            const senhaId = senhaExistente[0].id;
+                        const senhaId = senhaExistente[0].id;
 
-            console.log('ID da senha:', senhaId);  // Depuração para verificar o ID da senha
-
-            // Faz uma requisição PUT para atualizar a senha
-            const response = await fetch(`http://localhost:3000/senhas/${senhaId}`, {
+            console.log('ID da senha:', senhaId);  
+                        const response = await fetch(`http://localhost:3000/senhas/${senhaId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    id: senhaId,  // A ID precisa ser passada no corpo da requisição
-                    usuarioIdS: "1",  // Usando a chave correta 'usuarioIdS'
-                    senha: novaSenha  // Atualizando a senha com a nova senha
-                })
+                    id: senhaId,                      usuarioIdS: "1",                      senha: novaSenha                  })
             });
 
             if (!response.ok) {
@@ -157,8 +143,7 @@ async function salvarNovaSenha() {
             throw new Error('Senha não encontrada para o usuário.');
         }
 
-        // Fechar o modal de senha após sucesso
-        document.getElementById('password-modal').style.display = 'none';
+                document.getElementById('password-modal').style.display = 'none';
     } catch (error) {
         console.error('Erro ao alterar a senha:', error);
         alert(`Erro ao alterar a senha: ${error.message}`);
@@ -187,9 +172,7 @@ document.getElementById('close-password-modal').onclick = () => {
     document.getElementById('password-modal').style.display = 'none';
 };
 
-// Eventos de salvar
 document.getElementById('save-changes').onclick = salvarDadosEditados;
 document.getElementById('save-password').onclick = salvarNovaSenha;
 
-// Carregar os dados ao iniciar a página
 carregarDadosUsuario();

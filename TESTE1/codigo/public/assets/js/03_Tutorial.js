@@ -3,10 +3,10 @@ COPIAR CODIGO NO TERMINAL PARA INICIALIZAR O JSON SERVER
 npx json-server --watch codigo/db/db.json --port 3000
 */
 
-// Caminho do JSON com as descrições dos tutoriais
-const jsonPath = '/codigo/db/db.json';
 
-// Função para carregar dados do JSON
+const jsonPath = '/TESTE1/codigo/db/db.json';
+
+
 async function carregarDados() {
     try {
         console.log("Iniciando carregamento de dados...");
@@ -19,25 +19,25 @@ async function carregarDados() {
     }
 }
 
-// Função para exibir a descrição ao clicar nos botões
+
 function configurarBotoes(dados) {
     const descricaoDiv = document.querySelector('.descricao');
     console.log("Configuração dos botões iniciada.");
 
-    // Mapeia os botões aos dados no JSON
+    
     document.getElementById('AdicionarTarefas').addEventListener('click', () => {
         console.log("Botão 'Adicionar Tarefas' clicado.");
-        exibirDescricao(descricaoDiv, dados.AdicionarTarefas, '2px', '20px'); // Passa o padding 3px e font-size 20px
+        exibirDescricao(descricaoDiv, dados.AdicionarTarefas, '2px', '20px'); 
     });
 
     document.getElementById('CronogramaSemanal').addEventListener('click', () => {
         console.log("Botão 'Cronograma Semanal' clicado.");
-        exibirDescricao(descricaoDiv, dados.CronogramaSemanal, '7px', '21px'); // Passa o padding 10px e font-size 24px
+        exibirDescricao(descricaoDiv, dados.CronogramaSemanal, '7px', '21px'); 
     });
 
     document.getElementById('Analise').addEventListener('click', () => {
         console.log("Botão 'Análise' clicado.");
-        exibirDescricao(descricaoDiv, dados.Analise, '8px', '22px'); // Passa o padding 10px e font-size 24px
+        exibirDescricao(descricaoDiv, dados.Analise, '8px', '22px'); 
     });
 
     document.getElementById('Sugestao').addEventListener('click', () => {
@@ -58,7 +58,7 @@ function exibirDescricaoS(elemento, dadosDescricao) {
     elemento.innerHTML = conteudoHTML;
 }
 
-// Função para exibir um subtópico específico abaixo dos botões
+// Função para exibir um subtópico na sugestão
 function exibirSubtopico(subtopicoConteudo, subtopico, padding, fontSize) {
     console.log(`Exibindo subtópico: ${subtopico.titulo}`);
     const conteudoHTML = `
@@ -69,19 +69,19 @@ function exibirSubtopico(subtopicoConteudo, subtopico, padding, fontSize) {
     `;
     subtopicoConteudo.innerHTML = conteudoHTML;
 
-    // Modifica o padding e font-size dos itens da lista
-    const listaItems = subtopicoConteudo.querySelectorAll('ul li'); // Corrigido para usar o elemento correto
+   
+    const listaItems = subtopicoConteudo.querySelectorAll('ul li'); 
     listaItems.forEach(item => {
-        item.style.padding = padding; // Modifica o padding conforme o valor passado
-        item.style.fontSize = fontSize; // Modifica o font-size conforme o valor passado
+        item.style.padding = padding; 
+        item.style.fontSize = fontSize; 
     });
 }
 
-// Função para mostrar os subtópicos e associar o evento de clique
+// Função para mostrar os subtópicos da sugestão
 function mostrarSubtopicos(elemento, dadosSugestao) {
     console.log("Mostrando subtópicos da sugestão.");
 
-    // Define o HTML dos botões e a área onde os subtópicos aparecerão
+    
     const subtituloHTML = `
         <h3 class:"h3">Escolha um subtópico:</h3>
         <div id="subtopicoBotoes">
@@ -92,13 +92,13 @@ function mostrarSubtopicos(elemento, dadosSugestao) {
         <div id="subtopicoConteudo"></div>
     `;
 
-    // Insere o HTML na div principal
+    
     elemento.innerHTML += subtituloHTML;
 
-    // Seleciona a área onde o conteúdo do subtópico será exibido
+   
     const subtopicoConteudo = document.getElementById('subtopicoConteudo');
 
-    // Atribui eventos aos botões de sub-tópicos
+    
 
     document.getElementById('dicasEstudoBtn').addEventListener('click', () => {
         console.log("Botão 'Dicas de Estudo' clicado.");
@@ -116,7 +116,6 @@ function mostrarSubtopicos(elemento, dadosSugestao) {
     });
 }
 
-// Inicializar a aplicação ao carregar a página
 document.addEventListener('DOMContentLoaded', async () => {
     const dados = await carregarDados();
     if (dados) {
@@ -137,10 +136,10 @@ function exibirDescricao(elemento, dadosDescricao, padding, fontSize) {
     `;
     elemento.innerHTML = conteudoHTML;
 
-    // Modifica o padding e font-size dos itens da lista
+   
     const listaItems = elemento.querySelectorAll('.descricao ul li');
     listaItems.forEach(item => {
-        item.style.padding = padding; // Modifica o padding conforme o valor passado
-        item.style.fontSize = fontSize; // Modifica o font-size conforme o valor passado
+        item.style.padding = padding; 
+        item.style.fontSize = fontSize; 
     });
 }

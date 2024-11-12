@@ -3,7 +3,7 @@ const LOGIN_URL = "./public/pages/02_Login.html";
 
 // URL do servidor para o db.json
 const SERVER_URL = 'http://localhost:3000/usuarios'; 
-const SERVER_URL_SENHAS = 'http://localhost:3000/senhas'; // URL para a seção de senhas
+const SERVER_URL_SENHAS = 'http://localhost:3000/senhas'; 
 
 // Objeto para o banco de dados de usuários baseado em JSON
 var db_usuarios = { usuarios: [] };
@@ -55,7 +55,7 @@ function initLoginApp() {
 // Função para alternar a visibilidade da senha
 document.getElementById('toggle-password').addEventListener('click', function () {
     var passwordField = document.getElementById('password');
-    var type = passwordField.type === "password" ? "text" : "password"; // Altera entre 'password' e 'text'
+    var type = passwordField.type === "password" ? "text" : "password"; 
     passwordField.type = type;
 
     // Muda o ícone do olho para fechado ou aberto

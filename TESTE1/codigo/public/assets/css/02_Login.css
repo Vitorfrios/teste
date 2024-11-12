@@ -81,14 +81,14 @@ body {
     background-color: #4bb3c2;
 }
 #password {
-    padding-right: 40px; /* Cria o espaço para o ícone dentro do input */
+    padding-right: 40px; 
 }
 
 #toggle-password {
     position: absolute;
     right: 10px;
-    top: 70%; /* Ajusta para descer mais (aumente ou diminua conforme necessário) */
-    transform: translateY(-50%); /* Centraliza verticalmente, ajustando o 'top' */
+    top: 70%; 
+    transform: translateY(-50%); 
     cursor: pointer;
 }
 

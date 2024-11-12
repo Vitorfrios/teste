@@ -57,13 +57,12 @@ function exibirConteudo() {
         return;
     }
 
-    fetch('/codigo/db/db.json')
+    fetch('/TESTE1/codigo/db/db.json')
         .then(response => response.json())
         .then(data => {
             const conteudoExibicao = document.getElementById('conteudo-exibicao');
             conteudoExibicao.innerHTML = '';
 
-            // Acessa a chave do conteúdo selecionado (ajuda-horarios, dicas-estudo, etc.)
             const conteudo = data.conteudo2[opcaoSelecionada];
             if (conteudo && conteudo.topicos) {
                 conteudoExibicao.style.border = '3px solid #210af3';

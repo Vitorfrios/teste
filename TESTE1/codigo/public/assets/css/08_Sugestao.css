@@ -82,9 +82,9 @@ body {
 
 /* Estilo para o contêiner principal */
 .header {
-    font-size: 50px; /* Aumentei o tamanho da fonte */
+    font-size: 50px; 
     text-align: center;
-    margin-bottom: 20px; /* Aumentei a margem inferior */
+    margin-bottom: 20px; 
 }
 
 /* Estilo para o contêiner de lista */
@@ -95,23 +95,23 @@ body {
     align-items: center;
     padding: 0;
     margin: 0;
-    height: 95vh; /* Para ocupar a altura total da página */
+    height: 95vh; 
 }
 
 /* Estilo para os itens da lista */
 .nav-list li {
     background-color: #76cad8;
-    border: 3px solid #00A4CC; /* Aumentei a espessura da borda */
+    border: 3px solid #00A4CC; 
     color: #000000;
     cursor: pointer;
-    padding: 30px; /* Aumentei o padding */
-    margin: 30px 0; /* Aumentei a distância entre os itens */
+    padding: 30px; 
+    margin: 30px 0; 
     display: block;
-    width: 60%; /* Reduzi a largura para melhor ajustamento */
+    width: 60%; 
     text-align: center;
     border-radius: 30px;
     list-style-type: none;
-    font-size: 22px; /* Aumentei o tamanho da fonte nos itens */
+    font-size: 22px; 
 }
 
 /* Para remover o fundo azul quando o link é clicado */

@@ -186,18 +186,6 @@
     ],
     "adicionarTarefas": [
       {
-        "id": 1731191654878,
-        "name": "egsv",
-        "time": "23:45",
-        "category": "Estudo",
-        "priority": "Baixa",
-        "Udate": "0043-05-31",
-        "date": [
-          1
-        ],
-        "estimatedDuration": 435
-      },
-      {
         "id": 1731191654879,
         "name": "sdzfbadfhadh",
         "time": "23:00",
@@ -232,30 +220,6 @@
           2
         ],
         "estimatedDuration": 345
-      },
-      {
-        "id": 1731191654882,
-        "name": "125433",
-        "time": "12:40",
-        "category": "Trabalho",
-        "priority": "Media",
-        "Udate": "0033-04-15",
-        "date": [
-          2
-        ],
-        "estimatedDuration": 1543
-      },
-      {
-        "id": 1731191654883,
-        "name": "413545",
-        "time": "13:40",
-        "category": "Estudo",
-        "priority": "Media",
-        "Udate": "0345-05-14",
-        "date": [
-          2
-        ],
-        "estimatedDuration": 1245
       }
     ],
     "grafico": {
@@ -759,7 +723,6 @@
         2
       ]
     },
-    
     {
       "name": "Planejamento de Viagem",
       "time": [
@@ -1109,17 +1072,18 @@
       "id": "task_36"
     },
     {
-      "id": "task_37",
       "name": "Exercício Matinal",
-      "description": "Fazer uma sessão de exercícios para começar o dia.",
       "time": [
         "05:00"
       ],
+      "description": "Fazer uma sessão de exercícios para começar o dia.",
       "priority": "alta",
       "category": "lazer",
       "dates": [
-        2
-      ]
+        2,
+        4
+      ],
+      "id": "task_37"
     },
     {
       "id": "task_38",

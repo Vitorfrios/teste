@@ -84,7 +84,7 @@ function createTaskRow(task) {
 // Função para carregar tarefas do JSON e atualizar o cronograma
 async function loadTasks(dayOfWeek) {
     try {
-        const response = await fetch('/codigo/db/db.json');
+        const response = await fetch('/TESTE1/codigo/db/db.json');
         if (!response.ok) throw new Error(`Erro ao carregar tarefas: status ${response.status}`);
 
         const data = await response.json();

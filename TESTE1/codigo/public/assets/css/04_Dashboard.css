@@ -156,22 +156,22 @@ body {
 }
 
 .task-table tbody {
-    display: block; /* Faz com que o tbody se comporte como um bloco */
-    max-height: 240px; /* Define uma altura máxima */
-    overflow-y: auto; /* Permite a rolagem vertical quando necessário */
-    scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
+    display: block; 
+    max-height: 240px; 
+    overflow-y: auto; 
+    scrollbar-width: none; 
 }
 
-/* Oculta a barra de rolagem em navegadores WebKit (Chrome, Safari) */
+/* Oculta a barra de rolagem */
 .task-table tbody::-webkit-scrollbar {
     width: 0;
     height: 0;
 }
 
 .task-table tr {
-    display: table; /* Faz com que cada linha se comporte como uma linha de tabela */
-    table-layout: fixed; /* Mantém o layout da tabela */
-    width: 100%; /* Garante que a largura da linha corresponda à tabela */
+    display: table; 
+    table-layout: fixed; 
+    width: 100%; 
 }
 
 .task-table th {

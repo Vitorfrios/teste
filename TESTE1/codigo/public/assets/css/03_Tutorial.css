@@ -94,10 +94,10 @@ body {
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s;
-    text-align: left; /* Alinha o texto à esquerda */
-    display: flex; /* Para permitir alinhamento da imagem */
-    justify-content: space-between; /* Espaço entre texto e imagem */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
+    text-align: left; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
     margin-right: 60px;
 }
 
@@ -109,17 +109,17 @@ body {
 .set {
     display: flex;
     flex-direction: column;
-    gap: 60px; /* Espaçamento entre as setas */
+    gap: 60px; 
     align-items: center;
     justify-content: center;
-    width: 40px; /* Define largura para limitar o tamanho da seta */
+    width: 40px;
 }
 
 .set img {
-    height: 60px; /* Ajuste para o tamanho desejado */
+    height: 60px;
     width: 60px;
-    object-fit: contain; /* Garante que a imagem mantenha proporções */
-    margin-left: 10px; /* Espaçamento entre botão e seta */
+    object-fit: contain; 
+    margin-left: 10px; 
     margin-right: 60px;
 }
 
@@ -147,32 +147,32 @@ body {
 
 
 .descricao p {
-    font-size: 20px; /* Aumenta o tamanho da fonte do conteúdo geral */
+    font-size: 20px;
 }
 
 .descricao ul li {
     padding: 10px;
-    font-size: 20px; /* Aumenta o tamanho da fonte dos itens de lista dos tópicos */
+    font-size: 20px; 
 }
 
 #subtopicoBotoes {
-    text-align: center; /* Alinha os botões no centro */
+    text-align: center; 
 }
 
 #subtopicoBotoes button {
-    font-size: 15px; /* Aumenta o tamanho da fonte dos botões */
+    font-size: 15px; 
 }
 
 
 #subtopicoConteudo h3 {
-    font-size: 20px; /* Aumenta o tamanho da fonte do título dos subtópicos */
+    font-size: 20px; 
 }
 
 #subtopicoConteudo .h3 {
-    font-size: 20px; /* Aumenta o tamanho da fonte do título dos subtópicos */
+    font-size: 20px; 
 }
 #subtopicoConteudo ul li{
-    font-size: 24px; /* Aumenta o tamanho da fonte do título dos subtópicos */
+    font-size: 24px; 
     padding: 3px;
 }
 

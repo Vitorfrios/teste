@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let estaGirando = false;  
 
     async function carregarDados() {  
-        const response = await fetch('/codigo/db/db.json');  
+        const response = await fetch('/TESTE1/codigo/db/db.json');  
         data = await response.json();  
     }  
 
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //------------ Codigo para contagem de tarefas --------------- //
     async function atualizarContagemTarefas() {
         try {
-            const response = await fetch('/codigo/db/db.json');
+            const response = await fetch('/TESTE1/codigo/db/db.json');
             const data = await response.json();
 
             let contagemTrabalho = 0;
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //---------- Codigo para a contagem de tempo --------------- //    
 async function atualizarDuracaoEstimadas() {
     try {
-        const response = await fetch('/codigo/db/db.json');
+        const response = await fetch('/TESTE1/codigo/db/db.json');
         const data = await response.json();
 
         let duracaoTrabalho = 0;
@@ -229,7 +229,6 @@ async function atualizarDuracaoEstimadas() {
 }
 
 
-    //Atualizar os dados
     document.getElementById('atualizarDados').addEventListener('click', () => {
         atualizarContagemTarefas();
         atualizarDuracaoEstimadas();

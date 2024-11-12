@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let estaGirando = false;  
 
     async function carregarDados() {  
-        const response = await fetch('/codigo/db/db.json');  
+        const response = await fetch('/TESTE1/codigo/db/db.json');  
         data = await response.json();  
     }  
 

@@ -195,8 +195,8 @@ body {
 }
 .btn {
     display: flex;
-    flex-direction: column; /* Organiza os botões em uma coluna */
-    gap: 10px; /* Define o espaçamento vertical entre os botões */
+    flex-direction: column; 
+    gap: 10px; 
 }
 
 .btn button {

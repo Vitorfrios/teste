@@ -6,11 +6,6 @@ npx json-server --watch TESTE1/codigo/db/db.json --port 3000
 
 
 
-/* Função para atualizar o gráfico (dependendo das categorias de tarefas)
-function updateChart(categoryDurations) {
-    // Implementação do gráfico ou outro conteúdo relacionado
-} */
-
 // Configuração inicial dos botões de prioridade e carregamento do gráfico e tarefas
 document.addEventListener('DOMContentLoaded', () => {
     initializePriorityButtons(); 
@@ -132,23 +127,23 @@ async function saveTaskToServer(task) {
         
         const data = await response.json();
 
-        // Garante que o array de tarefas existe; caso contrário, inicializa como um array vazio
+        
         if (!Array.isArray(data.adicionarTarefas)) {
             data.adicionarTarefas = [];
         }
 
-        // Filtra tarefas válidas com IDs definidos para calcular o próximo ID corretamente
+        
         const validTasks = data.adicionarTarefas.filter(t => typeof t.id === 'number' && t.id > 0);
 
-        // Define o próximo ID sequencial baseado no maior ID encontrado, ou começa em 1
+        
         const nextId = validTasks.length > 0 
             ? Math.max(...validTasks.map(t => t.id)) + 1 
             : 1;
 
-        // Atribui o ID sequencial à tarefa antes de outras propriedades
+        
         task = { id: nextId, ...task };
 
-        // Adiciona a tarefa ao array
+        
         data.adicionarTarefas.push(task);
         
         const estimatedDuration = task.estimatedDuration;
@@ -164,7 +159,7 @@ async function saveTaskToServer(task) {
             data.grafico[category] += estimatedDuration;
         }
 
-        // Salva as mudanças no servidor
+        
         const updateResponse = await fetch('http://localhost:3000/tarefas', {
             method: 'PUT', 
             headers: {
@@ -187,7 +182,7 @@ async function removeTaskFromServer(task) {
         
         const data = await response.json();
         
-        // Filtra a tarefa pelo ID
+        
         data.adicionarTarefas = data.adicionarTarefas.filter(t => t.id !== task.id);
         
         const updateResponse = await fetch('http://localhost:3000/tarefas', {
@@ -206,165 +201,14 @@ async function removeTaskFromServer(task) {
 }
 
 
-
-
-
-
-
-
 // --- CARREGAMENTO DE TAREFAS E CRONOGRAMA ---
 
 
-// Função para verificar se a tabela de tarefas está vazia
 
 // Função para capitalizar a primeira letra de uma string
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
-
-// Função para carregar tarefas do JSON
-async function loadTasks(dayOfWeek) {
-    try {
-        const response = await fetch('/TESTE1/codigo/db/db.json');
-        if (!response.ok) throw new Error(`Erro ao carregar tarefas: status ${response.status}`);
-
-        const data = await response.json();
-
-        if (!data || !data.tarefas || !data.tasks_calendar) {
-            throw new Error("Estrutura de dados 'tarefas' ou 'tasks_calendar' não encontrada no JSON.");
-        }
-
-        const taskList = document.querySelector(".task-list");
-        const notice = document.querySelector('.empty');
-        
-        taskList.innerHTML = ''; // Limpar as tarefas anteriores
-        notice.innerHTML = '';  // Limpar o aviso de "Nenhuma tarefa"
-
-        let tasksFound = false;
-        let tasksForTheDay = [];
-        let categoryDurations = {
-            Lazer: 0,
-            Estudo: 0,
-            Trabalho: 0,
-        };
-
-        // Carregar tarefas de 'listaDeTarefas' (tarefas já programadas)
-        if (Array.isArray(data.tarefas.listaDeTarefas)) {
-            data.tarefas.listaDeTarefas.forEach(task => {
-                if (task.date.includes(dayOfWeek + 1)) { 
-                    tasksForTheDay.push(task);
-                    tasksFound = true;
-                    categoryDurations[task.category] += task.estimatedDuration;
-                }
-            });
-        }
-
-        // Carregar tarefas de 'adicionarTarefas' (tarefas a adicionar)
-        if (Array.isArray(data.tarefas.adicionarTarefas)) {
-            const selectedDay = new Date(currentYear, currentMonth, parseInt(document.querySelector('.selected-day').textContent));
-            const selectedDate = selectedDay.toISOString().split('T')[0]; 
-
-            console.log("Selected Day:", selectedDate); 
-
-            data.tarefas.adicionarTarefas.forEach(task => {
-                const taskUdate = task.Udate; 
-                const taskRecurrenceDays = task.date;
-
-                console.log("Task Udate:", taskUdate); 
-
-                if (taskUdate === selectedDate) {
-                    tasksForTheDay.push(task);
-                    tasksFound = true;
-                    categoryDurations[task.category] += task.estimatedDuration;
-                }
-
-                if (Array.isArray(taskRecurrenceDays) && taskRecurrenceDays.includes(dayOfWeek + 1)) {
-                    tasksForTheDay.push(task); 
-                    tasksFound = true;
-                    categoryDurations[task.category] += task.estimatedDuration;
-                }
-            });
-        }
-
-        // Carregar tarefas de 'tasks_calendar' (tarefas do calendário)
-        if (Array.isArray(data.tasks_calendar)) {
-            data.tasks_calendar.forEach(task => {
-                task.dates.forEach(date => {
-                    if (date === dayOfWeek + 1) {
-                        tasksForTheDay.push(task);
-                        tasksFound = true;
-                        categoryDurations[task.category] += task.estimatedDuration;
-                    }
-                });
-            });
-        }
-
-        console.log("Tarefas encontradas:", tasksForTheDay);
-
-        // Ordenar todas as tarefas pela hora (ordenando de forma crescente)
-        tasksForTheDay.sort((a, b) => convertTimeToNumber(a.time[0]) - convertTimeToNumber(b.time[0]));
-
-        // Exibir as tarefas na lista
-        tasksForTheDay.forEach(task => {
-            taskList.appendChild(createTaskRow(task)); 
-        });
-
-        // Se não encontrou nenhuma tarefa, exibe a mensagem de "Nenhuma tarefa"
-        if (!tasksFound) {
-            notice.innerHTML = 'Nenhuma tarefa para este dia.';
-        } else {
-            // Se encontrou tarefas, oculta a mensagem "Nenhuma tarefa"
-            notice.innerHTML = '';
-        }
-
-        updateChart(categoryDurations);
-        
-    } catch (error) {
-        document.querySelector('.empty').innerHTML = 'Selecione um dia para ver as tarefas';
-    }
-}
-
-// Função para converter o horário (em formato 'HH:MM') para número (em minutos)
-function convertTimeToNumber(time) {
-    const [hours, minutes] = time.split(':').map(Number);
-    return hours * 60 + minutes;
-}
-
-// Função para criar uma linha de tarefa
-function createTaskRow(task) {
-    const row = document.createElement("tr");
-    const time = Array.isArray(task.time) ? task.time[0] : task.time; // Garante que o tempo seja exibido corretamente
-
-    row.innerHTML = `
-        <td>${time}</td>
-        <td>${task.name}</td>
-        <td>${task.category}</td>
-        <td>${task.priority}</td>
-        <td><button class="remove-task" style="font-size: 22px">Remover</button></td>
-    `;
-
-    // Adiciona o evento de clique na linha para abrir o modal de edição
-    row.addEventListener('click', () => openEditModal(task));
-
-    // Impede o clique no botão de remover de abrir o modal de edição
-    row.querySelector('.remove-task').addEventListener('click', async (event) => {
-        event.stopPropagation(); // Impede o clique de se propagar para a linha
-        await removeTaskFromServer(task);
-        row.remove();
-        checkEmptyTasks();
-    });
-
-    return row;
-}
-
-// Função para verificar se as tarefas estão vazias
-function checkEmptyTasks() {
-    const tasksTable = document.querySelector('.task-list');
-    const notice = document.querySelector('.empty');
-    notice.innerHTML = tasksTable.children.length === 0 ? 'Nenhuma tarefa para este dia.' : '';
-}
-
 // Função para carregar as tarefas do JSON
 async function loadTasks(dayOfWeek) {
     try {
@@ -380,8 +224,8 @@ async function loadTasks(dayOfWeek) {
         const taskList = document.querySelector(".task-list");
         const notice = document.querySelector('.empty');
         
-        taskList.innerHTML = ''; // Limpar as tarefas anteriores
-        notice.innerHTML = '';  // Limpar o aviso de "Nenhuma tarefa"
+        taskList.innerHTML = ''; 
+        notice.innerHTML = '';  
 
         let tasksFound = false;
         let allTasks = [];
@@ -440,19 +284,19 @@ async function loadTasks(dayOfWeek) {
 
         console.log("Tarefas encontradas:", allTasks);
 
-        // Ordenar todas as tarefas pela hora (de 00:00 a 23:59)
+        
         allTasks = sortTasksByTime(allTasks);
 
-        // Exibir as tarefas na lista
+        
         allTasks.forEach(task => {
             taskList.appendChild(createTaskRow(task)); 
         });
 
-        // Se não encontrou nenhuma tarefa, exibe a mensagem de "Nenhuma tarefa"
+        
         if (!tasksFound) {
             notice.innerHTML = 'Nenhuma tarefa para este dia.';
         } else {
-            // Se encontrou tarefas, oculta a mensagem "Nenhuma tarefa"
+            
             notice.innerHTML = '';
         }
 
@@ -462,41 +306,38 @@ async function loadTasks(dayOfWeek) {
         document.querySelector('.empty').innerHTML = 'Selecione um dia para ver as tarefas';
     }
 }
-
 // Função para ordenar todas as tarefas pela hora (de 00:00 a 23:59)
 function sortTasksByTime(tasks) {
     return tasks.sort((a, b) => {
         const timeA = getTimeInMinutes(a.time);
         const timeB = getTimeInMinutes(b.time);
 
-        console.log(`Comparando ${timeA} vs ${timeB}`);  // Verifique se a conversão está correta
+        console.log(`Comparando ${timeA} vs ${timeB}`);  
 
-        return timeA - timeB;  // ordena pela diferença de minutos
+        return timeA - timeB;  
     });
 }
-
 // Função para converter o horário (em formato 'HH:MM' ou array) para minutos
 function getTimeInMinutes(time) {
-    // Se 'time' for um array, pegamos o primeiro item
+    
     if (Array.isArray(time)) {
         time = time[0];
     }
 
-    // Agora garantimos que 'time' seja uma string no formato 'HH:MM'
+    
     if (typeof time === 'string' && time.includes(':')) {
         const [hours, minutes] = time.split(':').map(Number);
-        return hours * 60 + minutes;  // Retorna o valor total em minutos
+        return hours * 60 + minutes;  
     }
 
-    // Caso o 'time' não esteja no formato esperado, retorne um valor muito alto (para que não atrapalhe a ordenação)
+    
     console.warn(`Formato de hora inválido: ${time}`);
-    return Infinity;  // Para que qualquer tarefa com formato inválido seja colocada no final
+    return Infinity;  
 }
-
 // Função para criar uma linha de tarefa
 function createTaskRow(task) {
     const row = document.createElement("tr");
-    const time = Array.isArray(task.time) ? task.time[0] : task.time;  // Garante que o tempo seja exibido corretamente
+    const time = Array.isArray(task.time) ? task.time[0] : task.time;  
 
     row.innerHTML = `
         <td>${time}</td>
@@ -506,12 +347,12 @@ function createTaskRow(task) {
         <td><button class="remove-task" style="font-size: 22px">Remover</button></td>
     `;
 
-    // Adiciona o evento de clique na linha para abrir o modal de edição
+    
     row.addEventListener('click', () => openEditModal(task));
 
-    // Impede o clique no botão de remover de abrir o modal de edição
+    
     row.querySelector('.remove-task').addEventListener('click', async (event) => {
-        event.stopPropagation(); // Impede o clique de se propagar para a linha
+        event.stopPropagation(); 
         await removeTaskFromServer(task);
         row.remove();
         checkEmptyTasks();
@@ -519,7 +360,6 @@ function createTaskRow(task) {
 
     return row;
 }
-
 // Função para verificar se as tarefas estão vazias
 function checkEmptyTasks() {
     const tasksTable = document.querySelector('.task-list');
@@ -527,20 +367,7 @@ function checkEmptyTasks() {
     notice.innerHTML = tasksTable.children.length === 0 ? 'Nenhuma tarefa para este dia.' : '';
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 // FUNÇÃO DO MODAL //
-
 
 // Função para abrir o modal de edição
 function openEditModal(task) {
@@ -554,7 +381,7 @@ function openEditModal(task) {
     // Mostrar o modal
     document.getElementById('editModal').style.display = "block";
 
-    // Fechar o modal ao clicar no "x"
+    // Fechar o modal ao no x
     document.querySelector('.close-btn').onclick = function() {
         document.getElementById('editModal').style.display = "none";
     }
@@ -580,30 +407,29 @@ document.getElementById('editTaskForm').addEventListener('submit', function(even
         estimatedDuration: document.getElementById('edit-task-duration').value
     };
 
-    // Chamar a função para atualizar a tarefa no servidor (ou banco de dados)
+   
     updateTaskOnServer(updatedTask);
 
-    // Fechar o modal
+   
     document.getElementById('editModal').style.display = "none";
 
-    // Atualizar a tarefa na tabela
+    
     updateTaskInTable(updatedTask);
 });
 
 // Função para atualizar a tarefa na tabela
 function updateTaskInTable(updatedTask) {
-    // Aqui você pode atualizar a tarefa na tabela, ou remover a linha e adicionar novamente, conforme necessário.
     console.log("Tarefa atualizada na tabela:", updatedTask);
 }
 
 async function updateTaskOnServer(task) {
     // Enviar a tarefa atualizada para o servidor
     const response = await fetch('/TESTE1/codigo/db/db.json', {
-        method: 'POST', // Ou 'PUT' dependendo de como você está fazendo o update
+        method: 'POST', 
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ tarefa: task }) // Enviar os dados da tarefa
+        body: JSON.stringify({ tarefa: task }) 
     });
 
     if (!response.ok) {
