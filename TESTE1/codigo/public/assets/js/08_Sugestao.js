@@ -57,7 +57,7 @@ function exibirConteudo() {
         return;
     }
 
-    fetch('/TESTE1/codigo/db/db.json')
+    fetch('/codigo/db/db.json')
         .then(response => response.json())
         .then(data => {
             const conteudoExibicao = document.getElementById('conteudo-exibicao');

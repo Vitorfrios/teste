@@ -212,7 +212,7 @@ function capitalizeFirstLetter(string) {
 // Função para carregar as tarefas do JSON
 async function loadTasks(dayOfWeek) {
     try {
-        const response = await fetch('/TESTE1/codigo/db/db.json');
+        const response = await fetch('/codigo/db/db.json');
         if (!response.ok) throw new Error(`Erro ao carregar tarefas: status ${response.status}`);
 
         const data = await response.json();
@@ -424,7 +424,7 @@ function updateTaskInTable(updatedTask) {
 
 async function updateTaskOnServer(task) {
     // Enviar a tarefa atualizada para o servidor
-    const response = await fetch('/TESTE1/codigo/db/db.json', {
+    const response = await fetch('/codigo/db/db.json', {
         method: 'POST', 
         headers: {
             'Content-Type': 'application/json'

@@ -4,7 +4,7 @@ npx json-server --watch codigo/db/db.json --port 3000
 */
 
 
-const jsonPath = '/TESTE1/codigo/db/db.json';
+const jsonPath = '/codigo/db/db.json';
 
 
 async function carregarDados() {
