@@ -84,12 +84,12 @@ function createTaskRow(task) {
 // Função para carregar tarefas do JSON e atualizar o cronograma
 async function loadTasks(dayOfWeek) {
     try {
-        const response = await fetch('/codigo/db/db.json');
+        const response = await fetch('/codigo/db/DB2.json');
         if (!response.ok) throw new Error(`Erro ao carregar tarefas: status ${response.status}`);
 
         const data = await response.json();
         
-        if (!data || !data.tarefas) {
+        if (!data || !data.listaDeTarefas || !data.adicionarTarefas) {
             throw new Error("Estrutura de dados 'tarefas' não encontrada no JSON.");
         }
 
@@ -107,8 +107,8 @@ async function loadTasks(dayOfWeek) {
             Trabalho: 0,
         };
 
-        if (Array.isArray(data.tarefas.listaDeTarefas)) {
-            data.tarefas.listaDeTarefas.forEach(task => {
+        if (Array.isArray(data.listaDeTarefas)) {
+            data.listaDeTarefas.forEach(task => {
                 if (task.date.includes(dayOfWeek + 1)) {
                     tasksForTheDay.push(task);
                     tasksFound = true;
@@ -117,17 +117,13 @@ async function loadTasks(dayOfWeek) {
             });
         }
 
-        if (Array.isArray(data.tarefas.adicionarTarefas)) {
+        if (Array.isArray(data.adicionarTarefas)) {
             const selectedDay = new Date(currentYear, currentMonth, parseInt(document.querySelector('.selected-day').textContent));
             const selectedDate = selectedDay.toISOString().split('T')[0]; 
 
-            console.log("Selected Day:", selectedDate); 
-
-            data.tarefas.adicionarTarefas.forEach(task => {
+            data.adicionarTarefas.forEach(task => {
                 const taskUdate = task.Udate; 
                 const taskRecurrenceDays = task.date;
-
-                console.log("Task Udate:", taskUdate); 
 
                 if (taskUdate === selectedDate) {
                     tasksForTheDay.push(task); 
@@ -142,8 +138,8 @@ async function loadTasks(dayOfWeek) {
                 }
             });
         }
+        
 
-        console.log("Tarefas encontradas:", tasksForTheDay);
 
         tasksForTheDay.sort((a, b) => convertTimeToNumber(a.time) - convertTimeToNumber(b.time));
 
@@ -161,8 +157,15 @@ async function loadTasks(dayOfWeek) {
         document.querySelector('.empty').innerHTML = 'Selecione um dia para ver as tarefas';
     }
 }
+
+
+
+
+
+
+
+
 function addTaskToTable(task) {
-    console.log(task); 
     const selectedDay = document.querySelector('.selected-day');
     if (!selectedDay) return; 
     
@@ -170,7 +173,7 @@ function addTaskToTable(task) {
     const dayOfWeek = new Date(currentYear, currentMonth, parseInt(selectedDay.textContent)).getDay();
 
     const taskUdate = task.Udate; 
-    const taskRecurrenceDays = task.date;  
+    const taskRecurrenceDays = task.date ; // permite tasks_calendar usar 'dates'
     
     if (taskUdate === selectedDate || (Array.isArray(taskRecurrenceDays) && taskRecurrenceDays.includes(dayOfWeek + 1))) {
         const taskList = document.querySelector(".task-list");
@@ -178,6 +181,9 @@ function addTaskToTable(task) {
         taskList.appendChild(taskRow);
     }
 }
+
+
+
 
 function convertTimeToNumber(time) {
     const [hours, minutes] = time.split(':').map(Number);
@@ -286,36 +292,56 @@ document.getElementById("next").addEventListener("click", () => {
 //Função para gerear o grafico 
 async function loadChart() {
     try {
-        const response = await fetch('http://localhost:3000/tarefas'); 
-        if (!response.ok) throw new Error(`Erro ao carregar dados: status ${response.status}`);
+        // Carregar os dados das duas listas de tarefas
+        const responseListaDeTarefas = await fetch('http://localhost:4000/listaDeTarefas');
+        const responseAdicionarTarefas = await fetch('http://localhost:4000/adicionarTarefas');
 
-        const data = await response.json();
+        // Verificar se as requisições foram bem-sucedidas
+        if (!responseListaDeTarefas.ok) throw new Error(`Erro ao carregar listaDeTarefas: status ${responseListaDeTarefas.status}`);
+        if (!responseAdicionarTarefas.ok) throw new Error(`Erro ao carregar adicionarTarefas: status ${responseAdicionarTarefas.status}`);
 
+        // Obter os dados das respostas
+        const dataListaDeTarefas = await responseListaDeTarefas.json();
+        const dataAdicionarTarefas = await responseAdicionarTarefas.json();
+
+        // Inicializar o objeto para armazenar as durações por categoria
         const chartData = {
             Trabalho: 0,
             Estudo: 0,
             Lazer: 0,
         };
 
-        if (data.grafico) {
-            for (const category in data.grafico) {
-                if (chartData.hasOwnProperty(category)) {
-                    chartData[category] += data.grafico[category]; 
+        // Somar as durações de listaDeTarefas por categoria
+        if (dataListaDeTarefas.listaDeTarefas) {
+            for (const task of dataListaDeTarefas.listaDeTarefas) {
+                if (chartData.hasOwnProperty(task.category)) {
+                    chartData[task.category] += task.estimatedDuration;
                 }
             }
         }
 
+        // Somar as durações de adicionarTarefas por categoria
+        if (dataAdicionarTarefas.adicionarTarefas) {
+            for (const task of dataAdicionarTarefas.adicionarTarefas) {
+                if (chartData.hasOwnProperty(task.category)) {
+                    chartData[task.category] += task.estimatedDuration;
+                }
+            }
+        }
+
+        // Formatar os dados para o gráfico
         const formattedChartData = {
             labels: Object.keys(chartData),
             datasets: [{
                 data: Object.values(chartData),
-                backgroundColor: ['#FF6384', '#36A2EB', '#4BC0C0'], 
+                backgroundColor: ['#FF6384', '#36A2EB', '#4BC0C0'],
             }]
         };
 
+        // Criar o gráfico
         const ctx = document.getElementById('progressChart').getContext('2d');
         if (window.progressChart instanceof Chart) {
-            window.progressChart.destroy(); 
+            window.progressChart.destroy(); // Destruir gráfico anterior
         }
 
         window.progressChart = new Chart(ctx, {
@@ -325,7 +351,7 @@ async function loadChart() {
                 responsive: true,
                 plugins: {
                     legend: {
-                        display: false, 
+                        display: false, // Não mostrar legenda
                         position: 'top',
                     },
                     tooltip: {

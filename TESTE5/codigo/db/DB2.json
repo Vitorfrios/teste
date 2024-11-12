@@ -1,0 +1,201 @@
+{
+  "mes_calendar": [
+    {
+      "id": "2686",
+      "value": 11,
+      "year": 2024
+    }
+  ],
+  "listaDeTarefas": [
+    {
+      "id": 1,
+      "name": "Projeto App",
+      "description": "Desenvolver a aplicação mobile",
+      "date": [
+        4,
+        5
+      ],
+      "time": "09:00",
+      "category": "Trabalho",
+      "priority": "Alta",
+      "estimatedDuration": 300
+    },
+    {
+      "name": "Reunião de equipe",
+      "time": "04:00",
+      "description": "Discutir progresso do projeto",
+      "priority": "Alta",
+      "category": "Trabalho",
+      "date": [
+        2,
+        3
+      ],
+      "estimatedDuration": 60,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Planejamento de semana",
+      "description": "Definir tarefas para a semana",
+      "date": [
+        3,
+        1
+      ],
+      "time": "14:00",
+      "category": "Estudo",
+      "priority": "Média",
+      "estimatedDuration": 120
+    },
+    {
+      "id": 4,
+      "name": "Revisão de metas",
+      "description": "Avaliar metas do mês anterior",
+      "date": [
+        1
+      ],
+      "time": "11:00",
+      "category": "Trabalho",
+      "priority": "Baixa",
+      "estimatedDuration": 60
+    },
+    {
+      "id": 5,
+      "name": "Revisão de código",
+      "description": "Revisar código com o time",
+      "date": [
+        5,
+        7
+      ],
+      "time": "10:00",
+      "category": "Estudo",
+      "priority": "Alta",
+      "estimatedDuration": 120
+    },
+    {
+      "id": 6,
+      "name": "Estudo de CSS",
+      "description": "Aprimorar conhecimentos em CSS",
+      "date": [
+        6,
+        4,
+        2
+      ],
+      "time": "15:00",
+      "category": "Estudo",
+      "priority": "Baixa",
+      "estimatedDuration": 180
+    },
+    {
+      "id": 7,
+      "name": "Aula de JavaScript",
+      "description": "Aula prática de JavaScript",
+      "date": [
+        3,
+        6
+      ],
+      "time": "13:00",
+      "category": "Estudo",
+      "priority": "Média",
+      "estimatedDuration": 120
+    },
+    {
+      "name": "Exercícios físicos",
+      "time": "07:00",
+      "description": "Fazer exercícios na academia",
+      "priority": "Alta",
+      "category": "Lazer",
+      "date": [
+        1,
+        2,
+        7
+      ],
+      "estimatedDuration": 60,
+      "id": 8
+    },
+    {
+      "id": 9,
+      "name": "Leitura de livro",
+      "description": "Ler um capítulo do livro escolhido",
+      "date": [
+        4,
+        3
+      ],
+      "time": "18:00",
+      "category": "Lazer",
+      "priority": "Baixa",
+      "estimatedDuration": 60
+    },
+    {
+      "id": 10,
+      "name": "Apresentação de projeto",
+      "description": "Apresentar projeto para a equipe",
+      "date": [
+        2,
+        6
+      ],
+      "time": "16:00",
+      "category": "Trabalho",
+      "priority": "Alta",
+      "estimatedDuration": 60
+    },
+    {
+      "id": 11,
+      "name": "Feedback da equipe",
+      "description": "Reunião para feedback do projeto",
+      "date": [
+        5,
+        7
+      ],
+      "time": "10:00",
+      "category": "Trabalho",
+      "priority": "Média",
+      "estimatedDuration": 60
+    }
+  ],
+  "adicionarTarefas": [
+    {
+      "name": "sdzfbadfhadh",
+      "time": "23:00",
+      "description": "undefined",
+      "priority": "Media",
+      "category": "Trabalho",
+      "date": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "estimatedDuration": 234,
+      "id": 1731191654879
+    },
+    {
+      "id": 1731191654880,
+      "name": "aerhdafbhafd",
+      "time": "03:45",
+      "category": "Trabalho",
+      "priority": "Baixa",
+      "Udate": "0054-04-23",
+      "date": [
+        3
+      ],
+      "estimatedDuration": 4345
+    },
+    {
+      "id": 1731191654881,
+      "name": "5345",
+      "time": "04:50",
+      "category": "Trabalho",
+      "priority": "Media",
+      "Udate": "0035-05-14",
+      "date": [
+        2
+      ],
+      "estimatedDuration": 345
+    }
+  ],
+  "grafico": {
+    "Trabalho": 3021,
+    "Estudo": 2080,
+    "Lazer": 1680
+  }
+}

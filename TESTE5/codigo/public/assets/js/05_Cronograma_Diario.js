@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('sugestao').classList.add('active');
         }
     }
-
-
+    
+    
     highlightActiveItem();
 });
 
@@ -56,7 +56,7 @@ const aplicarFiltro = document.getElementById('aplicarFiltro');
 botaoFiltro.addEventListener('click', (event) => {
     event.stopPropagation();
     modalFiltro.style.display = 'block';
-
+    
     const rect = botaoFiltro.getBoundingClientRect();
     modalFiltro.style.left = `${rect.left + rect.width / 2 - modalFiltro.offsetWidth / 2}px`;
     modalFiltro.style.top = `${rect.top - modalFiltro.offsetHeight - 10}px`;
@@ -66,21 +66,21 @@ botaoFiltro.addEventListener('click', (event) => {
 aplicarFiltro.addEventListener('click', async () => {
     const mesF = document.getElementById('meses').value;
     let anoF = document.getElementById('ano').value;
-
-   
+    
+    
     if (!anoF) {
         anoF = new Date().getFullYear();
     }
-
+    
     console.log("Mês selecionado:", mesF);
     console.log("Ano selecionado:", anoF);
-
-   
+    
+    
     if (!mesF || !anoF) {
         alert("Por favor, selecione um mês e ano.");
         return;
     }
-
+    
     try {
         
         const updatedData = {
@@ -90,7 +90,7 @@ aplicarFiltro.addEventListener('click', async () => {
         };
 
         
-        const response = await fetch('http://localhost:3000/mes_calendar/2686', {
+        const response = await fetch('http://localhost:4000/mes_calendar/2686', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -133,115 +133,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadMonthYearFromServer(); 
     desenharCalendario(); 
 });
-
-
-function desenharCalendario() {
-    const ano = dataAtual.getFullYear();
-    const mes = dataAtual.getMonth();
-
-    
-    const primeiroDiaDaSemana = new Date(ano, mes, dataAtual.getDate() - (dataAtual.getDay() === 0 ? 6 : dataAtual.getDay() - 1));
-
-    
-    const nomeMes = primeiroDiaDaSemana.toLocaleString('pt-BR', { month: 'long' });
-
-    
-    document.getElementById("month-year").innerText = nomeMes.charAt(0).toUpperCase() + nomeMes.slice(1);
-
-    
-    const primeiraData = primeiroDiaDaSemana.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
-    const ultimaData = new Date(primeiroDiaDaSemana);
-    ultimaData.setDate(primeiroDiaDaSemana.getDate() + 6);
-    const ultimaDataFormatada = ultimaData.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
-
-    document.getElementById("semana").innerText = `Semana de ${primeiraData} a ${ultimaDataFormatada}`;
-
-    
-    for (let i = 0; i < 7; i++) {
-        const diaSpan = document.querySelector(`.dia${ diasDaSemana[i]}`); 
-        diaSpan.innerText = ""; 
-    }  
-
-    
-    
-    for (let i = 0; i < 7; i++) {  
-        const diaAtual = new Date(primeiroDiaDaSemana);  
-        diaAtual.setDate(primeiroDiaDaSemana.getDate() + i);  
-
-        
-        const diaSpan = document.querySelector(`.dia${diasDaSemana[i]}`); 
-
-        
-        const dia = String(diaAtual.getDate()).padStart(2, '0'); 
-        const mes = String(diaAtual.getMonth() + 1).padStart(2, '0');  
-
-        diaSpan.innerText = ` ${dia}/${mes} `; 
-    }
-    carregarTarefas();
-    
-}  
-
-// Função para carregar as tarefas no calendário
-function carregarTarefas() {  
-    fetch('/codigo/db/db.json')  
-        .then(response => response.json())  
-        .then(data => {  
-            const tarefas = data.tasks_calendar;  
-            const horas = document.querySelectorAll('#linhas_calendario tr');  
-
-            
-            horas.forEach(hora => {
-                for (let i = 1; i < hora.children.length; i++) { 
-                    hora.children[i].innerHTML = ''; 
-                }
-            });
-
-            for (let dia = 0; dia < 7; dia++) {  
-               
-                tarefas.forEach(tarefa => {
-                    if (tarefa.dates.includes(dia + 1)) {  
-                        const horaIndex = Array.from(horas).findIndex(row => row.firstChild.innerText === tarefa.time[0]);  
-                        if (horaIndex !== -1) {  
-                            const cell = horas[horaIndex].children[dia + 1];  
-                            cell.classList.add('cursor-pointer');  
-
-                            const tarefaDiv = document.createElement('div');  
-                            tarefaDiv.classList.add('tarefa');  
-                            tarefaDiv.style.color = getColorForPriority(tarefa.priority);
-                            tarefaDiv.innerText = tarefa.name;  
-                            cell.appendChild(tarefaDiv);
-
-                            
-                            tarefaDiv.addEventListener('click', () => {
-                                abrirModalEdicao(tarefa); 
-                            });
-                        }  
-                    }
-                });  
-            }  
-        })  
-        .catch(error => console.error('Erro ao carregar tarefas:', error));  
-}
-
-
-// Função para obter a cor baseada na prioridade
-function getColorForPriority(priority) {
-    let color;
-    switch (priority) {
-        case 'alta': color = 'red'; break;
-        case 'media': color = 'darkgoldenrod'; break;
-        case 'baixa': color = 'darkgreen'; break;
-        default: color = 'gray'; break;
-    }
-    return color;
-}
-
-// Função para aplicar a cor
-function applyPriorityColor(element, priority) {
-    const color = getColorForPriority(priority);
-    element.style.color = color; 
-}
-
 // Função para navegar o ano
 function navegarSemana(direcao) {  
     
@@ -256,7 +147,6 @@ function navegarMes(direcao) {
 desenharCalendario();  
 
 // Inicializar  
-
 document.getElementById("prevSemana").onclick = () => navegarSemana(-1);  
 document.getElementById("nextSemana").onclick = () => navegarSemana(1);  
 document.getElementById("prev").onclick = () => navegarMes(-1);  
@@ -266,7 +156,7 @@ document.getElementById("next").onclick = () => navegarMes(1);
 // Função para carregar o mês e ano do servidor
 async function loadMonthYearFromServer() {
     try {
-        const response = await fetch('http://localhost:3000/mes_calendar');
+        const response = await fetch('http://localhost:4000/mes_calendar');
         if (response.ok) {
             const data = await response.json();
             const calendarData = data[0];
@@ -282,37 +172,116 @@ async function loadMonthYearFromServer() {
     }
 }
 
+function desenharCalendario() {
+    const ano = dataAtual.getFullYear();
+    const mes = dataAtual.getMonth();
+    const primeiroDiaDaSemana = new Date(ano, mes, dataAtual.getDate() - (dataAtual.getDay() === 0 ? 6 : dataAtual.getDay() - 1));
+    const nomeMes = primeiroDiaDaSemana.toLocaleString('pt-BR', { month: 'long' });
+    
+    document.getElementById("month-year").innerText = nomeMes.charAt(0).toUpperCase() + nomeMes.slice(1);
+    
+    const primeiraData = primeiroDiaDaSemana.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    const ultimaData = new Date(primeiroDiaDaSemana);
+    ultimaData.setDate(primeiroDiaDaSemana.getDate() + 6);
+    const ultimaDataFormatada = ultimaData.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
 
-let tarefaEditando = null;  
+    document.getElementById("semana").innerText = `Semana de ${primeiraData} a ${ultimaDataFormatada}`;
+    
+    for (let i = 0; i < 7; i++) {
+        const diaSpan = document.querySelector(`.dia${diasDaSemana[i]}`); 
+        diaSpan.innerText = ""; 
+    }  
+    
+    for (let i = 0; i < 7; i++) {  
+        const diaAtual = new Date(primeiroDiaDaSemana);  
+        diaAtual.setDate(primeiroDiaDaSemana.getDate() + i);  
+        
+        const diaSpan = document.querySelector(`.dia${diasDaSemana[i]}`); 
+        const dia = String(diaAtual.getDate()).padStart(2, '0'); 
+        const mes = String(diaAtual.getMonth() + 1).padStart(2, '0');  
 
-// Função para abrir o modal de edição
+        diaSpan.innerText = ` ${dia}/${mes} `; 
+    }
+    carregarTarefas();
+}
+
+function carregarTarefas() {  
+    fetch('/codigo/db/DB2.json')  
+        .then(response => response.json())  
+        .then(data => {  
+            const tarefas = [...data.listaDeTarefas, ...data.adicionarTarefas];
+            const horas = document.querySelectorAll('#linhas_calendario tr');  
+            
+            horas.forEach(hora => {
+                for (let i = 1; i < hora.children.length; i++) { 
+                    hora.children[i].innerHTML = ''; 
+                }
+            });
+
+            for (let dia = 0; dia < 7; dia++) {  
+                tarefas.forEach(tarefa => {
+                    if (tarefa.date.includes(dia + 1)) {  
+                        const horaIndex = Array.from(horas).findIndex(row => row.firstChild.innerText === tarefa.time);  
+                        if (horaIndex !== -1) {  
+                            const cell = horas[horaIndex].children[dia + 1];  
+                            cell.classList.add('cursor-pointer');  
+
+                            const tarefaDiv = document.createElement('div');  
+                            tarefaDiv.classList.add('tarefa');  
+                            tarefaDiv.style.color = getColorForPriority(tarefa.priority);
+                            tarefaDiv.innerText = tarefa.name;  
+                            cell.appendChild(tarefaDiv);
+
+                            tarefaDiv.addEventListener('click', () => {
+                                abrirModalEdicao(tarefa); 
+                            });
+                        }  
+                    }
+                });  
+            }  
+        })  
+        .catch(error => console.error('Erro ao carregar tarefas:', error));  
+}
+
+function getColorForPriority(priority) {
+    let color;
+    switch (priority.toLowerCase()) {
+        case 'alta': color = 'red'; break;
+        case 'média': color = 'darkgoldenrod'; break;
+        case 'baixa': color = 'darkgreen'; break;
+        default: color = 'gray'; break;
+    }
+    return color;
+}
 
 function abrirModalEdicao(tarefa) {
-    
     document.getElementById('modal-editar-tarefa').style.display = 'flex';
-    document.getElementById('modal-overlay').style.display = 'block';  
+    document.getElementById('modal-overlay').style.display = 'block';
 
-   
     document.getElementById('edit-nome').value = tarefa.name;
-    document.getElementById('edit-time').value = tarefa.time[0];  
+    document.getElementById('edit-time').value = tarefa.time;
     document.getElementById('edit-descricao').value = tarefa.description;
     document.getElementById('edit-prioridade').value = tarefa.priority;
     document.getElementById('edit-categoria').value = tarefa.category;
+    document.getElementById('edit-estimated-duration').value = tarefa.estimatedDuration;
 
-        const diasSelecionados = tarefa.dates;     for (let i = 1; i <= 7; i++) {
+    const diasSelecionados = tarefa.date;
+    for (let i = 1; i <= 7; i++) {
         const checkbox = document.getElementById(`edit-dias-${diasDaSemana[i - 1].toLowerCase()}`);
         checkbox.checked = diasSelecionados.includes(i);
     }
 
-        tarefaEditando = tarefa;
+    tarefaEditando = tarefa;
+    console.log('ID da tarefa:', tarefaEditando.id);  // Adicione isso para verificar o id
+
 }
 
-// Função para fechar o modal
+
 function fecharModal() {
     document.getElementById('modal-editar-tarefa').style.display = 'none';
-    document.getElementById('modal-overlay').style.display = 'none';  }
+    document.getElementById('modal-overlay').style.display = 'none';  
+}
 
-// Função para salvar os dados editados
 async function salvarDadosEditados() {
     if (!tarefaEditando) {
         console.error('Tarefa não encontrada.');
@@ -321,9 +290,11 @@ async function salvarDadosEditados() {
     }
 
     const nome = document.getElementById('edit-nome').value;
-    const time = document.getElementById('edit-time').value;      const descricao = document.getElementById('edit-descricao').value;
+    const time = document.getElementById('edit-time').value;
+    const descricao = document.getElementById('edit-descricao').value;
     const prioridade = document.getElementById('edit-prioridade').value;
     const categoria = document.getElementById('edit-categoria').value;
+    const duracao = document.getElementById('edit-estimated-duration').value;
 
     const diasSelecionados = [];
     for (let i = 1; i <= 7; i++) {
@@ -335,40 +306,95 @@ async function salvarDadosEditados() {
 
     const dadosAtualizados = {
         name: nome,
-        time: [time],          description: descricao,
+        time: time,
+        description: descricao,
         priority: prioridade,
         category: categoria,
-        dates: diasSelecionados
+        date: diasSelecionados,
+        estimatedDuration: duracao
     };
 
     try {
-        const response = await fetch(`http://localhost:3000/tasks_calendar/${tarefaEditando.id}`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(dadosAtualizados)
-        });
+        let response;
+
+        // Se o ID for menor que 205, é para listaDeTarefas, senão é para adicionarTarefas
+        if (tarefaEditando.id < 205) {
+            // Para listaDeTarefas
+            response = await fetch(`http://localhost:4000/listaDeTarefas/${tarefaEditando.id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dadosAtualizados)
+            });
+        } else {
+            // Para adicionarTarefas
+            response = await fetch(`http://localhost:4000/adicionarTarefas/${tarefaEditando.id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dadosAtualizados)
+            });
+        }
 
         if (!response.ok) {
             const errorText = await response.text();
+            console.error('Erro ao salvar dados:', errorText);
             throw new Error(`Erro ao salvar dados: ${errorText}`);
         }
 
         alert('Tarefa salva com sucesso!');
-        fecharModal();  
-        desenharCalendario(); 
-
+        fecharModal();
+        desenharCalendario();
     } catch (error) {
         console.error('Erro ao salvar a tarefa:', error.message);
         alert(`Erro ao salvar a tarefa: ${error.message}`);
     }
 }
 
-// Eventos para fechar o modal corretamente
-document.getElementById("modal-overlay").onclick = fecharModal; 
-document.getElementById("fechar-modal").onclick = fecharModal; 
+
+
+// Função para salvar os dados editados
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('btn-salvar').addEventListener('click', function() {
+        const nome = document.getElementById('edit-nome').value;
+        const horario = document.getElementById('edit-time').value;
+        const descricao = document.getElementById('edit-descricao').value || "-";  // Se a descrição estiver vazia, coloca "-"
+        const prioridade = document.getElementById('edit-prioridade').value;
+        const categoria = document.getElementById('edit-categoria').value;
+        const estimatedDuration = parseInt(document.getElementById('edit-estimated-duration').value) || 0; // Valor de duração (em minutos)
+        
+        // Recupera os dias selecionados
+        const diasSelecionados = [];
+        if (document.getElementById('edit-dias-seg').checked) diasSelecionados.push(1);
+        if (document.getElementById('edit-dias-ter').checked) diasSelecionados.push(2);
+        if (document.getElementById('edit-dias-qua').checked) diasSelecionados.push(3);
+        if (document.getElementById('edit-dias-qui').checked) diasSelecionados.push(4);
+        if (document.getElementById('edit-dias-sex').checked) diasSelecionados.push(5);
+        if (document.getElementById('edit-dias-sab').checked) diasSelecionados.push(6);
+        if (document.getElementById('edit-dias-dom').checked) diasSelecionados.push(7);
+
+        // Atualiza a tarefa com os novos valores
+        tarefaEditando.name = nome;
+        tarefaEditando.time = horario;
+        tarefaEditando.description = descricao;
+        tarefaEditando.priority = prioridade;
+        tarefaEditando.category = categoria;
+        tarefaEditando.estimatedDuration = estimatedDuration;
+        tarefaEditando.date = diasSelecionados;
+
+        // Atualiza o armazenamento local ou banco de dados aqui, se necessário
+        // localStorage.setItem('tarefas', JSON.stringify(tarefas));
+
+        // Fecha o modal após salvar
+        document.getElementById('modal-editar-tarefa').style.display = 'none';
+        document.getElementById('modal-overlay').style.display = 'none';
+        
+        // Atualiza a interface de acordo com a tarefa editada
+        carregarTarefas(tarefaEditando);  // Função que você usa para atualizar a lista de tarefas na tela
+    });
+    
+});
+
+
+document.getElementById("modal-overlay").onclick = fecharModal;
+document.getElementById("fechar-modal").onclick = fecharModal;
 document.getElementById("btn-salvar").onclick = salvarDadosEditados;
-
-
-
-// ----------  CARREGAR DADOS DE ADICIONAR TAREFAS ------- //
 
