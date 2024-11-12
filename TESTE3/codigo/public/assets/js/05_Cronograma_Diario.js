@@ -182,12 +182,13 @@ function desenharCalendario() {
     
 }  
 
+
 // Função para carregar as tarefas no calendário
 function carregarTarefas() {  
     fetch('/TESTE3/codigo/db/db.json')  
         .then(response => response.json())  
         .then(data => {  
-            const tarefas = [...data.tarefas.listaDeTarefas, ...data.tarefas.adicionarTarefas];  // Combina as duas listas
+            const tarefas = data.listaDeTarefas;  
             const horas = document.querySelectorAll('#linhas_calendario tr');  
 
             // Limpa as células antes de carregar as novas tarefas
@@ -200,7 +201,8 @@ function carregarTarefas() {
             for (let dia = 0; dia < 7; dia++) {  
                 // Verifica se existe alguma tarefa para o dia atual
                 tarefas.forEach(tarefa => {
-                    if (tarefa.date.includes(dia + 1)) {  // 'date' é um array, verificamos se o dia está incluído
+                    // Verifica se 'date' é um array e se inclui o dia atual
+                    if (Array.isArray(tarefa.date) && tarefa.date.includes(dia + 1)) {  
                         const horaIndex = Array.from(horas).findIndex(row => row.firstChild.innerText === tarefa.time);  
                         if (horaIndex !== -1) {  
                             const cell = horas[horaIndex].children[dia + 1];  
@@ -286,57 +288,43 @@ async function loadMonthYearFromServer() {
 }
 
 
+let tarefaEditando = null;  // Variável para armazenar a tarefa a ser editada
 
-
-let tarefaEditando = null; // Variável global para armazenar a tarefa que está sendo editada
-
+// Função para abrir o modal de edição
 function abrirModalEdicao(tarefa) {
-    tarefaEditando = tarefa;
+    console.log(tarefa); // Verifique o objeto tarefa aqui
 
-    console.log("Valor da prioridade da tarefa:", tarefa.priority);
-    console.log("Valor da categoria da tarefa:", tarefa.category);
+    // Exibe o modal
+    document.getElementById('modal-editar-tarefa').style.display = 'flex';
+    document.getElementById('modal-overlay').style.display = 'block';  // Exibe o overlay
 
     // Preenche os campos do modal com os dados da tarefa
-    document.getElementById('edit-nome').value = tarefa.name || '';
-    document.getElementById('edit-time').value = tarefa.time || '';
-    document.getElementById('edit-descricao').value = tarefa.description || '';
-    document.getElementById('edit-estimatedDuration').value = tarefa.estimatedDuration || '';
+    document.getElementById('edit-nome').value = tarefa.name;
+    document.getElementById('edit-time').value = tarefa.time;  // Alterado para acessar direto 'time'
+    document.getElementById('edit-estimatedDuration').value = tarefa.estimatedDuration;  // Alterado para acessar
 
-    // Define a prioridade e a categoria da tarefa no campo de seleção
-    document.getElementById('edit-prioridade').value = tarefa.priority || '';
-    document.getElementById('edit-categoria').value = tarefa.category || '';
+    document.getElementById('edit-descricao').value = tarefa.description;
+    document.getElementById('edit-prioridade').value = tarefa.priority;
+    document.getElementById('edit-categoria').value = tarefa.category;
 
-    const diasSelecionados = tarefa.date || [];
+    // Preenche os dias da semana (date) no modal
+    const diasSelecionados = tarefa.date;  // Alterado para 'date'
     for (let i = 1; i <= 7; i++) {
-        const checkbox = document.getElementById(`edit-dias-${['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'][i - 1]}`);
+        const checkbox = document.getElementById(`edit-dias-${diasDaSemana[i - 1].toLowerCase()}`);
         checkbox.checked = diasSelecionados.includes(i);
     }
 
-    document.getElementById('modal-overlay').style.display = 'block';
-    document.getElementById('modal-editar-tarefa').style.display = 'block';
-    console.log("Prioridade no modal:", document.getElementById("edit-prioridade").innerHTML);
-    console.log("Categoria no modal:", document.getElementById("edit-categoria").innerHTML);
-
+    // Armazena a tarefa sendo editada
+    tarefaEditando = tarefa;
 }
 
-
-
-
-// Fechar o modal
-document.getElementById('fechar-modal').onclick = function() {
-    fecharModal();
-};
-
+// Função para fechar o modal
 function fecharModal() {
-    document.getElementById('modal-overlay').style.display = 'none';
     document.getElementById('modal-editar-tarefa').style.display = 'none';
+    document.getElementById('modal-overlay').style.display = 'none';  // Esconde o overlay
 }
 
-// Salvar dados editados
-document.getElementById('btn-salvar').onclick = async function() {
-    await salvarDadosEditados();
-};
-
+// Função para salvar os dados editados
 async function salvarDadosEditados() {
     if (!tarefaEditando) {
         console.error('Tarefa não encontrada.');
@@ -345,8 +333,9 @@ async function salvarDadosEditados() {
     }
 
     const nome = document.getElementById('edit-nome').value;
-    const time = document.getElementById('edit-time').value;
-    const descricao = document.getElementById('edit-descricao').value || '';
+    const time = document.getElementById('edit-time').value;  // O valor será no formato "HH:MM"
+    const descricao = document.getElementById('edit-descricao').value;
+    const duracao = document.getElementById('edit-estimatedDuration').value;  // Alterado para acessar
     const prioridade = document.getElementById('edit-prioridade').value;
     const categoria = document.getElementById('edit-categoria').value;
 
@@ -358,65 +347,45 @@ async function salvarDadosEditados() {
         }
     }
 
-    // Cria o objeto de dados atualizados
     const dadosAtualizados = {
-        id: tarefaEditando.id,  // Mantém o ID da tarefa
+        id: tarefaEditando.id,  // Certifique-se de que o ID é passado corretamente
         name: nome,
         time: time,
         description: descricao,
+        estimatedDuration:duracao,
         priority: prioridade,
         category: categoria,
-        date: diasSelecionados,
-        estimatedDuration: parseInt(document.getElementById('edit-estimatedDuration').value) || tarefaEditando.estimatedDuration  // Mantém a duração estimada se não for alterada
+        date: diasSelecionados
     };
 
-    console.log("Dados a serem enviados:", dadosAtualizados); // Mostra os dados antes de enviar
-
     try {
-        // Define o endpoint para salvar a tarefa
-        const endpoint = `http://localhost:3000/tarefas/${tarefaEditando.id}`;
-        
-        console.log("Endpoint para requisição:", endpoint); // Mostra o endpoint
-
-        // Faz a requisição PUT para atualizar a tarefa
-        const response = await fetch(endpoint, {
+        const response = await fetch(`http://localhost:3000/listaDeTarefas/${tarefaEditando.id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dadosAtualizados)
         });
 
-        console.log("Resposta da requisição:", response); // Mostra a resposta da requisição
-
         if (!response.ok) {
             const errorText = await response.text();
-            console.error("Erro no response.ok:", errorText); // Mostra o erro detalhado
             throw new Error(`Erro ao salvar dados: ${errorText}`);
         }
 
         alert('Tarefa salva com sucesso!');
-        fecharModal();
-        desenharCalendario();
+        fecharModal();  // Fecha o modal
+        desenharCalendario();  // Atualiza o calendário, se necessário
 
     } catch (error) {
         console.error('Erro ao salvar a tarefa:', error.message);
         alert(`Erro ao salvar a tarefa: ${error.message}`);
-
-        // Exibe mais detalhes sobre o erro para depuração
-        if (error.response) {
-            console.error("Detalhes da resposta de erro:", error.response);
-        } else if (error.request) {
-            console.error("Erro na requisição:", error.request);
-        } else {
-            console.error("Erro desconhecido:", error.message);
-        }
     }
 }
-
-
-
 
 // Eventos para fechar o modal corretamente
 document.getElementById("modal-overlay").onclick = fecharModal; // Clique no fundo (overlay)
 document.getElementById("fechar-modal").onclick = fecharModal; // Clique no "X"
 document.getElementById("btn-salvar").onclick = salvarDadosEditados; // Clique no "Salvar"
+
+
+
+// ----------  CARREGAR DADOS DE ADICIONAR TAREFAS ------- //
 
