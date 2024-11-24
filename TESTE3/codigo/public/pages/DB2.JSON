@@ -1,0 +1,40 @@
+
+{
+  "tarefas": {
+    "listaDeTarefas": [
+        {
+
+          "id": 
+          "name": "",
+          "time": "",
+          "category": "",
+          "priority": "",
+          "Udate": "",
+          "date": [],
+          "estimatedDuration": 
+        }
+      ],
+      "adicionarTarefas": [
+        {
+
+          "id": 
+          "name": "",
+          "time": "",
+          "category": "",
+          "priority": "",
+          "Udate": "",
+          "date": [],
+          "estimatedDuration": 
+        }
+      ]
+    }
+  }
+
+  "id": 
+  "name": "",
+  "time": "",
+  "category": "",
+  "priority": "",
+  "Udate": "",
+  "date": [],
+  "estimatedDuration": 

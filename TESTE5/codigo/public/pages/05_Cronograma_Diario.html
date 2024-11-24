@@ -1,6 +1,6 @@
 <!--
 COPIAR CODIGO NO TERMINAL PARA INICIALIZAR O JSON SERVER
-npx json-server --watch codigo/db/db.json --port 3000
+npm start 
 -->
 
 <!DOCTYPE html>
@@ -109,30 +109,7 @@ npx json-server --watch codigo/db/db.json --port 3000
                 <table id="schedule">
                     <tbody id="linhas_calendario">  
                         <!-- Linhas de horas geradas dinamicamente -->
-                        <tr><td id="HOUR">00:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">01:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">02:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">03:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">04:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">05:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">06:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">07:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">08:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">09:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">10:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">11:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">12:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">13:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">14:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">15:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">16:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">17:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">18:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">19:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">20:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">21:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">22:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                        <tr><td id="HOUR">23:00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
                     </tbody>    
                 </table>
             </div>
@@ -193,6 +170,7 @@ npx json-server --watch codigo/db/db.json --port 3000
                             <label><input type="checkbox" id="edit-dias-dom"> Dom</label>
                         </div>
                     </div>
+                    <button id="btn-remover" class="botao-remover">Remover Tarefa</button>
                     <button id="btn-salvar">Salvar</button>
                 </div>
             </div>

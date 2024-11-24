@@ -1,7 +1,7 @@
 
 /*
 COPIAR CODIGO NO TERMINAL PARA INICIALIZAR O JSON SERVER
-npx json-server --watch codigo/db/db.json --port 3000
+npm start 
 */
 
 
@@ -133,14 +133,14 @@ document.addEventListener("DOMContentLoaded", function() {
 //------------ Codigo para contagem de tarefas --------------- //
     async function atualizarContagemTarefas() {
         try {
-            const response = await fetch('/codigo/db/db.json');
+            const response = await fetch('/codigo/db/DB2.json');
             const data = await response.json();
 
             let contagemTrabalho = 0;
             let contagemLazer = 0;
             let contagemEstudo = 0;
 
-            data.tarefas.listaDeTarefas.forEach(tarefa => {
+            data.listaDeTarefas.forEach(tarefa => {
                 switch (tarefa.category) {
                     case 'Trabalho':
                         contagemTrabalho++;
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
 
-            data.tarefas.adicionarTarefas.forEach(tarefa => {
+            data.adicionarTarefas.forEach(tarefa => {
                 switch (tarefa.category) {
                     case 'Trabalho':
                         contagemTrabalho++;
@@ -180,14 +180,14 @@ document.addEventListener("DOMContentLoaded", function() {
 //---------- Codigo para a contagem de tempo --------------- //    
 async function atualizarDuracaoEstimadas() {
     try {
-        const response = await fetch('/codigo/db/db.json');
+        const response = await fetch('/codigo/db/DB2.json');
         const data = await response.json();
 
         let duracaoTrabalho = 0;
         let duracaoLazer = 0;
         let duracaoEstudo = 0;
 
-        data.tarefas.listaDeTarefas.forEach(tarefa => {
+        data.listaDeTarefas.forEach(tarefa => {
             switch (tarefa.category) {
                 case 'Trabalho':
                     duracaoTrabalho += tarefa.estimatedDuration;
@@ -201,7 +201,7 @@ async function atualizarDuracaoEstimadas() {
             }
         });
 
-        data.tarefas.adicionarTarefas.forEach(tarefa => {
+        data.adicionarTarefas.forEach(tarefa => {
             switch (tarefa.category) {
                 case 'Trabalho':
                     duracaoTrabalho += tarefa.estimatedDuration;

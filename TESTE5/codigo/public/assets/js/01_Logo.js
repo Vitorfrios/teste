@@ -1,7 +1,7 @@
 
 /*
 COPIAR CODIGO NO TERMINAL PARA INICIALIZAR O JSON SERVER
-npx json-server --watch codigo/db/db.json --port 3000
+npm start 
 */
 
 const hourHand = document.querySelector('.hour-hand');
@@ -23,3 +23,8 @@ function setClock() {
 }
 
 setClock(); 
+
+
+
+
+

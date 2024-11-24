@@ -32,7 +32,6 @@
       "id": "15b6"
     }
   ],
-
   "telas": {
     "tela2": [
       {
@@ -198,6 +197,18 @@
       "tipo": "suporte",
       "mensagem": "qwegwegqge",
       "data": "2024-11-07T00:44:26.755Z"
+    },
+    {
+      "id": "suporte2",
+      "tipo": "suporte",
+      "mensagem": "\\dafFsdvdsvsdv",
+      "data": "2024-11-13T21:37:08.026Z"
+    },
+    {
+      "id": "feedback2",
+      "tipo": "feedback",
+      "mensagem": "vdsvsd",
+      "data": "2024-11-13T21:37:18.107Z"
     }
   ],
   "suporte": [],

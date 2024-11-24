@@ -9,7 +9,6 @@ npx json-server --watch TESTE1/codigo/db/db.json --port 3000
 // Configuração inicial dos botões de prioridade e carregamento do gráfico e tarefas
 document.addEventListener('DOMContentLoaded', () => {
     initializePriorityButtons(); 
-    initializeTaskCreation(); 
     loadChart(); 
     loadTasks(); 
 });
@@ -57,386 +56,297 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // --- INICIALIZAÇÃO DE botao dE PRIORIDADES ---
-
-// Função para inicializar os botões de prioridade
+// Inicializar botões de prioridade
 function initializePriorityButtons() {
     document.querySelectorAll('.priority-button').forEach(button => {
-        button.addEventListener('click', () => {
-            selectPriorityButton(button);
-        });
+        button.addEventListener('click', () => selectPriorityButton(button));
     });
 }
 
-// Função para selecionar um botão de prioridade
 function selectPriorityButton(selectedButton) {
     document.querySelectorAll('.priority-button').forEach(btn => btn.classList.remove('selected'));
     selectedButton.classList.add('selected');
 }
 
-// --- Criação , salvamento e remoção de tarefas ---
-
-// Função para criar tarefas
-function initializeTaskCreation() {
-    document.getElementById("add-task-button").addEventListener("click", async (event) => {
-        event.preventDefault(); 
-        const taskDetails = gatherTaskDetails();
-        if (taskDetails) {
-            await saveTaskToServer(taskDetails); 
-            sortTasksByTime();
-        }
-    });
-}
-
-// Função para coletar detalhes da tarefa
-function gatherTaskDetails() {
-    const taskName = document.querySelector('input[placeholder="Nome da tarefa"]').value;
-    const taskTime = document.querySelector('input[type="time"]').value;
-    const taskUdate = document.querySelector('input[name="dateUsuario"]').value;
-    const taskCategory = document.getElementById("category-filter").value;
-    const taskRecurrenceDays = getSelectedRecurrenceDays(); 
-    const estimatedDuration = parseInt(document.querySelector('input#estimatedDuration').value) || 0; 
-    
-    const selectedPriorityButton = document.querySelector(".priority-button.selected");
-    const taskPriority = selectedPriorityButton 
-        ? capitalizeFirstLetter(selectedPriorityButton.getAttribute("data-priority")) 
-        : "Não definida";
-    
-    return {
-        name: taskName,
-        time: taskTime,
-        category: taskCategory,
-        priority: taskPriority,
-        Udate: taskUdate,
-        date: taskRecurrenceDays,  
-        estimatedDuration: estimatedDuration  
-    };
-}
-
-// Função para obter os dias de recorrência selecionados
-function getSelectedRecurrenceDays() {
-    const daysCheckboxes = document.querySelectorAll('input[name="recurrenceDays"]:checked');
-    const selectedDays = Array.from(daysCheckboxes).map(checkbox => parseInt(checkbox.value));
-    return selectedDays;
-}
-
-
-async function saveTaskToServer(task) {
-    try {
-        const response = await fetch('http://localhost:3000/tarefas');
-        if (!response.ok) throw new Error('Erro ao carregar tarefas');
-        
-        const data = await response.json();
-
-        
-        if (!Array.isArray(data.adicionarTarefas)) {
-            data.adicionarTarefas = [];
-        }
-
-        
-        const validTasks = data.adicionarTarefas.filter(t => typeof t.id === 'number' && t.id > 0);
-
-        
-        const nextId = validTasks.length > 0 
-            ? Math.max(...validTasks.map(t => t.id)) + 1 
-            : 1;
-
-        
-        task = { id: nextId, ...task };
-
-        
-        data.adicionarTarefas.push(task);
-        
-        const estimatedDuration = task.estimatedDuration;
-        const category = task.category;
-        
-        if (!data.grafico) {
-            data.grafico = {};
-        }
-        
-        if (!data.grafico[category]) {
-            data.grafico[category] = estimatedDuration;
-        } else {
-            data.grafico[category] += estimatedDuration;
-        }
-
-        
-        const updateResponse = await fetch('http://localhost:3000/tarefas', {
-            method: 'PUT', 
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data), 
-        });
-        
-        if (!updateResponse.ok) throw new Error('Erro ao salvar tarefa');
-    } catch (error) {
-        console.error('Erro ao salvar tarefa:', error);
-    }
-}
-
-// Função para remover uma tarefa do servidor usando o ID da tarefa
-async function removeTaskFromServer(task) {
-    try {
-        const response = await fetch('http://localhost:3000/tarefas');
-        if (!response.ok) throw new Error('Erro ao carregar tarefas');
-        
-        const data = await response.json();
-        
-        
-        data.adicionarTarefas = data.adicionarTarefas.filter(t => t.id !== task.id);
-        
-        const updateResponse = await fetch('http://localhost:3000/tarefas', {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-
-        if (!updateResponse.ok) throw new Error('Erro ao remover tarefa');
-        console.log(`Tarefa com ID ${task.id} removida com sucesso.`);
-    } catch (error) {
-        console.error('Erro ao remover tarefa:', error);
-    }
-}
-
-
-// --- CARREGAMENTO DE TAREFAS E CRONOGRAMA ---
-
-
-
-// Função para capitalizar a primeira letra de uma string
+// Recolher dados de tarefa do formulário
 function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
-// Função para carregar as tarefas do JSON
+
+// Função para recuperar o maior ID já registrado, garantindo que ele seja tratado como número
+function getMaxTaskId(tasks) {
+    return tasks.reduce((maxId, task) => {
+        const numericId = parseInt(task.id, 10); // Converte a ID para número
+        return numericId > maxId ? numericId : maxId;
+    }, 0); // Se não houver tarefas, o valor inicial será 0
+}
+
+
+// Função para obter tarefas salvas do servidor ou de algum armazenamento
+function fetchSavedTasks() {
+    return fetch("http://localhost:4000/adicionarTarefas") // Modifique para seu endpoint real
+        .then(response => response.json())
+        .catch(() => []);  // Retorna uma lista vazia caso haja erro na busca
+}
+
+
+
+
+// Inicializa o ID com base nas tarefas salvas no servidor ou começa com 205 se não houver tarefas
+fetchSavedTasks().then(savedTasks => {
+    let currentTaskId = savedTasks.length > 0 ? getMaxTaskId(savedTasks) + 1 : 205; 
+
+    function generateTaskId() {
+        return currentTaskId++; 
+    }
+
+    function gatherTaskDetails() {
+        const taskName = document.querySelector('input[placeholder="Nome da tarefa"]').value.trim();
+        const taskTime = document.querySelector('input[type="time"]').value.trim();
+        const taskUdate = document.querySelector('input[name="dateUsuario"]').value.trim();
+        const taskCategory = document.getElementById("category-filter").value.trim();
+        const taskRecurrenceDays = getSelectedRecurrenceDays();
+        const estimatedDuration = parseInt(document.querySelector('input#estimatedDuration').value) || 0;
+        const selectedPriorityButton = document.querySelector(".priority-button.selected");
+    
+        if (!taskName || !taskTime || !taskUdate || !taskCategory || !taskRecurrenceDays.length) {
+            alert("Por favor, preencha todos os campos obrigatórios antes de salvar a tarefa.");
+            return null; 
+        }
+    
+        if (estimatedDuration > 1440) {
+            alert("A duração estimada não pode ser superior a 1440 minutos (24 horas).");
+            return null; 
+        }
+    
+        const taskPriority = selectedPriorityButton 
+            ? capitalizeFirstLetter(selectedPriorityButton.getAttribute("data-priority")) 
+            : "Não definida";
+    
+        const taskId = String(generateTaskId());
+    
+        return { 
+            id: taskId, 
+            name: taskName, 
+            time: taskTime, 
+            category: taskCategory, 
+            priority: taskPriority, 
+            Udate: taskUdate, 
+            date: taskRecurrenceDays, 
+            estimatedDuration 
+        };
+    }
+    
+    
+    
+    function getSelectedRecurrenceDays() {
+        return Array.from(document.querySelectorAll('input[name="recurrenceDays"]:checked'))
+            .map(checkbox => parseInt(checkbox.value));
+    }
+
+    function atualizarGraficoTempo(taskDetails) {
+        const { category, estimatedDuration } = taskDetails;
+    
+        fetch("http://localhost:4000/grafico")
+            .then(response => response.json())
+            .then(graficoTempo => {
+                // Soma incremental do tempo estimado para a categoria
+                graficoTempo[category] = (graficoTempo[category] || 0) + estimatedDuration;
+    
+                // Envia atualização ao servidor
+                return fetch("http://localhost:4000/grafico", {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(graficoTempo)
+                });
+            })
+            .then(() => console.log("Gráfico de tempo atualizado com sucesso"))
+            .catch(error => console.error("Erro ao atualizar gráfico de tempo:", error));
+    }
+
+    function saveTaskToServer() {
+        const taskDetails = gatherTaskDetails();
+    
+        if (!taskDetails) {
+            console.error("Os detalhes da tarefa são inválidos ou incompletos.");
+            return;
+        }
+    
+        console.log("Enviando tarefa ao servidor:", taskDetails); 
+    
+        fetch("http://localhost:4000/adicionarTarefas", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(taskDetails)
+        })
+        .then(response => {
+            if (!response.ok) throw new Error("Erro ao salvar a tarefa no servidor");
+            console.log("Tarefa salva com sucesso!");
+            return response.json();
+        })
+        .then(data => {
+            console.log("Tarefa salva no servidor:", data);
+            atualizarGraficoTempo(taskDetails); 
+        })
+        .catch(error => console.error("Erro:", error));
+    }
+    
+    document.getElementById('add-task-button').addEventListener('click', (e) => {
+        e.preventDefault();
+        saveTaskToServer();
+    });
+
+});
+
+
+
+
+
+
+async function removeTaskFromServer(taskId) {
+    try {
+        const normalizedTaskId = typeof taskId === 'number' ? taskId.toString() : taskId;
+
+        // Determinar o endpoint correto
+        const endpointMap = {
+            adicionarTarefas: parseInt(normalizedTaskId, 10) >= 205,
+            listaDeTarefas: parseInt(normalizedTaskId, 10) < 205
+        };
+
+        const endpoint = endpointMap.adicionarTarefas ? 'adicionarTarefas' : 'listaDeTarefas';
+        const url = `http://localhost:4000/${endpoint}/${normalizedTaskId}`;
+
+        // Recupera a tarefa para obter a categoria e o tempo estimado antes de excluí-la
+        const taskResponse = await fetch(url);
+        if (!taskResponse.ok) {
+            throw new Error(`Erro ao recuperar a tarefa: ${taskResponse.statusText}`);
+        }
+        const taskDetails = await taskResponse.json();
+
+        // Exclui a tarefa do servidor
+        const response = await fetch(url, { method: 'DELETE', headers: { 'Content-Type': 'application/json' } });
+        if (response.ok) {
+            console.log(`Tarefa com ID ${normalizedTaskId} removida de ${url}`);
+
+            // Atualiza graficoTempo subtraindo a duração da tarefa removida
+            atualizarGraficoTempoRemocao(taskDetails.category, taskDetails.estimatedDuration);
+        } else {
+            console.error(`Erro ao remover tarefa de ${url}:`, response.statusText);
+            const errorMessage = await response.text();
+            console.error(`Detalhes do erro: ${errorMessage}`);
+        }
+    } catch (error) {
+        console.error('Erro ao remover a tarefa:', error);
+    }
+}
+
+// Função para subtrair o tempo da categoria no gráfico de tempo
+async function atualizarGraficoTempoRemocao(category, estimatedDuration) {
+    try {
+        const response = await fetch("http://localhost:4000/grafico");
+        const graficoTempo = await response.json();
+
+        if (graficoTempo[category] !== undefined) {
+            graficoTempo[category] = Math.max(0, graficoTempo[category] - estimatedDuration); // Evita valores negativos
+
+            await fetch("http://localhost:4000/grafico", {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(graficoTempo)
+            });
+            console.log("Gráfico de tempo atualizado após remoção.");
+        }
+    } catch (error) {
+        console.error("Erro ao atualizar gráfico de tempo após remoção:", error);
+    }
+}
+
+
+
+
 async function loadTasks(dayOfWeek) {
     try {
-        const response = await fetch('/codigo/db/db.json');
+        const response = await fetch('/codigo/db/DB2.json');
         if (!response.ok) throw new Error(`Erro ao carregar tarefas: status ${response.status}`);
-
+        
         const data = await response.json();
-
-        if (!data || !data.tarefas || !data.tasks_calendar) {
-            throw new Error("Estrutura de dados 'tarefas' ou 'tasks_calendar' não encontrada no JSON.");
-        }
+        if (!data.adicionarTarefas || !data.listaDeTarefas) throw new Error("Estrutura de dados não encontrada no JSON.");
 
         const taskList = document.querySelector(".task-list");
         const notice = document.querySelector('.empty');
         
-        taskList.innerHTML = ''; 
-        notice.innerHTML = '';  
+        taskList.innerHTML = '';
+        notice.innerHTML = '';
 
         let tasksFound = false;
         let allTasks = [];
-        let categoryDurations = {
-            Lazer: 0,
-            Estudo: 0,
-            Trabalho: 0,
-        };
+        let categoryDurations = { Lazer: 0, Estudo: 0, Trabalho: 0 };
+        const selectedDate = new Date(currentYear, currentMonth, parseInt(document.querySelector('.selected-day').textContent)).toISOString().split('T')[0];
 
-        // Carregar tarefas de 'listaDeTarefas' (tarefas já programadas)
-        if (Array.isArray(data.tarefas.listaDeTarefas)) {
-            data.tarefas.listaDeTarefas.forEach(task => {
-                if (task.date.includes(dayOfWeek + 1)) {
-                    allTasks.push(task);
-                    tasksFound = true;
-                    categoryDurations[task.category] += task.estimatedDuration;
-                }
-            });
-        }
-
-        // Carregar tarefas de 'adicionarTarefas' (tarefas a adicionar)
-        if (Array.isArray(data.tarefas.adicionarTarefas)) {
-            const selectedDay = new Date(currentYear, currentMonth, parseInt(document.querySelector('.selected-day').textContent));
-            const selectedDate = selectedDay.toISOString().split('T')[0]; 
-
-            data.tarefas.adicionarTarefas.forEach(task => {
-                const taskUdate = task.Udate; 
-                const taskRecurrenceDays = task.date;
-
-                if (taskUdate === selectedDate) {
-                    allTasks.push(task);
-                    tasksFound = true;
-                    categoryDurations[task.category] += task.estimatedDuration;
-                }
-
-                if (Array.isArray(taskRecurrenceDays) && taskRecurrenceDays.includes(dayOfWeek + 1)) {
-                    allTasks.push(task); 
-                    tasksFound = true;
-                    categoryDurations[task.category] += task.estimatedDuration;
-                }
-            });
-        }
-
-        // Carregar tarefas de 'tasks_calendar' (tarefas do calendário)
-        if (Array.isArray(data.tasks_calendar)) {
-            data.tasks_calendar.forEach(task => {
-                task.dates.forEach(date => {
-                    if (date === dayOfWeek + 1) {
-                        allTasks.push(task);
-                        tasksFound = true;
-                        categoryDurations[task.category] += task.estimatedDuration;
-                    }
-                });
-            });
-        }
-
-        console.log("Tarefas encontradas:", allTasks);
-
-        
-        allTasks = sortTasksByTime(allTasks);
-
-        
-        allTasks.forEach(task => {
-            taskList.appendChild(createTaskRow(task)); 
+        data.listaDeTarefas.forEach(task => {
+            if (task.date.includes(dayOfWeek + 1)) {
+                allTasks.push(task);
+                categoryDurations[task.category] += task.estimatedDuration;
+                tasksFound = true;
+            }
         });
 
-        
-        if (!tasksFound) {
-            notice.innerHTML = 'Nenhuma tarefa para este dia.';
-        } else {
-            
-            notice.innerHTML = '';
-        }
+        data.adicionarTarefas.forEach(task => {
+            const matchByExactDate = task.Udate === selectedDate;
+            const matchByRecurrence = Array.isArray(task.date) && task.date.includes(dayOfWeek + 1);
+            if (matchByExactDate || matchByRecurrence) {
+                allTasks.push(task);
+                categoryDurations[task.category] += task.estimatedDuration;
+                tasksFound = true;
+            }
+        });
 
+        taskList.append(...sortTasksByTime(allTasks).map(createTaskRow));
+        notice.innerHTML = tasksFound ? '' : 'Nenhuma tarefa para este dia.';
         updateChart(categoryDurations);
         
     } catch (error) {
         document.querySelector('.empty').innerHTML = 'Selecione um dia para ver as tarefas';
     }
 }
-// Função para ordenar todas as tarefas pela hora (de 00:00 a 23:59)
+
 function sortTasksByTime(tasks) {
-    return tasks.sort((a, b) => {
-        const timeA = getTimeInMinutes(a.time);
-        const timeB = getTimeInMinutes(b.time);
-
-        console.log(`Comparando ${timeA} vs ${timeB}`);  
-
-        return timeA - timeB;  
-    });
+    return tasks.sort((a, b) => getTimeInMinutes(a.time) - getTimeInMinutes(b.time));
 }
-// Função para converter o horário (em formato 'HH:MM' ou array) para minutos
-function getTimeInMinutes(time) {
-    
-    if (Array.isArray(time)) {
-        time = time[0];
-    }
 
-    
+function getTimeInMinutes(time) {
     if (typeof time === 'string' && time.includes(':')) {
         const [hours, minutes] = time.split(':').map(Number);
-        return hours * 60 + minutes;  
+        return hours * 60 + minutes;
     }
-
-    
     console.warn(`Formato de hora inválido: ${time}`);
-    return Infinity;  
+    return Infinity;
 }
-// Função para criar uma linha de tarefa
+
 function createTaskRow(task) {
     const row = document.createElement("tr");
-    const time = Array.isArray(task.time) ? task.time[0] : task.time;  
-
     row.innerHTML = `
-        <td>${time}</td>
+        <td>${Array.isArray(task.time) ? task.time[0] : task.time}</td>
         <td>${task.name}</td>
         <td>${task.category}</td>
         <td>${task.priority}</td>
         <td><button class="remove-task" style="font-size: 22px">Remover</button></td>
     `;
 
-    
-    row.addEventListener('click', () => openEditModal(task));
-
-    
     row.querySelector('.remove-task').addEventListener('click', async (event) => {
-        event.stopPropagation(); 
-        await removeTaskFromServer(task);
+        event.stopPropagation();
+        await removeTaskFromServer(task.id);
         row.remove();
         checkEmptyTasks();
     });
 
     return row;
 }
-// Função para verificar se as tarefas estão vazias
+
 function checkEmptyTasks() {
     const tasksTable = document.querySelector('.task-list');
     const notice = document.querySelector('.empty');
     notice.innerHTML = tasksTable.children.length === 0 ? 'Nenhuma tarefa para este dia.' : '';
-}
-
-// FUNÇÃO DO MODAL //
-
-// Função para abrir o modal de edição
-function openEditModal(task) {
-    // Preencher o modal com os dados da tarefa
-    document.getElementById('edit-task-name').value = task.name;
-    document.getElementById('edit-task-category').value = task.category;
-    document.getElementById('edit-task-priority').value = task.priority;
-    document.getElementById('edit-task-time').value = task.time;
-    document.getElementById('edit-task-duration').value = task.estimatedDuration;
-
-    // Mostrar o modal
-    document.getElementById('editModal').style.display = "block";
-
-    // Fechar o modal ao no x
-    document.querySelector('.close-btn').onclick = function() {
-        document.getElementById('editModal').style.display = "none";
-    }
-
-    // Fechar o modal se clicar fora dele
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('editModal')) {
-            document.getElementById('editModal').style.display = "none";
-        }
-    }
-}
-
-// Função para salvar a tarefa atualizada
-document.getElementById('editTaskForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    // Obter os novos valores do formulário
-    const updatedTask = {
-        name: document.getElementById('edit-task-name').value,
-        category: document.getElementById('edit-task-category').value,
-        priority: document.getElementById('edit-task-priority').value,
-        time: document.getElementById('edit-task-time').value,
-        estimatedDuration: document.getElementById('edit-task-duration').value
-    };
-
-   
-    updateTaskOnServer(updatedTask);
-
-   
-    document.getElementById('editModal').style.display = "none";
-
-    
-    updateTaskInTable(updatedTask);
-});
-
-// Função para atualizar a tarefa na tabela
-function updateTaskInTable(updatedTask) {
-    console.log("Tarefa atualizada na tabela:", updatedTask);
-}
-
-async function updateTaskOnServer(task) {
-    // Enviar a tarefa atualizada para o servidor
-    const response = await fetch('/codigo/db/db.json', {
-        method: 'POST', 
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ tarefa: task }) 
-    });
-
-    if (!response.ok) {
-        console.error("Erro ao atualizar tarefa no servidor");
-    } else {
-        console.log("Tarefa atualizada com sucesso no servidor");
-    }
 }
 
 
@@ -536,43 +446,46 @@ document.getElementById("next").addEventListener("click", () => {
 
 
 
-// ----------------------GRAFICO---------------------- //
-
-//Função para gerear o grafico 
+// Função para gerar o gráfico
 async function loadChart() {
     try {
-        const response = await fetch('http://localhost:3000/tarefas'); 
+        const response = await fetch('http://localhost:4000/grafico');
         if (!response.ok) throw new Error(`Erro ao carregar dados: status ${response.status}`);
 
         const data = await response.json();
 
+        // Inicializando os dados do gráfico
         const chartData = {
             Trabalho: 0,
             Estudo: 0,
             Lazer: 0,
         };
 
-        if (data.grafico) {
-            for (const category in data.grafico) {
-                if (chartData.hasOwnProperty(category)) {
-                    chartData[category] += data.grafico[category]; 
+        if (data) {
+            for (const category in data) {
+                // Somando os dados de cada categoria, garantindo que o valor seja numérico e válido
+                const value = parseInt(data[category], 10);
+                if (!isNaN(value) && value >= 0) {
+                    chartData[category] += value;
                 }
             }
         }
 
+        // Preparando os dados para o gráfico
         const formattedChartData = {
             labels: Object.keys(chartData),
             datasets: [{
                 data: Object.values(chartData),
-                backgroundColor: ['#FF6384', '#36A2EB', '#4BC0C0'], 
+                backgroundColor: ['#FF6384', '#36A2EB', '#4BC0C0'],
             }]
         };
 
         const ctx = document.getElementById('progressChart').getContext('2d');
         if (window.progressChart instanceof Chart) {
-            window.progressChart.destroy(); 
+            window.progressChart.destroy(); // Destrói o gráfico existente, se houver
         }
 
+        // Criando um novo gráfico com os dados formatados
         window.progressChart = new Chart(ctx, {
             type: 'doughnut',
             data: formattedChartData,
@@ -580,7 +493,7 @@ async function loadChart() {
                 responsive: true,
                 plugins: {
                     legend: {
-                        display: false, 
+                        display: false,
                         position: 'top',
                     },
                     tooltip: {
@@ -598,7 +511,7 @@ async function loadChart() {
     }
 }
 
-loadChart(); 
+loadChart();
 
 // Atualiza o gráfico com a soma das durações estimadas
 function updateChart(categoryDurations) {
@@ -609,8 +522,10 @@ function updateChart(categoryDurations) {
     };
 
     for (const category in categoryDurations) {
-        if (chartData.hasOwnProperty(category)) {
-            chartData[category] += categoryDurations[category]; 
+        // Verificando se a duração é válida antes de adicionar
+        const duration = categoryDurations[category];
+        if (typeof duration === 'number' && !isNaN(duration) && duration >= 0) {
+            chartData[category] += duration;
         }
     }
 
@@ -618,13 +533,13 @@ function updateChart(categoryDurations) {
         labels: Object.keys(chartData),
         datasets: [{
             data: Object.values(chartData),
-            backgroundColor: ['#FF6384', '#36A2EB', '#4BC0C0'], 
+            backgroundColor: ['#FF6384', '#36A2EB', '#4BC0C0'],
         }]
     };
 
     const ctx = document.getElementById('progressChart').getContext('2d');
     if (window.progressChart instanceof Chart) {
-        window.progressChart.destroy(); 
+        window.progressChart.destroy(); // Destrói o gráfico existente, se houver
     }
 
     window.progressChart = new Chart(ctx, {
@@ -634,7 +549,7 @@ function updateChart(categoryDurations) {
             responsive: true,
             plugins: {
                 legend: {
-                    display: false, 
+                    display: false,
                     position: 'top',
                 },
                 tooltip: {

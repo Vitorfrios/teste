@@ -339,6 +339,22 @@ td#HOUR {
 }
 
 
+.botao-remover {
+    background-color: #f44336; /* Vermelho */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.botao-remover:hover {
+    background-color: #d32f2f; /* Vermelho mais escuro */
+}
+
+
+
 /* Legend */
 .legend {
     display: flex;

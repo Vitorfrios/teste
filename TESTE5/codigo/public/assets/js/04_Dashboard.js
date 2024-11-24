@@ -1,7 +1,7 @@
 
 /*
 COPIAR CODIGO NO TERMINAL PARA INICIALIZAR O JSON SERVER
-npx json-server --watch codigo/db/db.json --port 3000
+npm start 
 */
 
 // Configuração inicial dos botões de prioridade e carregamento do gráfico e tarefas
@@ -51,6 +51,8 @@ document.addEventListener("DOMContentLoaded", function() {
 // --- CARREGAMENTO DE TAREFAS E CRONOGRAMA ---
 
 
+// --- CARREGAMENTO DE TAREFAS E CRONOGRAMA ---
+
 // Função para verificar se a tabela de tarefas está vazia
 function checkEmptyTasks() {
     const tasksTable = document.querySelector('.task-list');
@@ -80,7 +82,6 @@ function createTaskRow(task) {
     return row;
 }
 
-
 // Função para carregar tarefas do JSON e atualizar o cronograma
 async function loadTasks(dayOfWeek) {
     try {
@@ -89,7 +90,7 @@ async function loadTasks(dayOfWeek) {
 
         const data = await response.json();
         
-        if (!data || !data.listaDeTarefas || !data.adicionarTarefas) {
+        if (!data) {
             throw new Error("Estrutura de dados 'tarefas' não encontrada no JSON.");
         }
 
@@ -126,20 +127,18 @@ async function loadTasks(dayOfWeek) {
                 const taskRecurrenceDays = task.date;
 
                 if (taskUdate === selectedDate) {
-                    tasksForTheDay.push(task); 
+                    tasksForTheDay.push(task);
                     tasksFound = true;
                     categoryDurations[task.category] += task.estimatedDuration;
                 }
 
                 if (Array.isArray(taskRecurrenceDays) && taskRecurrenceDays.includes(dayOfWeek + 1)) {
-                    tasksForTheDay.push(task); 
+                    tasksForTheDay.push(task);
                     tasksFound = true;
                     categoryDurations[task.category] += task.estimatedDuration;
                 }
             });
         }
-        
-
 
         tasksForTheDay.sort((a, b) => convertTimeToNumber(a.time) - convertTimeToNumber(b.time));
 
@@ -157,41 +156,6 @@ async function loadTasks(dayOfWeek) {
         document.querySelector('.empty').innerHTML = 'Selecione um dia para ver as tarefas';
     }
 }
-
-
-
-
-
-
-
-
-function addTaskToTable(task) {
-    const selectedDay = document.querySelector('.selected-day');
-    if (!selectedDay) return; 
-    
-    const selectedDate = new Date(currentYear, currentMonth, parseInt(selectedDay.textContent)).toISOString().split('T')[0];
-    const dayOfWeek = new Date(currentYear, currentMonth, parseInt(selectedDay.textContent)).getDay();
-
-    const taskUdate = task.Udate; 
-    const taskRecurrenceDays = task.date ; // permite tasks_calendar usar 'dates'
-    
-    if (taskUdate === selectedDate || (Array.isArray(taskRecurrenceDays) && taskRecurrenceDays.includes(dayOfWeek + 1))) {
-        const taskList = document.querySelector(".task-list");
-        const taskRow = createTaskRow(task);
-        taskList.appendChild(taskRow);
-    }
-}
-
-
-
-
-function convertTimeToNumber(time) {
-    const [hours, minutes] = time.split(':').map(Number);
-    return hours * 60 + minutes;
-}
-
-
-
 
 // --- GERAÇÃO E NAVEGAÇÃO DO CALENDÁRIO ---
 
@@ -238,7 +202,6 @@ function generateCalendar() {
 function addClickEventsToDays() {
     document.querySelectorAll('#calendar-body td').forEach(td => {
         td.addEventListener('click', function () {
-
             document.querySelectorAll('#calendar-body td').forEach(day => {
                 day.classList.remove('selected-day');
             });
@@ -247,16 +210,9 @@ function addClickEventsToDays() {
 
             const day = parseInt(this.textContent);
             const dayOfWeek = new Date(currentYear, currentMonth, day).getDay();
-            loadTasks(dayOfWeek);
-            updateSelectedDay(day);
+            loadTasks(dayOfWeek); // Carregar tarefas com base no dia clicado
         });
     });
-}
-
-// Atualiza o dia selecionado no calendário
-function updateSelectedDay(day) {
-    const month = (currentMonth + 1).toString().padStart(2, '0');
-    document.getElementById("selected-day").textContent = ` - ${day}/${month}/${currentYear}`;
 }
 
 // Navegação do calendário
@@ -287,61 +243,42 @@ document.getElementById("next").addEventListener("click", () => {
 
 
 
-// ----------------------GRAFICO---------------------- //
 
+
+// ----------------------GRAFICO---------------------- //
 //Função para gerear o grafico 
 async function loadChart() {
     try {
-        // Carregar os dados das duas listas de tarefas
-        const responseListaDeTarefas = await fetch('http://localhost:4000/listaDeTarefas');
-        const responseAdicionarTarefas = await fetch('http://localhost:4000/adicionarTarefas');
+        const response = await fetch('http://localhost:4000/grafico'); 
+        if (!response.ok) throw new Error(`Erro ao carregar dados: status ${response.status}`);
 
-        // Verificar se as requisições foram bem-sucedidas
-        if (!responseListaDeTarefas.ok) throw new Error(`Erro ao carregar listaDeTarefas: status ${responseListaDeTarefas.status}`);
-        if (!responseAdicionarTarefas.ok) throw new Error(`Erro ao carregar adicionarTarefas: status ${responseAdicionarTarefas.status}`);
+        const data = await response.json();
 
-        // Obter os dados das respostas
-        const dataListaDeTarefas = await responseListaDeTarefas.json();
-        const dataAdicionarTarefas = await responseAdicionarTarefas.json();
-
-        // Inicializar o objeto para armazenar as durações por categoria
         const chartData = {
             Trabalho: 0,
             Estudo: 0,
             Lazer: 0,
         };
 
-        // Somar as durações de listaDeTarefas por categoria
-        if (dataListaDeTarefas.listaDeTarefas) {
-            for (const task of dataListaDeTarefas.listaDeTarefas) {
-                if (chartData.hasOwnProperty(task.category)) {
-                    chartData[task.category] += task.estimatedDuration;
+        if (data) {
+            for (const category in data) {
+                if (chartData.hasOwnProperty(category)) {
+                    chartData[category] += data[category]; 
                 }
             }
         }
 
-        // Somar as durações de adicionarTarefas por categoria
-        if (dataAdicionarTarefas.adicionarTarefas) {
-            for (const task of dataAdicionarTarefas.adicionarTarefas) {
-                if (chartData.hasOwnProperty(task.category)) {
-                    chartData[task.category] += task.estimatedDuration;
-                }
-            }
-        }
-
-        // Formatar os dados para o gráfico
         const formattedChartData = {
             labels: Object.keys(chartData),
             datasets: [{
                 data: Object.values(chartData),
-                backgroundColor: ['#FF6384', '#36A2EB', '#4BC0C0'],
+                backgroundColor: ['#FF6384', '#36A2EB', '#4BC0C0'], 
             }]
         };
 
-        // Criar o gráfico
         const ctx = document.getElementById('progressChart').getContext('2d');
         if (window.progressChart instanceof Chart) {
-            window.progressChart.destroy(); // Destruir gráfico anterior
+            window.progressChart.destroy(); 
         }
 
         window.progressChart = new Chart(ctx, {
@@ -351,7 +288,7 @@ async function loadChart() {
                 responsive: true,
                 plugins: {
                     legend: {
-                        display: false, // Não mostrar legenda
+                        display: false, 
                         position: 'top',
                     },
                     tooltip: {

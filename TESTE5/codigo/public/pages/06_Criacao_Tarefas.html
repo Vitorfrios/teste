@@ -1,6 +1,6 @@
 <!--
 COPIAR CODIGO NO TERMINAL PARA INICIALIZAR O JSON SERVER
-npx json-server --watch codigo/db/db.json --port 3000
+npm start 
 -->
 
 <!DOCTYPE html>
@@ -112,40 +112,7 @@ npx json-server --watch codigo/db/db.json --port 3000
                 </table>
                 <h4 class="empty"></h4>
             </div>
-        
-            <!-- Modal para editar tarefa -->
-        <div id="editModal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <h2>Editar Tarefa</h2>
-                <form id="editTaskForm">
-                    <label for="edit-task-name">Nome da Tarefa:</label>
-                    <input type="text" id="edit-task-name" name="taskName" required>
-
-                    <label for="edit-task-category">Categoria:</label>
-                    <select id="edit-task-category" name="taskCategory" required>
-                        <option value="Lazer">Lazer</option>
-                        <option value="Estudo">Estudo</option>
-                        <option value="Trabalho">Trabalho</option>
-                    </select>
-
-                    <label for="edit-task-priority">Prioridade:</label>
-                    <select id="edit-task-priority" name="taskPriority" required>
-                        <option value="Baixa">Baixa</option>
-                        <option value="Média">Média</option>
-                        <option value="Alta">Alta</option>
-                    </select>
-
-                    <label for="edit-task-time">Hora:</label>
-                    <input type="time" id="edit-task-time" name="taskTime" required>
-
-                    <label for="edit-task-duration">Tempo Estimado:</label>
-                    <input type="number" id="edit-task-duration" name="taskDuration" required>
-
-                    <button type="submit">Salvar Alterações</button>
-                </form>
-            </div>
-        </div>
+    
 
 
     </div>

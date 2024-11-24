@@ -2,200 +2,522 @@
   "mes_calendar": [
     {
       "id": "2686",
-      "value": 11,
+      "value": 4,
       "year": 2024
     }
   ],
+  "grafico": {
+    "Trabalho": 927,
+    "Estudo": 780,
+    "Lazer": 665
+  },
+  "adicionarTarefas": [],
   "listaDeTarefas": [
     {
-      "id": 1,
-      "name": "Projeto App",
-      "description": "Desenvolver a aplicação mobile",
+      "id": "1",
+      "name": "Fazer um Tour de Vinhos",
+      "time": "03:27",
+      "category": "Lazer",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        4,
+        2
+      ],
+      "estimatedDuration": 77
+    },
+    {
+      "id": "2",
+      "name": "Fazer um Curso de Culinária",
+      "time": "20:34",
+      "category": "Lazer",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        2
+      ],
+      "estimatedDuration": 95
+    },
+    {
+      "id": "3",
+      "name": "Assistir a um Concerto",
+      "time": "11:52",
+      "category": "Lazer",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        3,
+        1
+      ],
+      "estimatedDuration": 43
+    },
+    {
+      "id": "5",
+      "name": "Revisar o Cronograma de Trabalho",
+      "time": "11:43",
+      "category": "Trabalho",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        6,
+        5,
+        3
+      ],
+      "estimatedDuration": 93
+    },
+    {
+      "id": "6",
+      "name": "Participar de um Seminário",
+      "time": "23:09",
+      "category": "Estudo",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        2
+      ],
+      "estimatedDuration": 59
+    },
+    {
+      "id": "7",
+      "name": "Ler Biografias",
+      "time": "11:35",
+      "category": "Estudo",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        4,
+        1,
+        3
+      ],
+      "estimatedDuration": 39
+    },
+    {
+      "id": "8",
+      "name": "Fazer um Relatório de Pesquisa",
+      "time": "03:01",
+      "category": "Trabalho",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        1,
+        2
+      ],
+      "estimatedDuration": 63
+    },
+    {
+      "id": "9",
+      "name": "Fazer um Estudo de Mercado",
+      "time": "12:28",
+      "category": "Trabalho",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        4,
+        1
+      ],
+      "estimatedDuration": 58
+    },
+    {
+      "id": "10",
+      "name": "Preparar uma Apresentação",
+      "time": "23:00",
+      "category": "Trabalho",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        3,
+        6,
+        4
+      ],
+      "estimatedDuration": 42
+    },
+    {
+      "id": "11",
+      "name": "Fazer um Workshop de Pintura",
+      "time": "06:49",
+      "category": "Lazer",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        1
+      ],
+      "estimatedDuration": 113
+    },
+    {
+      "id": "12",
+      "name": "Fazer um Mapa Mental",
+      "time": "10:06",
+      "category": "Estudo",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        6
+      ],
+      "estimatedDuration": 76
+    },
+    {
+      "name": "Participar de um Workshop de Habilidades",
+      "time": "23:08",
+      "description": "undefined",
+      "priority": "Baixa",
+      "category": "Estudo",
+      "date": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "estimatedDuration": 47,
+      "id": "13"
+    },
+    {
+      "id": "14",
+      "name": "Fazer um Relatório de Desempenho",
+      "time": "12:43",
+      "category": "Trabalho",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        1,
+        2,
+        4
+      ],
+      "estimatedDuration": 48
+    },
+    {
+      "id": "15",
+      "name": "Fazer um Estudo de Caso",
+      "time": "19:22",
+      "category": "Estudo",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        6,
+        3,
+        5
+      ],
+      "estimatedDuration": 51
+    },
+    {
+      "id": "16",
+      "name": "Fazer um Estudo de Viabilidade",
+      "time": "22:47",
+      "category": "Trabalho",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        6,
+        5,
+        3
+      ],
+      "estimatedDuration": 117
+    },
+    {
+      "id": "17",
+      "name": "Fazer um Tour de Vinhos",
+      "time": "10:41",
+      "category": "Lazer",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        2
+      ],
+      "estimatedDuration": 100
+    },
+    {
+      "id": "18",
+      "name": "Fazer um Workshop de Pintura",
+      "time": "22:54",
+      "category": "Lazer",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        5,
+        2
+      ],
+      "estimatedDuration": 32
+    },
+    {
+      "id": "19",
+      "name": "Fazer um Relatório de Desempenho",
+      "time": "05:51",
+      "category": "Trabalho",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        3
+      ],
+      "estimatedDuration": 117
+    },
+    {
+      "id": "20",
+      "name": "Fazer um Estudo de Sociologia",
+      "time": "05:57",
+      "category": "Estudo",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        3
+      ],
+      "estimatedDuration": 64
+    },
+    {
+      "id": "21",
+      "name": "Participar de um Seminário",
+      "time": "14:30",
+      "category": "Estudo",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        5,
+        1
+      ],
+      "estimatedDuration": 34
+    },
+    {
+      "id": "22",
+      "name": "Fazer um Estudo de Sociologia",
+      "time": "19:55",
+      "category": "Estudo",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        7
+      ],
+      "estimatedDuration": 53
+    },
+    {
+      "id": "23",
+      "name": "Fazer um Relatório de Pesquisa",
+      "time": "02:53",
+      "category": "Trabalho",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        5,
+        1
+      ],
+      "estimatedDuration": 108
+    },
+    {
+      "id": "24",
+      "name": "Revisar Políticas da Empresa",
+      "time": "13:29",
+      "category": "Trabalho",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        6,
+        3
+      ],
+      "estimatedDuration": 113
+    },
+    {
+      "id": "25",
+      "name": "Estudar Filosofia",
+      "time": "05:25",
+      "category": "Estudo",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        4
+      ],
+      "estimatedDuration": 70
+    },
+    {
+      "id": "26",
+      "name": "Visitar um Museu",
+      "time": "03:15",
+      "category": "Lazer",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        3,
+        1
+      ],
+      "estimatedDuration": 61
+    },
+    {
+      "id": "27",
+      "name": "Estudar Teoria Musical",
+      "time": "10:03",
+      "category": "Estudo",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        1,
+        2
+      ],
+      "estimatedDuration": 83
+    },
+    {
+      "id": "28",
+      "name": "Fazer um Estudo de Viabilidade",
+      "time": "15:52",
+      "category": "Trabalho",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        7
+      ],
+      "estimatedDuration": 52
+    },
+    {
+      "id": "29",
+      "name": "Fazer um Workshop de Pintura",
+      "time": "09:05",
+      "category": "Lazer",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        6,
+        5,
+        7
+      ],
+      "estimatedDuration": 120
+    },
+    {
+      "id": "30",
+      "name": "Praticar Fotografia",
+      "time": "05:29",
+      "category": "Lazer",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        7,
+        6
+      ],
+      "estimatedDuration": 76
+    },
+    {
+      "id": "31",
+      "name": "Ler Artigos Acadêmicos",
+      "time": "14:12",
+      "category": "Estudo",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        3,
+        7
+      ],
+      "estimatedDuration": 90
+    },
+    {
+      "id": "32",
+      "name": "Fazer um Tour Gastronômico",
+      "time": "08:17",
+      "category": "Lazer",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        6
+      ],
+      "estimatedDuration": 106
+    },
+    {
+      "id": "33",
+      "name": "Revisar Políticas da Empresa",
+      "time": "08:49",
+      "category": "Trabalho",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        5
+      ],
+      "estimatedDuration": 30
+    },
+    {
+      "id": "34",
+      "name": "Fazer um Jogo de Trivia",
+      "time": "07:53",
+      "category": "Lazer",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        3,
+        6,
+        2
+      ],
+      "estimatedDuration": 82
+    },
+    {
+      "id": "35",
+      "name": "Assistir a um Show",
+      "time": "07:43",
+      "category": "Lazer",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        7,
+        6,
+        5
+      ],
+      "estimatedDuration": 87
+    },
+    {
+      "id": "36",
+      "name": "Fazer um Jogo de Escape Room",
+      "time": "02:27",
+      "category": "Lazer",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        3
+      ],
+      "estimatedDuration": 102
+    },
+    {
+      "id": "37",
+      "name": "Fazer um Workshop de Habilidades",
+      "time": "01:51",
+      "category": "Trabalho",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        4
+      ],
+      "estimatedDuration": 46
+    },
+    {
+      "id": "38",
+      "name": "Participar de um Grupo de Estudo",
+      "time": "14:33",
+      "category": "Estudo",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
       "date": [
         4,
         5
       ],
-      "time": "09:00",
-      "category": "Trabalho",
-      "priority": "Alta",
-      "estimatedDuration": 300
+      "estimatedDuration": 38
     },
     {
-      "name": "Reunião de equipe",
-      "time": "04:00",
-      "description": "Discutir progresso do projeto",
-      "priority": "Alta",
-      "category": "Trabalho",
+      "id": "39",
+      "name": "Estudar para um Exame",
+      "time": "23:42",
+      "category": "Estudo",
+      "priority": "Média",
+      "Udate": "2024-11-13",
       "date": [
-        2,
         3
       ],
-      "estimatedDuration": 60,
-      "id": 2
+      "estimatedDuration": 120
     },
     {
-      "id": 3,
-      "name": "Planejamento de semana",
-      "description": "Definir tarefas para a semana",
+      "id": "40",
+      "name": "Fazer um Tour de Cervejarias",
+      "time": "17:27",
+      "category": "Lazer",
+      "priority": "Média",
+      "Udate": "2024-11-13",
       "date": [
-        3,
+        2,
         1
       ],
-      "time": "14:00",
-      "category": "Estudo",
-      "priority": "Média",
-      "estimatedDuration": 120
-    },
-    {
-      "id": 4,
-      "name": "Revisão de metas",
-      "description": "Avaliar metas do mês anterior",
-      "date": [
-        1
-      ],
-      "time": "11:00",
-      "category": "Trabalho",
-      "priority": "Baixa",
-      "estimatedDuration": 60
-    },
-    {
-      "id": 5,
-      "name": "Revisão de código",
-      "description": "Revisar código com o time",
-      "date": [
-        5,
-        7
-      ],
-      "time": "10:00",
-      "category": "Estudo",
-      "priority": "Alta",
-      "estimatedDuration": 120
-    },
-    {
-      "id": 6,
-      "name": "Estudo de CSS",
-      "description": "Aprimorar conhecimentos em CSS",
-      "date": [
-        6,
-        4,
-        2
-      ],
-      "time": "15:00",
-      "category": "Estudo",
-      "priority": "Baixa",
-      "estimatedDuration": 180
-    },
-    {
-      "id": 7,
-      "name": "Aula de JavaScript",
-      "description": "Aula prática de JavaScript",
-      "date": [
-        3,
-        6
-      ],
-      "time": "13:00",
-      "category": "Estudo",
-      "priority": "Média",
-      "estimatedDuration": 120
-    },
-    {
-      "name": "Exercícios físicos",
-      "time": "07:00",
-      "description": "Fazer exercícios na academia",
-      "priority": "Alta",
-      "category": "Lazer",
-      "date": [
-        1,
-        2,
-        7
-      ],
-      "estimatedDuration": 60,
-      "id": 8
-    },
-    {
-      "id": 9,
-      "name": "Leitura de livro",
-      "description": "Ler um capítulo do livro escolhido",
-      "date": [
-        4,
-        3
-      ],
-      "time": "18:00",
-      "category": "Lazer",
-      "priority": "Baixa",
-      "estimatedDuration": 60
-    },
-    {
-      "id": 10,
-      "name": "Apresentação de projeto",
-      "description": "Apresentar projeto para a equipe",
-      "date": [
-        2,
-        6
-      ],
-      "time": "16:00",
-      "category": "Trabalho",
-      "priority": "Alta",
-      "estimatedDuration": 60
-    },
-    {
-      "id": 11,
-      "name": "Feedback da equipe",
-      "description": "Reunião para feedback do projeto",
-      "date": [
-        5,
-        7
-      ],
-      "time": "10:00",
-      "category": "Trabalho",
-      "priority": "Média",
-      "estimatedDuration": 60
+      "estimatedDuration": 106
     }
-  ],
-  "adicionarTarefas": [
-    {
-      "name": "sdzfbadfhadh",
-      "time": "23:00",
-      "description": "undefined",
-      "priority": "Media",
-      "category": "Trabalho",
-      "date": [
-        1,
-        2,
-        3,
-        4
-      ],
-      "estimatedDuration": 234,
-      "id": 1731191654879
-    },
-    {
-      "id": 1731191654880,
-      "name": "aerhdafbhafd",
-      "time": "03:45",
-      "category": "Trabalho",
-      "priority": "Baixa",
-      "Udate": "0054-04-23",
-      "date": [
-        3
-      ],
-      "estimatedDuration": 4345
-    },
-    {
-      "id": 1731191654881,
-      "name": "5345",
-      "time": "04:50",
-      "category": "Trabalho",
-      "priority": "Media",
-      "Udate": "0035-05-14",
-      "date": [
-        2
-      ],
-      "estimatedDuration": 345
-    }
-  ],
-  "grafico": {
-    "Trabalho": 3021,
-    "Estudo": 2080,
-    "Lazer": 1680
-  }
+  ]
 }
