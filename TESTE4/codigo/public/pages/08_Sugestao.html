@@ -1,0 +1,77 @@
+<!--
+DIGITAR npm start NO TERMINAL PARA INICIALIZAR O JSON SERVER
+npm start 
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.">
+    <link rel="stylesheet" href="../assets/css/08_Sugestao.css">
+
+    <title>Tempo Otimizado-Sugestão</title>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Tempo Otimizado</h2>
+        <ul class="ul">
+            <li id="dashboard"><a href="../pages/05_Dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li> 
+            <li id="cronograma"><a href="../pages/06_Cronograma_Diario.html"><i class="fas fa-calendar-alt"></i> Cronograma Diário</a></li>
+            <li id="tarefas"><a href="../pages/07_Criacao_Tarefas.html"><i class="fas fa-tasks"></i> Criação de tarefas</a></li>
+            <li id="sugestao"><a href="#"><i class="fas fa-question-circle"></i> Sugestão</a></li>
+            <li id="perfil"><a href="../pages/09_Perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
+            <li id="feedback"><a href="../pages/10_Suporte_Feedback.html"><i class="fas fa-comments"></i> Feedback/Suporte</a></li>
+            <li id="logOut"><a href="../pages/02_Inicio_logo.html"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
+          
+        </ul>
+
+    </div>
+    
+    
+
+    <div class="main-content"style="margin-left: 10px;">
+        
+        <ul class="nav-list">
+            <div class="header">Sugestão</div>
+            <li id="dicas-estudo"><a href="../pages/08.1_Dicas_para_Estudo.html">&emsp;01. Dicas para estudo</a></li>
+            <li id="dicas-dormir"><a href="../pages/08.2_Dicas_para_Dormir.html">&emsp;02. Dicas para Dormir</a></li>
+            <li id="dicas-desempenho"><a href="../pages/08.3_Dicas_para_Desempenho.html">&emsp;03. Dicas para desempenho</a></li>
+        </ul>
+
+
+
+    </div>
+
+    <div class="right-content">
+        <div class="profile">
+            <a href="./09_Perfil.html">
+                                <span class="name"></span>
+
+
+                <img alt="Profile Picture" height="40"
+                src="../assets/images/icone_padrão.png"
+                width="40" />
+            </a>
+        </div>
+        <div class="solucoes">
+            <h3 for="opcoes">Selecione uma opção de sugestao para saber o que ela faz:</h3>
+            <select id="opcoes" onchange="exibirConteudo()">
+                <option value="" style="text-align: center;">-- Escolha uma opção de sugestão--</option>
+                <option value="dicas-estudo">01_Dicas para Estudo</option>
+                <option value="descansar-dormir">02_Descansar/Dormir</option>
+                <option value="desempenho">03_Desempenho</option>
+
+            </select>
+            <div id="conteudo-exibicao" class="conteudo-exibicao"></div>
+        </div>
+    </div>
+    <script src="../assets/js/08_Sugestao.js"></script>
+
+</body>
+</html>

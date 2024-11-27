@@ -1,0 +1,503 @@
+/*
+DIGITAR npm start NO TERMINAL PARA INICIALIZAR O JSON SERVER
+npm start 
+*/
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E8F0F2;
+    margin: 0;
+    padding: 1px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Sidebar */
+.sidebar {
+    width: auto;
+    background-color: #000;
+    color: #fff;
+    height: auto;
+    position: relative;
+    left: 0;
+    padding-top: 10px;
+    border-radius: 30px; 
+    margin-left: 10px;
+    margin-top: 10px;
+    min-height: 96vh; 
+    min-width: 40vh; 
+
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    color: #fff; 
+    text-decoration: none; 
+    display: block;
+    padding: 0.3em 1px; 
+}
+
+.sidebar ul li.active a {
+    color: #03d9ff;
+    padding-left: 15px; 
+}
+
+.sidebar ul li {
+    padding: 0.5em 1em; 
+    font-size: 1.41rem; 
+}
+
+.sidebar ul li i {
+    margin-right: 10px;
+}
+
+.sidebar ul li:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    flex: 1;
+    width: 65%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    margin-top: 4px;
+}
+
+.task-form input,
+#nome-da-tarefa,
+.task-form select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 2px solid #00A4CC;
+    border-radius: 30px;
+    font-size: 25px;
+    text-align: center;
+    box-sizing: border-box;
+    display: block;
+}
+
+.task-form .chackbox-repeat {
+    border: 2px solid #00A4CC;
+    border-radius: 30px;
+    width: 100%;
+}
+
+.task-form .Daysrepeat {
+    width: 90%;
+    margin: 1px auto;
+    border-radius: 30px;
+    font-size: 25px;
+    text-align: center;
+    display: block;
+}
+
+.task-form .repeat {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 20px;
+    justify-content: center;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.form, .task-time-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 45%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.form input,
+.form select,
+.task-time-form input,
+.task-time-form select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 2px solid #00A4CC;
+    border-radius: 30px;
+    font-size: 25px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#add-task-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#add-task-button {
+    background-color: #00a4cc;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 100px;
+    border: none;
+    border-radius: 30px;
+    font-size: 25px;
+}
+
+.priority {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px 0;
+    margin-top: 0px;
+}
+
+.priority div {
+    display: flex;
+    align-items: center;
+}
+
+.priority div span {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.priority-button {
+    width: 40px;
+    height: 20px;
+    background-color: grey;
+    border: none;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+.priority-button[data-priority="alta"] {
+    background-color: red;
+}
+
+.priority-button[data-priority="media"] {
+    background-color: yellow;
+}
+
+.priority-button[data-priority="baixa"] {
+    background-color: green;
+}
+
+.priority-button.selected::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: black;
+    border-radius: 30%;
+    position: absolute;
+    top: 7px;
+    left: 17px;
+}
+
+
+/* Tasks da main content(onde aparece as tarefas)*/
+.empty{
+    font-size: 1.5rem;
+}
+.tasks {
+    background-color: #B0C4DE;
+    padding: 10px;
+    border-radius: 30px;
+    margin: 20px auto;
+    width: 50vw; 
+    text-align: center;
+    padding-bottom: 2px;
+}
+
+.tasks h2 {
+    margin-top: 1px;
+    margin-bottom: 9px;
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.task-table tbody {
+    display: block;
+    max-height: 150px;
+    overflow-y: auto;
+    scrollbar-width: none; 
+}
+
+
+/* Oculta a barra de rolagem */
+.task-table tbody::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.task-table tr {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.task-table th {
+    text-align: center;
+    background-color: #009efa;
+    padding: 8px;
+    font-size: 24px;
+}
+
+.task-table td {
+    padding: 15px;
+    text-align: center;
+    padding-bottom: 8px;
+}
+
+.remove-task {
+    background-color: #B0C4DE;
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 30px;
+}
+
+.remove-task:hover {
+    background-color: #D3DDE8; 
+}
+
+
+
+
+
+
+
+
+
+/* Right Content */
+.right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10px;
+    gap: 1rem;
+}
+
+/* Profile */
+.right-content .profile {
+    display: flex;
+    align-items: center;
+    border: 2px solid #00A4CC;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+
+}
+
+.right-content .name,
+.right-content .profile img {
+    margin: 2px;
+    margin-left: 40px;
+}
+
+.right-content .profile img {
+    border-radius: 60%;
+    width: 40px;
+    height: 40px;
+}
+
+.right-content .profile a {
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Progress */
+.progress {
+    text-align: center;
+    background-color: #B0C4DE;
+    padding: 11px;
+    border-radius: 30px;
+    margin: 5px 0;
+    width: 92%;
+    margin-bottom: 5px;
+
+}
+
+#chartContainer {
+    max-width: 200px;
+    margin: auto;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#progressChart {
+    width: 90% !important;
+    height: auto !important;
+    margin: 0;
+}
+
+
+.legend {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.legend-item {
+    width: 30px;
+    height: 20px;
+    margin-right: 10px;
+    margin-left: 20px;
+    text-align: center;
+
+}
+
+/* Calendar */
+.calendar-container {
+    background-color: #1cb6ae;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+}
+
+.calendar {
+    background-color: #B0C4DE;
+    padding: 15px;
+    border-radius: 30px;
+    margin: 10px 0;
+    width: 92%;
+}
+
+.calendar table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.calendar th,
+.calendar td {
+    padding: 5.5px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.calendar td:hover {
+    background-color: #00A4CC;
+    color: white;
+}
+
+.calendar td {
+    text-align: center;
+    vertical-align: middle;
+    height: 25px;
+}
+
+.tempo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+
+}
+
+.selected-day {
+    background-color: rgba(0, 255, 213, 0.432);
+    color: white;
+    border-radius: 30px;
+
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 180px;
+    }
+
+    .main-content {
+        margin-left: 190px;
+    }
+
+    .tasks,
+    .calendar,
+    .progress {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+    }
+
+    .tasks,
+    .calendar,
+    .progress {
+        width: 90%;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .sidebar,
+    .main-content {
+        padding: 5px;
+    }
+}

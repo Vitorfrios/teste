@@ -1,0 +1,406 @@
+/*
+DIGITAR npm start NO TERMINAL PARA INICIALIZAR O JSON SERVER
+npm start 
+*/
+
+html {
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    scrollbar-width: overflow-y none; 
+    scroll-behavior: smooth;
+
+}
+
+
+html::-webkit-scrollbar {
+    width: 0; 
+    height: auto; 
+}
+
+
+
+
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    box-sizing: border-box;
+    font-size: 2rem;
+    display: flex; 
+    flex-direction: column;
+
+}
+.tudo {
+    display: flex;
+    flex-direction: row;
+    width: 100%; 
+}
+
+.main {
+    width: auto; 
+    padding: 20px;
+    box-sizing: border-box;
+    flex: 0 0 290px; 
+}
+
+.rigth-content {
+    padding: 20px 80px 20px 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-size: 18px;
+    flex: 1; 
+}
+
+
+
+.nav-container {
+    position: sticky; 
+    top: 0; 
+    width: 290px; 
+    background-color: #fff;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto; 
+    height: auto;   
+    
+}
+.nav-container.scrolled {
+    position: sticky; 
+    top: 50%; 
+    left: 0; 
+    transform: translateY(-50%); 
+    width: 290px; 
+    background-color: #fff;
+    height: auto;     
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s ease, transform 0.3s ease-out; 
+
+}
+.nav-container h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.nav-container ul {
+    padding-left: 0;
+}
+
+.nav-container ul li {
+    margin: 10px 0;
+}
+
+.nav-container ul li a {
+    font-size: 1.6rem;
+    color: #00a4cc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-container ul li a:hover {
+    color: #008bb5;
+}
+
+
+
+
+header {
+    background: #333; 
+    color: #fff; 
+    padding: 20px 30px;
+    text-align: center;
+    border-bottom: 5px solid #00a4cc; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    padding-bottom: 0;
+}
+h1{
+    font-size: 50px;
+}
+.btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+}
+
+
+
+h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #00a4cc;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+ul, ol {
+    margin: 10px 0 20px 20px;
+}
+
+ul li, ol li {
+    font-size: 1.5rem;
+
+    margin: 8px 0;
+}
+
+
+
+a {
+    color: #00a4cc;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 22px;
+}
+
+a:hover {
+    color: #008bb5;
+    
+}
+
+button {
+    background-color: #00a4cc;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 15px;
+}
+
+button:hover {
+    background-color: #008bb5;
+    transform: scale(1.05);
+}
+
+
+.invisible-table {
+    border: none;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.invisible-table th, .invisible-table td {
+    padding: 10px;
+    text-align: left;
+    border: none;
+    padding-bottom: 0;
+}
+
+.invisible-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.invisible-table ul {
+    font-size: 15px; 
+    line-height: 15px; 
+    padding: 0;
+}
+
+.invisible-table ul li a {
+    font-size: 20px; 
+    color: #00a4cc;
+    text-decoration: none;
+    display: block; 
+    padding: 8px 0;
+    transition: color 0.3s;
+}
+
+.invisible-table ul li a:hover {
+    color: #008bb5;
+}
+
+
+
+.barra-info button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #00a4cc; 
+    color: #000000; 
+    cursor: pointer;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 25px; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.barra-info button:hover {
+    background-color: #008c99; 
+    transform: scale(1.05); 
+}
+
+
+
+section {
+    padding: 20px;
+    margin: 10px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #00a4cc;
+    margin-bottom: 20px;
+    display: flex; 
+    flex-direction: column;
+    width: 100%; 
+}
+.iframe-telas {
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+    width: 125%; 
+    height: 900px; 
+    box-sizing: border-box;
+    overflow: hidden; 
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+iframe {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform-origin: top left; 
+    width: 100%; 
+    height: 100%; 
+    transform: scale(var(--iframe-scale, 0.8)); 
+}
+
+/* Classe para o iframe do Logo */
+.iframe-logo {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform-origin: top left;
+    width: 100%;
+    height: 80%;
+    transform: scale(var(--iframe-scale, 0.8));
+}
+
+/* Classe para o iframe do Login */
+.iframe-login, 
+/* Classe para o iframe do Tutorial */
+.iframe-tutorial {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform-origin: top left;
+    width: 100%;
+    height: 80%;
+    transform: scale(var(--iframe-scale, 0.8));
+}
+
+/* Classe para o iframe do Dashboard */
+.iframe-dashboard {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform-origin: top left;
+    width: 100%;
+    height: 90%;
+    transform: scale(var(--iframe-scale, 0.8));
+}
+
+/* Classe para o iframe do Cronograma Diário */
+.iframe-cronograma {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform-origin: top left;
+    width: 100%;
+    height: 95%;
+    transform: scale(var(--iframe-scale, 0.8));
+}
+
+/* Classe para o iframe da Criação de Tarefas */
+.iframe-tasks {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform-origin: top left;
+    width: 140%;
+    height: 800px;
+    transform: scale(var(--iframe-scale, 0.715));
+    margin-top: 15px;
+}
+
+/* Classe para o iframe da Sugestões */
+.iframe-sugestao {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform-origin: top left;
+    width: 100%;
+    height: 80%;
+    transform: scale(var(--iframe-scale, 0.8));
+}
+
+/* Classe para o iframe das Dicas para Estudo */
+.iframe-sugestao1,
+/* Classe para o iframe das Dicas para Dormir */
+.iframe-sugestao2,
+/* Classe para o iframe das Dicas para Desempenho */
+.iframe-sugestao3 {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform-origin: top left;
+    width: 100%;
+    height: 90%;
+    transform: scale(var(--iframe-scale, 0.8));
+}
+
+/* Classe para o iframe do Perfil */
+.iframe-perfil {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform-origin: top left;
+    width: 100%;
+    height: 80%;
+    transform: scale(var(--iframe-scale, 0.8));
+}
+
+/* Classe para o iframe do Suporte e Feedback */
+.iframe-suporte-feedback {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform-origin: top left;
+    width: 100%;
+    height: 90%;
+    transform: scale(var(--iframe-scale, 0.8));
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .nav-container {
+        width: 180px;  
+    }
+
+    .rigth-content {
+        margin-left: 190px;  
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+}

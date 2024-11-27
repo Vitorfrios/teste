@@ -1,0 +1,459 @@
+/*
+DIGITAR npm start NO TERMINAL PARA INICIALIZAR O JSON SERVER
+npm start 
+*/
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E8F0F2;
+    margin: 0;
+    padding: 1px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Sidebar */
+.sidebar {
+    width: auto;
+    min-width: 40vh;
+    background-color: #000;
+    color: #fff;
+    height: auto;
+    position: relative;
+    left: 0;
+    padding-top: 10px;
+    border-radius: 30px; 
+    margin-left: 10px;
+    margin-top: 10px;
+    min-height: 96vh; 
+
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    color: #fff; 
+    text-decoration: none; 
+    display: block;
+    padding: 0.3em 1px; 
+}
+
+.sidebar ul li.active a {
+    color: #03d9ff;
+    padding-left: 15px; 
+}
+
+.sidebar ul li {
+    padding: 0.5em 1em; 
+    font-size: 1.41rem; 
+}
+
+.sidebar ul li i {
+    margin-right: 10px;
+}
+
+.sidebar ul li:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
+/* Main Content */
+.main-content {
+    padding: 10px;
+    flex: 1;
+    height:180px; 
+    overflow:block;
+    margin-left: 10px;
+    
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:30px;
+    padding: 20px;
+}
+
+.header button {
+    border: 2px solid #00A4CC;
+    text-decoration: none;
+    color: #000000;
+    font-size: 25px;
+    background-color: #3bb5d3;
+    cursor: pointer;
+    padding: 8.5px;
+    margin: 8px;
+    display: inline-block;
+    width: 100%;
+    border-radius: 30px;
+}
+
+.header button a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Modal Filtrar */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+    position: absolute;
+    top: -120px;
+    background: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 260px;
+}
+
+.modal-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-container select,
+.modal-container input {
+    padding: 5px;
+    font-size: 14px;
+}
+
+.modal-container button {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Tempo */
+.tempo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    border: 1px solid #000;
+    border-bottom: 0;
+    padding: 8px;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.tempo button {
+    font-size: 25px; 
+    border-radius: 30px;
+}
+
+.table-container {
+    height: 500px;
+    overflow-y: auto;
+    position: relative;
+    scrollbar-width: none;
+}
+.table-container::-webkit-scrollbar {
+    display: none;
+}
+
+.hed {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: #3bb5d3;
+    z-index: 1;
+    border-collapse: collapse;
+    border: 1px solid #000;
+    
+}
+
+.hed th,
+#schedule td {
+    width: 180px; 
+    text-align: center;
+    border: 1px solid #000;
+    padding: 8px;
+    height: 40px;
+    margin: 0; 
+    box-sizing: border-box;
+    font-size: 18px;
+    border-top: 0;
+    
+    
+}
+
+th#H,
+td#HOUR {
+    width: 70px;
+}
+
+#schedule {
+    border-collapse: collapse;
+    width: 100%;
+}
+.tarefa{
+    cursor: pointer;
+}
+
+/* Estilo do Modal */
+.modal-editar-tarefa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9998;  
+    width: 500px;  
+    height: auto;  
+    max-height: 85vh;  
+    padding: 20px;
+    border-radius: 8px;  
+    display: none;  
+    overflow-y: auto; 
+}
+
+.modal-content-editar {
+    background-color: #E8F0F2;
+    border: 2px solid #00A4CC;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box; 
+}
+
+.modal-header {
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 25px;
+    color: #00A4CC; 
+    flex-shrink: 0; 
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.form-group-N {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    width: 100%;
+    flex-grow: 1; 
+}
+
+.form-group-N label {
+    font-size: 20px;
+    margin-bottom: 0px;
+    color: #333;
+}
+
+.form-group-N input, .form-group-N textarea, .form-group-N select {
+    border: none;
+    border-bottom: 2px solid #00BFFF;
+    outline: none;
+    padding: 8px;
+    width: 100%;
+    background-color: #E8F0F2;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.form-group-N textarea {
+    resize: vertical;
+}
+
+#btn-salvar {
+    background-color: #00A4CC;
+    color: white;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    font-size: 20px;
+    flex-shrink: 0; 
+}
+
+#btn-salvar:hover {
+    background-color: #007b8b;
+}
+
+#edit-dates {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 10px;
+    width: 100%;
+}
+
+#edit-dates label {
+    font-size: 20px;
+    text-align: center; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 12%; 
+}
+
+#edit-dates input {
+    margin-top: 5px; 
+}
+
+
+.botao-remover {
+    background-color: #f44336; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.botao-remover:hover {
+    background-color: #d32f2f; 
+}
+
+
+
+/* Legend */
+.legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    margin-top: 30px;
+    font-size: 25px;
+}
+
+.legend div {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.legend div span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.high-priority {
+    background-color: red;
+}
+
+.medium-priority {
+    background-color: yellow;
+}
+
+.low-priority {
+    background-color: green;
+}
+
+/* Right Content */
+.right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+/* Profile */
+.right-content .profile {
+    display: flex;
+    align-items: center;
+    border: 2px solid #00A4CC;
+    border-radius: 30px;
+
+}
+
+.right-content .name,
+.right-content .profile img {
+    margin: 2px;
+    margin-left: 40px;
+}
+
+.right-content .profile img {
+    border-radius: 60%;
+    width: 40px;
+    height: 40px;
+}
+
+.right-content .profile a {
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) { 
+    .sidebar {
+        width: auto;
+  min-width: 40vh; min-width: 40vh; 
+    }
+
+    .main-content {
+        margin-left: 225px; 
+    }
+
+    .right-content {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) { 
+    .sidebar {
+        width: auto;
+  min-width: 40vh; min-width: 40vh; 
+        height: auto; 
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-right: 0; 
+    }
+
+    .right-content {
+        width: 95%; 
+    }
+}

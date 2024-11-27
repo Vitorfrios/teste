@@ -1,0 +1,734 @@
+<!--
+DIGITAR npm start NO TERMINAL PARA INICIALIZAR O JSON SERVER
+npm start
+-->
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/codigo/about.css">
+    <title>Documentação do Projeto</title>
+</head>
+
+<body>
+    <header>
+
+        
+        <div class="barra-info">
+            <nav class="menu" id="menu">
+                <div class="header-buttons" style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="btn">
+                        <a href="./public/pages/02_Inicio_logo.html"> <button >Iniciar App</button> </a>
+                    </div>
+                    <div class="container">
+                        <div class="clock">
+                            <div class="clock-face">
+                                <div class="hand minute-hand"></div>
+                                <div class="hand second-hand"></div>
+                            </div>
+                        </div>
+                        <h1>Tempo Otimizado</h1>
+                    </div>
+                    <div class="btn">
+                        <a href="./public/pages/01_Telas.html"> <button >Ver Telas</button> </a>
+                    </div>
+                </div>            
+            </nav>
+        </div>
+    </header>
+    <div class="tudo">
+
+        <div class="main">
+            <section id="nav"  class="nav-container">
+                <h2>Menu de Navegação</h2>
+                <p>A documentação do projeto é estruturada da seguinte forma:</p>
+            
+                <!-- Índice -->
+                <table class="invisible-table">
+                    <tr>
+                        <td>
+                            <ul>
+                                <li><a href="#menu">Menu</a></li>
+                                <li><a href="#introducao">Introdução</a></li>
+                                <li><a href="#Contexto">Contexto</a></li>
+                                <li><a href="#Design-thinking">Projeto de Design thinking</a></li>
+                                <li><a href="#personas">Personas</a></li>
+                                <li><a href="#requisitos">Requisitos</a></li>
+                                <li><a href="#acoes">Ações do Usuário</a></li>
+                                <li><a href="#projetos">Projeto de Interfaces</a></li>
+                                <li><a href="#metodologia">Metodologia</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+
+        </div>
+    
+        <div class="rigth-content">
+    
+                <!-- Seção: Introdução -->
+                <section id="introducao">
+                    <h2>Introdução</h2>
+                    <p>Informações básicas do projeto.</p>
+                    <ul>
+                        <li><strong>Projeto:</strong> Tempo otimizado</li>
+                        <li>
+                            <strong>Repositório GitHub Pessoal</strong>
+                            <a href="https://github.com/Vitorfrios/Trabalho-TI-1-puc-minas">Trabalho-TI-1-puc-minas</a>
+                        </li>
+                        <li>
+                            <strong>Repositório GitHub PUC:</strong>
+                            <a href="https://github.com/ICEI-PUC-Minas-PPLCC-TI/ti-1-ppl-cc-m-2024-2-g5-dificuldade-em-otimizacao-do-tempo"> ti-1-ppl-cc-m-2024-2-g5-dificuldade-em-otimizacao-do-tempo</a>
+                        </li>
+                        <li> 
+                            <p><strong>Membros da equipe:</strong></p>
+                            <ul>
+                                <li><a href="https://github.com/Vitorfrios">Vitor de Freitas Rios</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h2 style="margin-top: 0;">Documentos</h2>
+                    <div class="doc" style="display: flex; justify-content: space-around;">
+                        <p>✅ <a href="/codigo/about.html">Documentação geral do projeto</a></p>
+                        <p>✅ <a href="/docs/files/Trabalho-TI-1-puc-minas.zip" download="Trabalho-TI-1-puc-minas.zip">Código do projeto</a></p>
+                        <p>✅ <a href="/docs/files/processo-dt-G5.pdf">Documentação de Design Thinking (MIRO)</a></p>
+                    </div>              
+                </section>
+    
+                <!-- Seção: Contexto -->
+                <section id="Contexto">
+                    <h2>Contexto</h2>
+                    <p>
+                        Em um mundo cada vez mais dinâmico e digitalizado, muitas pessoas enfrentam dificuldades para otimizar seu tempo. Isso ocorre devido à sobrecarga de tarefas, falta de planejamento adequado e a constante presença de distrações. Nos últimos anos, a fácil acessibilidade a dispositivos eletrônicos tem exacerbado esse problema, uma vez que eles oferecem uma infinidade de distrações, tornando a gestão do tempo ainda mais desafiadora. Como resultado, muitos indivíduos experimentam atrasos em suas rotinas diárias e uma sensação geral de improdutividade. 
+                        Por isso, torna-se essencial adotar métodos eficazes para gerenciar o tempo, priorizar atividades e encontrar um equilíbrio saudável entre o trabalho e o lazer.
+                    </p>
+    
+                    <h3>Problema</h3>
+                    <ul>
+                        <li><strong>Dificuldade em gerenciar o tempo:</strong> Muitos indivíduos têm dificuldade em organizar suas tarefas e prioridades, o que pode resultar em perda de produtividade e acúmulo de responsabilidades.</li>
+                        <li><strong>Impacto na qualidade de vida:</strong> A falta de estratégias eficazes para otimizar o tempo pode gerar estresse, esgotamento e uma sensação constante de sobrecarga, afetando negativamente a qualidade de vida.</li>
+                        <li><strong>Dificuldade de acesso a ferramentas adequadas:</strong> Existe uma grande dificuldade em encontrar métodos e ferramentas acessíveis e confiáveis para melhorar a gestão do tempo de maneira prática.</li>
+                        <li><strong>Sobrecarga de responsabilidades:</strong> O excesso de tarefas e a falta de organização geram longas listas de afazeres, o que aumenta o tempo necessário para concluir atividades importantes.</li>
+                    </ul>
+    
+                    <h3>Objetivos</h3>
+                    <ul>
+                        <li><strong>Facilitar a otimização do tempo:</strong> Criar uma plataforma online que ajude os usuários a organizar e gerenciar melhor seu tempo, conectando-os a ferramentas e estratégias eficazes de produtividade.</li>
+                        <li><strong>Reduzir as dificuldades no aproveitamento do tempo:</strong> A plataforma deve oferecer uma maneira prática e acessível para que os usuários identifiquem suas prioridades, planejem suas atividades e alcancem um equilíbrio entre trabalho e vida pessoal.</li>
+                        <li><strong>Promover um estilo de vida mais saudável:</strong> Com uma boa gestão do tempo, será possível reduzir a procrastinação, garantir uma rotina mais ativa e produtiva, evitando estresse e esgotamento, ao mesmo tempo em que se mantém tempo para hobbies e interesses pessoais.</li>
+                    </ul>
+    
+                    <h3>Justificativa</h3>
+                    <ul>
+                        <li><strong>Impacto positivo na produtividade:</strong> Ao facilitar o acesso a ferramentas de gestão de tempo, podemos ajudar os usuários a aumentar sua eficiência, reduzir o estresse e melhorar a qualidade de vida.</li>
+                        <li><strong>Redução da procrastinação:</strong> A procrastinação afeta cerca de 20% dos adultos no Brasil. A otimização do tempo pode ser uma solução eficaz para reduzir esse comportamento e promover uma vida mais produtiva e saudável.</li>
+                        <li><strong>Proximidade com a problemática:</strong> Todos os integrantes do grupo podem se relacionar diretamente com a dificuldade em gerenciar o tempo, uma vez que todos são estudantes universitários com rotinas intensas e múltiplos compromissos.</li>
+                    </ul>
+    
+                    <h3>Proposta de Solução</h3>
+                    <p>
+                        A solução proposta consiste no desenvolvimento de uma plataforma digital que reúne um conjunto de ferramentas voltadas para a organização, gestão e otimização do tempo. Esta plataforma será projetada para se adaptar às necessidades de diferentes perfis de usuários, oferecendo funcionalidades como:
+                    </p>
+                    <ul>
+                        <li><strong>Gestão de Tarefas:</strong> O usuário poderá criar e organizar suas tarefas de forma centralizada, definindo prazos, prioridades e categorias, além de poder acompanhar o progresso de suas atividades.</li>
+                        <li><strong>Calendário e Planejamento:</strong> A plataforma contará com um calendário interativo para que os usuários visualizem suas tarefas, compromissos e horários vagos, facilitando o gerenciamento de seu dia a dia.</li>
+                        <li><strong>Ferramentas de Produtividade:</strong> Métodos como o <em>Pomodoro</em> serão integrados à plataforma, ajudando os usuários a trabalhar de maneira mais eficiente, com intervalos estratégicos para descanso e recuperação.</li>
+                        <li><strong>Relatórios de Desempenho:</strong> A plataforma gerará relatórios semanais e mensais, mostrando o tempo gasto por tarefa, para que os usuários possam analisar seu desempenho e identificar áreas para melhoria.</li>
+                        <li><strong>Ferramentas para Redução de Distrações:</strong> Serão integrados aplicativos que bloqueiam sites e notificações para ajudar os usuários a manter o foco em suas tarefas e reduzir distrações externas.</li>
+                    </ul>
+                    <p>
+                        A plataforma será intuitiva e de fácil acesso, com uma interface amigável, adequada tanto para iniciantes quanto para usuários mais experientes em gestão de tempo. Ela será acessível em dispositivos móveis e desktops, permitindo que os usuários possam gerenciar suas atividades de qualquer lugar.
+                    </p>
+                    <p>
+                        O objetivo final é não apenas melhorar a produtividade dos usuários, mas também contribuir para sua saúde mental e bem-estar, proporcionando mais tempo livre para lazer e descanso. A longo prazo, esperamos que os usuários consigam estabelecer um equilíbrio saudável entre suas responsabilidades pessoais e profissionais, o que impactará positivamente sua qualidade de vida.
+                    </p>
+    
+                    <h3>Público-Alvo</h3>
+                    <p>
+                        Nosso público-alvo principal são jovens adultos e adultos, entre 20 e 50 anos, com rotinas intensas e carregadas, como estudantes universitários, estagiários, professores, coordenadores e outros profissionais. A maioria desse público tem acesso à tecnologia, que tanto pode ser uma ferramenta útil quanto uma fonte de distração. Nosso foco inclui:
+                    </p>
+                    <ul>
+                        <li><strong>Profissionais e estudantes:</strong> Aqueles que precisam organizar suas rotinas e maximizar seu tempo de forma eficaz.</li>
+                        <li><strong>Indivíduos que buscam melhorar sua produtividade:</strong> Pessoas que desejam otimizar seu tempo para aumentar a eficiência e reduzir o estresse.</li>
+                        <li><strong>Empresas, educadores e outros influenciadores:</strong> Organizações que apoiam a gestão eficaz do tempo e a produtividade dos seus colaboradores ou estudantes.</li>
+                    </ul>
+                </section>
+    
+                
+    
+                <!-- Seção: Projeto de Design thinking -->
+                <section id="Design-thinking">
+                    <h2>Projeto de Design thinking</h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;" class="imgs">
+                        <div style="flex: 1; text-align: center;">
+                            <h3>Matriz CSD e Mapa de Stakeholders</h3>
+                            <img src="/docs/images/matrizStakeholders.jpg" alt="Matriz CSD e Mapa de Stakeholders" >
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <h3>Entrevista Qualitativa</h3>
+                            <img src="/docs/images/entrevistasHighlights.jpg" alt="Entrevista Qualitativa" >
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <h3>Histórias de Usuários</h3>
+                            <img src="/docs/images/historias.jpg" alt="Histórias de Usuários" >
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;" class="imgs">
+                        <div style="flex: 1; text-align: center;">
+                            <h3>Brainstorming / Brainwriting</h3>
+                            <img src="/docs/images/brainstorming.jpg" alt="Brainstorming / Brainwriting" >
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <h3>Mural de Possibilidades</h3>
+                            <img src="/docs/images/mural_de_possibilidades.jpg" alt="Mural de Possibilidades" >
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <h3>Priorização de Ideias</h3>
+                            <img src="/docs/images/priorizaçãoIdeias.jpg" alt="Priorização de Ideias" >
+                        </div>
+                    </div>
+                    
+                    <div style="flex: 1; text-align: center;">
+                        <h3>Fluxo de Usuários</h3>
+                        <img src="/docs/images/userflow.jpg" alt="Fluxo de Usuários" style="width: 100%; height: 100%;">
+                    </div>
+                    
+                </section>
+                
+    
+    
+                <!-- Seção: Personas -->
+                <section id="personas">
+                    <h2>Personas</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: center;">André Albuquerque</th>
+                                <th style="text-align: center;">Aline Maia</th>
+                                <th style="text-align: center;">Carlos Mendonça</th>
+                            </tr>
+                        </thead>
+                        
+                        
+                        <tbody>
+                            <tr>
+                                <td><p><img src="/docs/images/andré_persona.jpg" alt="Proposta de Valor - André Albuquerque"></p></td>
+                                <td><p><img src="/docs/images/aline_persona.jpg" alt="Proposta de Valor - Aline Maia"> </p></td>
+                                <td><p><img src="/docs/images/carlos_persona.jpg" alt="Proposta de Valor - Carlos Mendonça"></p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+    
+    
+    
+                <section id="requisitos">
+                    <h2>Requisitos</h2>
+                    <p>As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do
+                        projeto.
+                    </p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><em>Tela</em></th>
+                                <th><em>Requisitos Funcionais (RF)</em></th>
+                                <th><em>Requisitos Não Funcionais (RNF)</em></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><em>1. Tela de Abertura</em></td>
+                                <td>
+                                    - Exibir o logotipo com animação<br>
+                                    - Exibir botão para avançar à tela de cadastro/login ou redirecionar automaticamente após a animação.
+                                </td>
+                                <td>
+                                    - Animação com tempo de 2-3 segundos<br>
+                                    - Design responsivo<br>
+                                    - Transições suaves entre telas.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><em>2. Tela de Cadastro/Login</em></td>
+                                <td>
+                                    - Login com e-mail e senha<br>
+                                    - Opção de cadastro para novos usuários<br>
+                                    - Links para recuperação de senha e alternar entre cadastro/login<br>
+                                    - Login com Google.
+                                </td>
+                                <td>
+                                    - Segurança dos dados (senhas criptografadas)<br>
+                                    - Resposta do sistema em &lt; 2 segundos<br>
+                                    - Design acessível e legível.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><em>3. Tela de Tutorial</em></td>
+                                <td>
+                                    - Exibir slides sobre o aplicativo<br>
+                                    - Navegar entre slides com botões<br>
+                                    - Opção de pular o Tutorial<br>
+                                    - Registrar se o usuário completou o Tutorial.
+                                </td>
+                                <td>
+                                    - Processo de Tutorial em 2-3 minutos<br>
+                                    - Textos e gráficos simples e claros<br>
+                                    - Compatível com dispositivos móveis e desktops.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><em>4. Tela de Dashboard</em></td>
+                                <td>
+                                    - Exibir tarefas do dia/semana<br>
+                                    - Atalhos para “Criar Tarefa”, “Sugestão” e “Cronograma semanal”<br>
+                                    - Atualização em tempo real.
+                                </td>
+                                <td>
+                                    - Carregamento rápido das tarefas<br>
+                                    - Design responsivo<br>
+                                    - Suportar grande quantidade de tarefas sem perda de desempenho.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><em>5. Tela de Cronograma Diário/Semanal</em></td>
+                                <td>
+                                    - Exibir tarefas organizadas no cronograma<br>
+                                    - Permitir arrastar e reorganizar tarefas<br>
+                                    - Botão para adicionar nova tarefa.
+                                </td>
+                                <td>
+                                    - Transição rápida e sem travamentos<br>
+                                    - Layout responsivo<br>
+                                    - Reorganização de tarefas salva imediatamente.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><em>6. Tela de Criação de Tarefas</em></td>
+                                <td>
+                                    - Formulário para criar/editar tarefas<br>
+                                    - Campos obrigatórios: nome, data/hora, prioridade, categoria e notificação<br>
+                                    - Salvar tarefa e adicionar ao cronograma.
+                                </td>
+                                <td>
+                                    - Validação dos campos em tempo real<br>
+                                    - Design intuitivo e responsivo<br>
+                                    - Salvamento em &lt; 1 segundo.
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td><em>7. Tela de Sugestão</em></td>
+                                <td>
+                                    - Exibir tres tipos de sugestões:<br>
+                                    1. Dicas para estudo<br>
+                                    2. Dicas para Descansar/dormir<br>
+                                    3. Dicas para bom desempenho.
+                                </td>
+                                <td>
+                                    - Sugestões claras e interativas<br>
+                                    - Análise rápida e baseada em dados reais<br>
+                                    - Layout compatível com dispositivos móveis e desktops, oferecendo uma experiência fluida.
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td><em>8. Tela de Perfil</em></td>
+                                <td>
+                                    - Permite editar informações pessoais: <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;- Nome completo <br> 
+                                    &nbsp;&nbsp;&nbsp;&nbsp;- Idade <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;- Email <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;- Nome de usuário <br>
+                                    - Configurações de preferências, como notificações.
+                                </td>
+                                <td>
+                                    - Design simples e acessível<br>
+                                    - Alteração dos dados do perfil incluindo senha <br>
+                                    - Configuração de notificações para manter o usuário atualizado.
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td><em>9. Tela de Suporte/Feedback</em></td>
+                                <td>
+                                    - Formulário para feedback e suporte<br>
+                                    - Campos obrigatórios: descrição e categoria<br>
+                                    - Envio do formulário e confirmação de recebimento.
+                                </td>
+                                <td>
+                                    - Resposta para envio do formulário em &lt; 2 segundos<br>
+                                    - Design simples e acessível<br>
+                                    - Feedback registrado de forma segura e confidencial.
+                                </td>
+                            </tr>
+    
+                        </tbody>
+                        
+                    </table>
+                </section>
+    
+                <section id="acoes">
+                    <h2>Ações do Usuário</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><em>Tela</em></th>
+                                <th><em>Ações do Usuário</em></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><em>1. Tela de Abertura</em></td>
+                                <td>
+                                    - Observar a animação do logotipo<br>
+                                    - Clicar no botão para prosseguir, caso não redirecionado automaticamente
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><em>2. Tela de Cadastro/Login</em></td>
+                                <td>
+                                    - Inserir e-mail e senha para login<br>
+                                    - Clicar na opção de cadastro<br>
+                                    - Alternar entre login e cadastro<br>
+                                    - Utilizar a opção de login com Google
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><em>3. Tela de Tutorial</em></td>
+                                <td>
+                                    - Navegar entre os slides<br>
+                                    - Pular o Tutorial, se desejado<br>
+                                    - Receber informações sobre o aplicativo
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><em>4. Tela de Dashboard</em></td>
+                                <td>
+                                    - Menu navegação de 4 opções <br>
+                                    - Área de mostragem de tarefas <br>
+                                    - Clique no calendário para exibir as tarefas <br>
+                                    - Mostra um gráfico com base no tempo gasto em cada categoria <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><em>5. Tela de Cronograma Diário/Semanal</em></td>
+                                <td>
+                                    - Visualizar tarefas durante um período de 7 dias <br>
+                                    - Filtrar semana do mês: Selecionar a semana que deseja visualizar <br>
+                                    - Ver sugestões/dicas: Vai para a página de sugestões <br>
+                                    - Adicionar tarefa: Vai para a página de criação de tarefas <br>
+                                
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><em>6. Tela de Criação de Tarefas</em></td>
+                                <td>
+                                    - Escreva o nome da tarefa <br>
+                                    - Escolha os dias de repetição de tarefas (se quiser) <br>
+                                    - Escolha a hora, o dia e a prioridade da tarefa <br>
+                                    - Escolha as categorias (lazer/trabalho/estudo) <br>
+                                    - Área de mostragem de tarefas <br>
+                                    - Clique no calendário para exibir as tarefas <br>
+                                    - Mostra um gráfico com base no tempo gasto em cada categoria
+                                
+                                </td>
+                            </tr>
+    
+    
+                            <tr>
+                                <td><em>7. Tela de Sugestão</em></td>
+                                <td>
+                                    - Menu navegação de 3 opções <br>
+                                    - Ajuda com horários <br>
+                                    - Dicas de estudo <br>
+                                    - Dicas para descansar <br>
+                                
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><em>7.1 Dicas para Estudo</em></td>
+                                <td>
+                                    - Clique na roleta para exibir as 4 dicas <br>
+                                    - Técnicas de estudo <br>
+                                    - Organizar tempo de estudo <br>
+                                    - Técnica Pomodoro: <br>
+                                        - Divida o estudo em blocos de 25 minutos (chamados de "Pomodoros"). <br>
+                                        - Após cada Pomodoro, faça uma pausa de 5 minutos. <br>
+                                        - Após 4 Pomodoros, faça uma pausa mais longa, de 15 a 30 minutos. <br>
+                                        - Isso ajuda a manter o foco e a evitar a sobrecarga mental.
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td><em>7.2 Dicas para Dormir</em></td>
+                                <td>
+                                    - Clique na roleta para exibir as 4 dicas <br>
+                                    - Calcular horário de dormir e acordar <br>
+                                    - Digite o horário de deitar <br>
+                                    - Digite o horário do compromisso <br>
+                                    - Exibir a hora de acordar <br>
+                                    - Exibir tempo de sono <br>
+                                
+                                
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><em>7.3 Dicas para ter um bom desempenho</em></td>
+                                <td>
+                                    - Clique na roleta para exibir as 4 dicas <br>
+                                    - Mostra o tanto de tarefas por categoria <br>
+                                    - Mostra o tanto de horas gastas por categoria <br>
+                                
+                                
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><em>8. Tela de Perfil do Usuário</em></td>
+                                <td>
+                                    - Editar nome completo <br>
+                                    - Editar idade <br>
+                                    - Editar email <br>
+                                    - Editar nome de usuário <br>
+                            </td>
+                            </tr>
+                            <tr>
+                                <td><em>9. Tela de Suporte/Feedback</em></td>
+                                <td>
+                                    - Preencher e enviar o formulário de feedback/suporte<br>
+                                    - Aguardar a confirmação de recebimento.
+                                    - Enviar feedback <br>
+                                    - Obter ajuda com o aplicativo <br>
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                
+    
+    
+    
+                <section id="projetos">
+                    <h2 id="projeto-de-interface">Projeto de Interface</h2>
+                    <p>Artefatos relacionados com a interface e a interacão do usuário na proposta de solução.</p>
+    
+                    <h3 id="prot-tipo-interativo">Protótipo Interativo</h3>
+                    <p>Desenvolvemos wireframes para o layout da plataforma, chamada <em>“Tempo Otimizado”</em>, durante
+                        reuniões do
+                        grupo, com foco em gestão eficiente de tarefas e otimização do cronograma.</p>
+                    <p>✅ <a
+                            href="https://www.figma.com/design/IEsgUebiFZGQOkeAWqdyTZ/Untitled?node-id=0-1&amp;node-type=canvas&amp;t=ibNazsvTiTDXlugF-0">Tempo
+                            Otimizado - Figma</a></p>
+    
+    
+                    
+                    <h3 id="wireframes">Wireframes</h3>
+                    <p>Estes são os protótipos de telas do sistema.</p>
+    
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th style="width: 20%; text-align: center;"><strong>Título</strong></th>
+                                <th style="width: 50%; text-align: center;"><strong>Imagem</strong></th>
+                                <th style="width: 30%; text-align: left;"><strong>Descrição</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Página Inicial</strong></td>
+                                <td style="text-align: center;">
+                                    <img src="/docs/images/wireframePaginaInicial.png" alt="Wireframe - Página inicial" style="width: 90%; height: auto;">
+                                </td>
+                                <td>Página inicial da plataforma, onde o usuário poderá ler sobre o projeto e acessar a página de acesso à conta.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Página de Login e Registro</strong></td>
+                                <td style="text-align: center;">
+                                    <img src="/docs/images/wireframeLogin.jpg" alt="Wireframe - Página de login e registro" style="width: 90%; height: auto;">
+                                </td>
+                                <td>Página que permite o usuário entrar na sua conta ou se registrar caso não possua uma conta. Possui um formulário simples para inserir os dados.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tutorial</strong></td>
+                                <td style="text-align: center;">
+                                    <img src="/docs/images/wireframeTutorial.jpg" alt="Wireframe - Tutorial" style="width: 90%; height: auto;">
+                                </td>
+                                <td>Página que apresenta um guia interativo para os novos usuários, com explicações detalhadas sobre as funcionalidades do sistema, permitindo navegação entre os slides ou a opção de pular o tutorial.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dashboard</strong></td>
+                                <td style="text-align: center;">
+                                    <img src="/docs/images/wireframeDashboard.png" alt="Wireframe - Dashboard" style="width: 90%; height: auto;">
+                                </td>
+                                <td>Página principal após login, que exibe as tarefas a serem concluídas, junto da opção de criar ou deletar tarefas. Além disso, pode visualizar um calendário com as tarefas e uma breve preview da página de Análise.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cronograma</strong></td>
+                                <td style="text-align: center;">
+                                    <img src="/docs/images/wireframeCronograma.jpg" alt="Wireframe - Cronograma" style="width: 90%; height: auto;">
+                                </td>
+                                <td>Página que exibe o cronograma de hora em hora dos dias da semana atual. Possui uma legenda de cor por nível de prioridade das tarefas e um botão de atalho para a criação de tarefas, página de sugestões e para inserir o horário em que o usuário dorme.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Criação de Tarefas</strong></td>
+                                <td style="text-align: center;">
+                                    <img src="/docs/images/wireframeTarefas.jpg" alt="Wireframe - Criação de tarefas" style="width: 90%; height: auto;">
+                                </td>
+                                <td>Página dedicada à criação de tarefas. Permite ao usuário adicionar detalhes como nome, data/hora, prioridade e categoria. Também oferece a opção de definir notificações e criar tarefas recorrentes.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sugestões</strong></td>
+                                <td style="text-align: center;">
+                                    <img src="/docs/images/wireframeSugestoes.jpg" alt="Wireframe - Sugestões e dicas" style="width: 90%; height: auto;">
+                                </td>
+                                <td>Página com listas de sugestões e dicas para o usuário com a opção de selecionar o tema. Possui também um quadro de horários e dias mais vagos.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dicas para Estudo</strong></td>
+                                <td style="text-align: center;">
+                                    <img src="/docs/images/wireframeEstudo.jpg" alt="Wireframe - Dicas para Estudo" style="width: 90%; height: auto;">
+                                </td>
+                                <td>Página dedicada a oferecer técnicas de estudo, como o método Pomodoro e mapas mentais, ajudando o usuário a organizar seu tempo de forma eficiente.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dicas para Descansar</strong></td>
+                                <td style="text-align: center;">
+                                    <img src="/docs/images/wireframeDormir.jpg" alt="Wireframe - Dicas para Descansar" style="width: 90%; height: auto;">
+                                </td>
+                                <td>Página voltada ao bem-estar do usuário, com orientações sobre hábitos de sono saudáveis, cálculo de ciclos de sono e horários ideais para dormir e acordar, promovendo um descanso mais eficiente.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dicas de Desempenho</strong></td>
+                                <td style="text-align: center;">
+                                    <img src="/docs/images/wireframeDesempenho.jpg" alt="Wireframe - Dicas de Desempenho" style="width: 90%; height: auto;">
+                                </td>
+                                <td>Página que fornece sugestões para melhorar a produtividade, como técnicas de organização, foco em metas e priorização de tarefas, com base no desempenho atual e nos hábitos do usuário.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Perfil</strong></td>
+                                <td style="text-align: center;">
+                                    <img src="/docs/images/wireframePerfil.png" alt="Wireframe - Perfil do usuário" style="width: 90%; height: auto;">
+                                </td>
+                                <td>Página com as informações do perfil do usuário. Permitindo a opção de alterá-las ou deletar a conta.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Suporte/Feedback</strong></td>
+                                <td style="text-align: center;">
+                                    <img src="/docs/images/wireframeSuporteFeedback.jpg" alt="Wireframe - Suporte/Feedback" style="width: 90%; height: auto;">
+                                </td>
+                                <td>Página destinada ao envio de dúvidas, sugestões ou relatórios de problemas. Oferece um formulário simples e eficiente, com campos obrigatórios para categoria e descrição, além de confirmação de recebimento.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    
+    
+                </section>
+    
+                <section id="metodologia">
+    
+                    <h2 id="metodologia">Metodologia</h2>
+                    <p>O desenvolvimento do projeto seguiu a metodologia SCRUM. Realizamos encontros semanais e utilizamos um
+                        grupo
+                        no
+                        WhatsApp para comunicação. Reuniões online foram realizadas para revisar o progresso e definir novas
+                        tarefas. A
+                        divisão de tarefas foi organizada utilizando a metodologia Kanban.</p>
+                    <h3 id="ferramentas">Ferramentas</h3>
+                    <p>Relação de ferramentas empregadas pelo grupo durante o projeto.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ambiente</th>
+                                <th>Plataforma</th>
+                                <th>Link de acesso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Processo de Design Thinking</td>
+                                <td>Miro</td>
+                                <td><a href="https://miro.com/app/board/uXjVKn9kuFg=/">PPLCC-M - G5 - Dificuldade em otimizar o tempo</a></td>
+                            </tr>
+                            <tr>
+                                <td>Repositório de código PUC</td>
+                                <td>GitHub</td>
+                                <td><a href="https://github.com/ICEI-PUC-Minas-PPLCC-TI/ti-1-ppl-cc-m-2024-2-g5-dificuldade-em-otimizacao-do-tempo">ti-1-ppl-cc-m-2024-2-g5-dificuldade-em-otimizacao-do-tempo</a></td>
+                            </tr>
+                            <tr>
+                                <td>Repositório de código Pessoal</td>
+                                <td>GitHub</td>
+                                <td><a href="https://github.com/Vitorfrios/Trabalho-TI-1-puc-minas">Trabalho-TI-1-puc-minas</a></td>
+                            </tr>
+                            <tr>
+                                <td>Protótipo Interativo</td>
+                                <td>Figma</td>
+                                <td><a href="https://www.figma.com/design/IEsgUebiFZGQOkeAWqdyTZ/Tempo-otimizado?node-id=0-1&node-type=canvas&t=I7xRj2ulRa4trN3M-0">Tempo otimizado</a></td>
+                            </tr>
+                            <tr>
+                                <td>Documentação inicial</td>
+                                <td>Google/ Docs</td>
+                                <td><a href="https:///docs.google.com/document/d/1Q8gyPVwmVyhmgnTF2TCXz3vqIcY56G-rgm00SgYForM/edit">Documentação do projeto-G5 - Dificuldade em otimizar o tempo</a></td>
+                            </tr>
+                            <tr>
+                                <td>Comunicação e reunião</td>
+                                <td>Discord</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Listas e anotações</td>
+                                <td>DontPad</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                        
+                 
+                    <li>
+                        <strong>Miro</strong> &nbsp;-&nbsp; Utilizado para o Design Thinking, aproveitando o modelo já disponibilizado para nós. 
+                        Possui uma diversidade de opções e permite a colaboração com a equipe, tornando-se uma ótima opção.
+                    </li>
+                    <li>
+                        <strong>GitHub</strong> &nbsp;-&nbsp; O repositório Git mais conhecido e utilizado. Ótimo para colaboração e versionamento 
+                        dos projetos, permitindo acompanhar o progresso e rapidamente encontrar erros.
+                    </li>
+                    <li>
+                        <strong>Figma</strong> &nbsp;-&nbsp; Plataforma que não só auxilia na montagem do protótipo da interface, mas também traz opções 
+                        de atribuir interatividade aos elementos da página. Assim, idealizar a função dos botões da página se torna rápido e prático.
+                    </li>
+                    <li>
+                        <strong>Discord</strong> &nbsp;-&nbsp; Aplicativo de fácil acesso para mensagens de texto e voz, permitindo que os membros da equipe 
+                        se conectem para reuniões e trocas de ideias.
+                    </li>
+                    <li>
+                        <strong>DontPad</strong> &nbsp;-&nbsp; Um bloco de notas que pode ser editado e enviado para os outros rapidamente. Por não precisar de login, 
+                        as anotações são passadas rapidamente entre os integrantes do grupo.
+                    </li>
+                    <li>
+                        <strong>Google Docs</strong> &nbsp;-&nbsp; Antes da documentação ser passada ao GitHub em formato Markdown, ela era feita inicialmente no Google Docs, 
+                        que permite o compartilhamento e edição entre o grupo, além de diversas opções para formatação do texto.
+                    </li>
+                    
+                    <h3 id="gerenciamento-do-projeto">Gerenciamento do Projeto</h3>
+                    <p>Divisão de papéis no grupo e apresentação da estrutura da ferramenta de controle de tarefas (Kanban).</p>
+                    <div class="space-img">
+    
+                        <img src="/docs/images/Kanban.jpg" alt="Kanban"> <img src="/docs/images/planejamento.jpg"
+                            alt="Planejamento das Sprints"><img src="/docs/images/notas.jpg" alt="Notas e próximos passos">
+                    </div>
+                </section>
+        </div>
+    </div>
+
+    <script src="./about.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!--
+DIGITAR npm start NO TERMINAL PARA INICIALIZAR O JSON SERVER
+npm start 
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <link rel="stylesheet" href="../assets/css/10_Suporte_Feedback.css">
+    <title>Tempo Otimizado - Suporte</title>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Tempo Otimizado</h2>
+        <ul style="font-size: 30px;">
+            <li id="dashboard"><a href="../pages/05_Dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li> 
+            <li id="cronograma"><a href="../pages/06_Cronograma_Diario.html"><i class="fas fa-calendar-alt"></i> Cronograma Diário</a></li>
+            <li id="tarefas"><a href="../pages/07_Criacao_Tarefas.html"><i class="fas fa-tasks"></i> Criação de tarefas</a></li>
+            <li id="sugestao"><a href="../pages/08_Sugestao.html"><i class="fas fa-question-circle"></i> Sugestão</a></li>
+            <li id="perfil"><a href="../pages/09_Perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
+            <li id="feedback"><a href="#"><i class="fas fa-comments"></i> Feedback/Suporte</a></li>
+            <ul class="sub-itens" style="font-size: 12px;">
+                <li id="sugestao"><a href="../pages/04_Tutorial.html">&emsp;&emsp;&emsp;•&emsp;Tela de tutorial</a></li>
+            </ul>
+            <li id="logOut"><a href="../pages/02_Inicio_logo.html"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
+
+
+
+        </ul>
+    </div>
+
+    <div class="main-content" style="margin-left: 20px;">
+        <div class="support-feedback">
+            <h2>SUPORTE E FEEDBACK</h2>
+            <p>Caso as opções propostas ao lado nao solucionarem seu problema favor enviar um e-mail para o e-mail descrito abaixo:</p>
+            <p>TempoOtimizado@to.com.br</p>
+        </div>
+        <div class="feedback-form">
+            <h3>Envie seu Feedback ou Suporte</h3>
+            <form id="suporteForm">
+                <label for="tipo" aria-placeholder="Selecione o tipo:"></label>
+                <select id="tipo">
+                    <option value="" id="tipo2">-- Selecione o tipo: --</option>
+                    <option value="suporte" id="tipo2">Suporte</option>
+                    <option value="feedback" id="tipo2">Feedback</option>
+                </select>
+                
+                <label for="mensagem">Escreva sua mensagem:</label>
+                <textarea id="mensagem" rows="5" placeholder="Descreva seu suporte ou Feedback" style="font-size: 20px;"></textarea>
+                
+                <button type="button" onclick="enviarFeedback()">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="right-content">
+        <div class="profile">
+            <a href="./09_Perfil.html">
+                                <span class="name"></span>
+
+
+                <img alt="Profile Picture" height="40"
+                    src="../assets/images/icone_padrão.png"
+                    width="40" />
+            </a>
+        </div>
+        
+        <div class="solucoes">
+            <h3 for="opcoes">Selecione uma opção de solução rápida:</h3>
+            <select id="opcoes" onchange="exibirConteudo()">
+                <option value="" class="option">-- Escolha uma opção --</option>
+                <option value="dashboard">Dashboard</option>
+                <option value="criacao-tarefas">Criação de Tarefas</option>
+                <option value="cronograma">Cronograma</option>
+                <option value="progresso">Progresso</option>
+                <option value="sugestaoI">Sugestões</option>
+                <option value="dicas-estudo">Sugestões - Dicas para Estudo</option>
+                <option value="descansar-dormir">Sugestões - Descansar/Dormir</option>
+                <option value="desempenho">Sugestões - Desempenho</option>
+                <option value="perfil-usuario">Perfil do Usuário</option>
+                <option value="suporte-feedback">Suporte/Feedback</option>
+            </select>
+            <div id="conteudo-exibicao" class="conteudo-exibicao"></div>
+        </div>
+        
+    </div>
+    
+    
+
+    <script src="../assets/js/10_Suporte_Feedback.js"></script>
+</body>
+</html>

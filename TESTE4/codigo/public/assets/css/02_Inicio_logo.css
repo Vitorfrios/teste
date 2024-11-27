@@ -1,0 +1,82 @@
+/*
+DIGITAR npm start NO TERMINAL PARA INICIALIZAR O JSON SERVER
+npm start 
+*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #E8F0F2; 
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    border: 8px solid #000;
+    border-radius: 50%;
+    position: relative;
+    background-color: #fff; 
+    margin-bottom: 50px; 
+}
+
+.clock-face {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateY(-3px); 
+}
+
+.hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 50%; 
+    transform: rotate(90deg);
+    background-color: #000;
+}
+
+.hour-hand {
+    height: 5px;
+    width: 30%;
+}
+
+.minute-hand {
+    width: 30%; 
+    height: 4px;
+}
+
+.second-hand {
+    width: 35%; 
+    height: 2px;
+}
+
+.label {
+    font-size: 36px;
+    color: #000; 
+    margin-bottom: 60px; 
+}
+
+.enter-btn {
+    background-color: #3bb5d3; 
+    color: #000000;
+    border: none;
+    padding: 20px 50px;
+    font-size: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.enter-btn:hover {
+    background-color: #4bb3c2;
+}

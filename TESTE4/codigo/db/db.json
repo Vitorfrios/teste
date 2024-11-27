@@ -1,0 +1,393 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Usuário 1",
+      "email": "usuario1@example.com",
+      "login": "usuario1",
+      "senha": "senha1",
+      "notificacoes": true
+    },
+    {
+      "id": "2",
+      "nome": "Usuário 2",
+      "email": "usuario2@example.com",
+      "login": "usuario2",
+      "senha": "senha2",
+      "notificacoes": true
+    },
+    {
+      "id": "3",
+      "nome": "Usuário 3",
+      "email": "usuario3@example.com",
+      "login": "usuario3",
+      "senha": "senha3",
+      "notificacoes": false
+    }
+  ],
+  "usuario_logado": [],
+  
+  
+  "telas": {
+    "tela2": [
+      {
+        "num": 1,
+        "titulo": "Planeje e Organize Seu Tempo",
+        "text1": "Cronograma: Organize seus estudos com um plano semanal.",
+        "text2": "Metas Diárias: Defina objetivos claros para cada sessão de estudo.",
+        "text3": "Avaliação: Revise suas metas regularmente para manter o foco.",
+        "text4": "Flexibilidade: Esteja aberto a ajustar o cronograma conforme necessário.",
+        "text5": "Use Aplicativos: Utilize tecnologia para planejamento."
+      },
+      {
+        "num": 2,
+        "titulo": "Use Técnicas de Estudo Ativas",
+        "text1": "Resumos e Anotações: Resuma os principais pontos para facilitar a revisão.",
+        "text2": "Pratique com Questões: Resolva exercícios para reforçar o aprendizado.",
+        "text3": "Grupo de Estudos: Participe de grupos para compartilhar conhecimentos.",
+        "text4": "Flashcards: Crie cartões para revisar conceitos rapidamente.",
+        "text5": "Ensine Outros: Compartilhar o que aprendeu ajuda a consolidar o conhecimento."
+      },
+      {
+        "num": 3,
+        "titulo": "Ambiente de Estudo Adequado",
+        "text1": "Espaço Quieto: Escolha um lugar tranquilo e organizado.",
+        "text2": "Materiais à Mão: Tenha tudo que precisa ao seu alcance.",
+        "text3": "Iluminação: Utilize luz adequada para evitar cansaço visual.",
+        "text4": "Ergonomia: Ajuste a cadeira e a mesa para conforto.",
+        "text5": "Desconexão: Minimize distrações como celular e redes sociais."
+      },
+      {
+        "num": 4,
+        "titulo": "Faça Pausas Regulares",
+        "text1": "Técnica Pomodoro: Estude 25 min, pause 5 min, e repita.",
+        "text2": "Relaxamento: Use pausas para descansar com atividades leves.",
+        "text3": "Movimentação: Faça alongamentos ou pequenas caminhadas durante as pausas.",
+        "text4": "Desconexão: Evite pensar em tarefas durante as pausas para recarregar a mente.",
+        "text5": "Hidrate-se: Aproveite as pausas para beber água e manter-se hidratado."
+      },
+      {
+        "num": 5,
+        "titulo": "Revise e Reforce o Conhecimento",
+        "text1": "Revisão Regular: Releia e reforce o que aprendeu periodicamente.",
+        "text2": "Ensine: Explicar o conteúdo solidifica o conhecimento.",
+        "text3": "Autoavaliação: Teste seu conhecimento com quizzes.",
+        "text4": "Mapas Mentais: Crie diagramas para visualizar conexões entre conceitos.",
+        "text5": "Dicas de Revisão: Varie o método de estudo para tornar a revisão mais interessante."
+      }
+    ],
+    "tela3": [
+      {
+        "num": 1,
+        "titulo": "Rotina de Sono Consistente",
+        "text1": "Horários Regulares: Mantenha horários fixos para dormir.",
+        "text2": "Ritual Relaxante: Crie uma rotina calma antes de dormir.",
+        "text3": "Limite o Soneca: Evite cochilos longos durante o dia.",
+        "text4": "Consistência: Acorde e durma nos mesmos horários sempre.",
+        "text5": "Anote Pensamentos: Escreva preocupações antes de dormir."
+      },
+      {
+        "num": 2,
+        "titulo": "Otimize Seu Ambiente de Sono",
+        "text1": "Ambiente Escuro e Silencioso: Minimize distrações no quarto.",
+        "text2": "Temperatura: Mantenha o quarto entre 15-20°C.",
+        "text3": "Cortinas: Use cortinas blackout para um ambiente mais escuro.",
+        "text4": "Ruído: Use máquinas de som para abafar barulhos.",
+        "text5": "Conforto: Invista em um bom colchão e travesseiro."
+      },
+      {
+        "num": 3,
+        "titulo": "Gerencie o Estresse e a Ansiedade",
+        "text1": "Relaxamento: Meditação e respiração ajudam a relaxar.",
+        "text2": "Evite Estimulantes: Reduza cafeína e alimentos pesados à noite.",
+        "text3": "Journaling: Escreva sobre seus sentimentos para processar emoções.",
+        "text4": "Exercícios: Inclua atividade física regular para reduzir estresse.",
+        "text5": "Técnicas de Relaxamento: Explore yoga ou alongamento antes de dormir."
+      },
+      {
+        "num": 4,
+        "titulo": "Desconecte-se de Dispositivos",
+        "text1": "Evite Telas: Reduza o uso de eletrônicos antes de dormir.",
+        "text2": "Substitutos: Leia um livro ou ouça música relaxante no lugar de telas.",
+        "text3": "Desativar Notificações: Coloque seu celular em modo não perturbe à noite.",
+        "text4": "Desconexão: Reserve 30 minutos antes de dormir sem dispositivos."
+      },
+      {
+        "num": 5,
+        "titulo": "Hábitos Alimentares Saudáveis",
+        "text1": "Refeições leves perto da hora de dormir.",
+        "text2": "Evite beber muita água antes de dormir.",
+        "text3": "Limite cafeína e açúcar após o meio-dia.",
+        "text4": "Pequenos lanches proteicos antes de dormir.",
+        "text5": "Evite alimentos pesados para facilitar a digestão."
+      }
+    ],
+    "tela4": [
+      {
+        "num": 1,
+        "titulo": "Organize Suas Tarefas",
+        "text1": "Divida tarefas grandes em etapas menores.",
+        "text2": "Priorize as tarefas mais importantes.",
+        "text3": "Verifique se as tarefas estão atualizadas.",
+        "text4": "Delegue tarefas quando possível.",
+        "text5": "Use ferramentas para monitorar prazos."
+      },
+      {
+        "num": 2,
+        "titulo": "Priorize e Foco",
+        "text1": "Concentre-se no mais importante.",
+        "text2": "Evite multitarefa, foque em uma tarefa.",
+        "text3": "Defina metas diárias claras.",
+        "text4": "Reserve momentos para descansar.",
+        "text5": "Use Pomodoro para aumentar o foco."
+      },
+      {
+        "num": 3,
+        "titulo": "Desenvolva Habilidades de Comunicação",
+        "text1": "Expresse-se claramente e escute ativamente.",
+        "text2": "Busque e forneça feedback construtivo.",
+        "text3": "Entenda o ponto de vista dos outros.",
+        "text4": "Construa relacionamentos com networking."
+      },
+      {
+        "num": 4,
+        "titulo": "Aprenda a Lidar com o Estresse",
+        "text1": "Invista no seu desenvolvimento pessoal.",
+        "text2": "Pratique mindfulness para reduzir a ansiedade.",
+        "text3": "Inclua exercícios na rotina para relaxar.",
+        "text4": "Use respirações profundas para acalmar.",
+        "text5": "Faça cursos para novas habilidades."
+      },
+      {
+        "num": 5,
+        "titulo": "Aprimore Suas Soluções",
+        "text1": "Gerencie o estresse com exercícios e meditação.",
+        "text2": "Desenvolva habilidades de resolução de problemas.",
+        "text3": "Durma bem para clareza mental.",
+        "text4": "Quebre problemas em partes menores.",
+        "text5": "Busque soluções criativas e novas ideias."
+      }
+    ]
+  },
+  "feedback": [
+    {
+      "id": "suporte1",
+      "tipo": "suporte",
+      "mensagem": "teste suporte",
+      "data": "2024-11-06T22:12:26.234Z"
+    },
+    {
+      "id": "feedback1",
+      "tipo": "feedback",
+      "mensagem": "teste feedback",
+      "data": "2024-11-06T22:12:36.053Z"
+    },
+    {
+      "id": "feedback1",
+      "tipo": "feedback",
+      "mensagem": "wegwegwg",
+      "data": "2024-11-07T00:44:22.740Z"
+    },
+    {
+      "id": "suporte1",
+      "tipo": "suporte",
+      "mensagem": "qwegwegqge",
+      "data": "2024-11-07T00:44:26.755Z"
+    },
+    {
+      "id": "suporte2",
+      "tipo": "suporte",
+      "mensagem": "\\dafFsdvdsvsdv",
+      "data": "2024-11-13T21:37:08.026Z"
+    },
+    {
+      "id": "feedback2",
+      "tipo": "feedback",
+      "mensagem": "vdsvsd",
+      "data": "2024-11-13T21:37:18.107Z"
+    }
+  ],
+  "suporte": [],
+  "conteudo": {
+    "dashboard": {
+      "topicos": [
+        "Menu navegação de 4 opções",
+        "Área de mostragem de tarefas",
+        "Clique no calendário para exibir as tarefas",
+        "Mostra um gráfico com base no tempo gasto em cada categoria"
+      ]
+    },
+    "criacao-tarefas": {
+      "topicos": [
+        "Escreva o nome da tarefa",
+        "Escolha os dias de repetição de tarefas (se quiser)",
+        "Escolha a hora, o dia e a prioridade da tarefa",
+        "Escolha as categorias (lazer/trabalho/estudo)",
+        "Área de mostragem de tarefas",
+        "Clique no calendário para exibir as tarefas",
+        "Mostra um gráfico com base no tempo gasto em cada categoria"
+      ]
+    },
+    "cronograma": {
+      "topicos": [
+        "Visualizar tarefas durante um período de 7 dias",
+        "Filtrar semana do mês: Selecionar a semana que deseja visualizar",
+        "Ver sugestões/dicas: Vai para a página de sugestões",
+        "Adicionar tarefa: Vai para a página de criação de tarefas"
+      ]
+    },
+    "sugestaoI": {
+      "topicos": [
+        "Menu navegação de 3 opções:",
+        "Ajuda com horários",
+        "Dicas de estudo",
+        "Dicas para descansar"
+      ]
+    },
+    "dicas-estudo": {
+      "topicos": [
+        "Clique na roleta para exibir as 4 dicas",
+        "Técnicas de estudo",
+        "Organizar tempo de estudo"
+      ]
+    },
+    "descansar-dormir": {
+      "topicos": [
+        "Clique na roleta para exibir as 4 dicas",
+        "Calcular horário de dormir e acordar",
+        "Digite o horário de deitar",
+        "Digite o horário do compromisso",
+        "Exibir a hora de acordar",
+        "Exibir tempo de sono"
+      ]
+    },
+    "desempenho": {
+      "topicos": [
+        "Clique na roleta para exibir as 4 dicas",
+        "Mostra o tanto de tarefas por categoria",
+        "Mostra o tanto de horas gastas por categoria"
+      ]
+    },
+    "suporte-feedback": {
+      "topicos": [
+        "Enviar feedback",
+        "Obter ajuda com o aplicativo"
+      ]
+    },
+    "perfil-usuario": {
+      "topicos": [
+        "Editar nome completo",
+        "Editar idade",
+        "Editar email",
+        "Editar nome de usuário"
+      ]
+    }
+  },
+  "conteudo2": {
+    "dicas-estudo": {
+      "topicos": [
+        "Clique na roleta para exibir as 4 dicas",
+        "Técnicas de estudo",
+        "Organizar tempo de estudo",
+        "Criar cronograma de estudos",
+        "Gerenciar prazos de tarefas",
+        "Fazer intervalos regulares"
+      ]
+    },
+    "descansar-dormir": {
+      "topicos": [
+        "Clique na roleta para exibir as 4 dicas",
+        "Mostrar cálculo de acordo com o ciclo do sono",
+        "Calcular horário de dormir e acordar",
+        "Exemplo de cálculo de sono:",
+        "Digite o horário de deitar (23:00)",
+        "Digite o horário do compromisso (7:00)",
+        "Exibir a hora de acordar (6:00)",
+        "Exibir tempo de sono (5:30h)"
+      ]
+    },
+    "desempenho": {
+      "topicos": [
+        "Clique na roleta para exibir as 4 dicas",
+        "Mostra o tanto de tarefas por categoria",
+        "Mostra o tanto de horas gastas por categoria",
+        "Avaliar seu desempenho semanal",
+        "Visualizar gráficos de produtividade",
+        "Estabelecer metas de produtividade",
+        "Identificar áreas para melhorar"
+      ]
+    }
+  },
+  "tutorial": {
+    "AdicionarTarefas": {
+      "titulo": "Adicionar Tarefas",
+      "conteudo": [
+        "Escreva o Nome da tarefa: Define o título da tarefa.",
+        "Escolha os dias de repetição de tarefas (se quiser)",
+        "Escolha a hora da tarefa: Seleciona o horário de início/fim.",
+        "Escolha as categorias (lazer/trabalho/estudo)",
+        "Prioridade: Define a prioridade entre:",
+        "  - Alta Prioridade",
+        "  - Média Prioridade",
+        "  - Baixa Prioridade",
+        "Categoria: Classifica a tarefa em categorias (trabalho, pessoal, etc.).",
+        "Clique no calendário para exibir as tarefas",
+        "Mostra um gráfico com base no tempo gasto em cada categoria"
+      ]
+    },
+    "CronogramaSemanal": {
+      "titulo": "Ver Cronogramas",
+      "conteudo": [
+        "Permite que o usuário visualize o cronograma de suas tarefas e compromissos, organizados por data e horário.",
+        "O cronograma facilita o planejamento e visualização das atividades diárias, semanais ou mensais.",
+        "Visualizar tarefas durante um período de 7 dias",
+        "Filtrar semana do mês: Selecionar a semana que deseja visualizar",
+        "Ver sugestões/dicas: Vai para a página de sugestões",
+        "Adicionar tarefa: Vai para a página de criação de tarefas"
+      ]
+    },
+    "Analise": {
+      "titulo": "Ver Análises",
+      "conteudo": [
+        "Exibe uma análise detalhada das tarefas concluídas e pendentes, com gráficos de produtividade.",
+        "Mostra o desempenho em termos de tempo gasto em cada tarefa e oferece insights para melhorar a gestão do tempo.",
+        "Exibir gráfico de tarefas concluídas",
+        "Exibir gráfico de tarefas não concluídas",
+        "Exibir tempo gasto por categoria: Trabalho, Lazer, Estudo",
+        "Exibir gráfico de média entre trabalho, lazer e estudo"
+      ]
+    },
+    "Sugestao": {
+      "titulo": "Ver Sugestões",
+      "conteudo": "Otimização de tempo, ajustando prioridades e rotina.",
+      "subtopicos": {
+        "dicas-estudo": {
+          "titulo": "Dicas de Estudo",
+          "conteudo": [
+            "Clique na roleta para exibir as 4 dicas",
+            "Técnicas de estudo",
+            "Organizar tempo de estudo"
+          ]
+        },
+        "descansar-dormir": {
+          "titulo": "Descansar e Dormir",
+          "conteudo": [
+            "Clique na roleta para exibir as 4 dicas",
+            "Digite o horário de deitar",
+            "Digite o horário do compromisso",
+            "Exibir a hora de acordar",
+            "Exibir tempo de sono"
+          ]
+        },
+        "desempenho": {
+          "titulo": "Desempenho",
+          "conteudo": [
+            "Clique na roleta para exibir as 4 dicas",
+            "Mostra o tanto de tarefas por categoria",
+            "Mostra o tanto de horas gastas por categoria"
+          ]
+        }
+      }
+    }
+  }
+}
