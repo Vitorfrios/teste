@@ -1,5 +1,0 @@
-{
-  "Trabalho": 4260,
-  "Estudo": 2760,
-  "Lazer": 600
-}
