@@ -57,8 +57,8 @@ carregarNomeUsuarioLogado();
 
 // ------------------- FIM DA SIDE BAR ------------------- //
 // ------------------- CODIGO DO SUPORTE -----------------//
-let feedbackCount = 1;
-let suporteCount = 1;
+let feedbackCount = localStorage.getItem('feedbackCount') ? parseInt(localStorage.getItem('feedbackCount')) : 1;
+let suporteCount = localStorage.getItem('suporteCount') ? parseInt(localStorage.getItem('suporteCount')) : 1;
 
 function enviarFeedback() {
     const tipo = document.getElementById('tipo').value;
@@ -71,9 +71,13 @@ function enviarFeedback() {
 
     let id;
     if (tipo === "feedback") {
-        id = `feedback${feedbackCount++}`;
+        id = `feedback${feedbackCount}`;
+        feedbackCount++;  // Incrementa para a próxima postagem de feedback
+        localStorage.setItem('feedbackCount', feedbackCount);  // Salva o contador no localStorage
     } else if (tipo === "suporte") {
-        id = `suporte${suporteCount++}`;
+        id = `suporte${suporteCount}`;
+        suporteCount++;  // Incrementa para a próxima postagem de suporte
+        localStorage.setItem('suporteCount', suporteCount);  // Salva o contador no localStorage
     } else {
         alert("Selecione um tipo de feedback antes de enviar.");
         return;
@@ -103,6 +107,7 @@ function enviarFeedback() {
         alert("Erro ao enviar feedback. Tente novamente.");
     });
 }
+
 
 
 // -------------- CODIGO DAS SOLUÇÕES RAPIDAS -------------- //

@@ -10,8 +10,7 @@ O projeto "Tempo Otimizado" apresenta uma interface com diversas telas que têm 
     - [Vitor de Freitas Rios](https://github.com/Vitorfrios)
     
 ### Documentos:
-| ✅ [Documentação do projeto](README.md) | [✅ Código do projeto](https://github.com/Vitorfrios/Trabalho-TI-1-puc-minas/raw/main/docs/files/Trabalho-TI-1-puc-minas.zip) | ✅ [Documentação de Design Thinking (MIRO)](/docs/files/processo-dt-G5.pdf) |
-
+| ✅ [Informações do projeto](/README.md) | ✅ [Documentação do Projeto (pdf)](/docs/files/Documentação%20G5-Dificuldade%20em%20otimizar%20o%20tempo.pdf) | ✅ [Documentação de Design Thinking (MIRO)](/docs/files/processo-dt-G5.pdf) |
 
 ## Estrutura do Projeto
 
@@ -120,6 +119,5 @@ A estrutura do projeto está organizada em pastas para facilitar a compreensão 
 
 ## Como Executar o Projeto
 - DIGITE " npm start " no terminal
-- Vá para o arquivo " about.html " e acione o live server
 - Leia sobre o projeto e inicie o app clicando no botao " Iniciar App "
 - Caso queira saber mais sobre o projeto clique em " Ver Informações ", você será encaminhado a uma pagina que contém todas as telas funcionando, entretanto em miniatura

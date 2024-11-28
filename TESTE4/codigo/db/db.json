@@ -25,9 +25,16 @@
       "notificacoes": false
     }
   ],
-  "usuario_logado": [],
-  
-  
+  "usuario_logado": [
+    {
+      "id": "3",
+      "nome": "Usuário 3",
+      "email": "usuario3@example.com",
+      "login": "usuario3",
+      "senha": "senha3",
+      "notificacoes": false
+    }
+  ],
   "telas": {
     "tela2": [
       {
@@ -173,41 +180,28 @@
     {
       "id": "suporte1",
       "tipo": "suporte",
-      "mensagem": "teste suporte",
-      "data": "2024-11-06T22:12:26.234Z"
+      "mensagem": "dgdfgdf",
+      "data": "2024-11-27T21:28:52.798Z"
     },
     {
       "id": "feedback1",
       "tipo": "feedback",
-      "mensagem": "teste feedback",
-      "data": "2024-11-06T22:12:36.053Z"
-    },
-    {
-      "id": "feedback1",
-      "tipo": "feedback",
-      "mensagem": "wegwegwg",
-      "data": "2024-11-07T00:44:22.740Z"
-    },
-    {
-      "id": "suporte1",
-      "tipo": "suporte",
-      "mensagem": "qwegwegqge",
-      "data": "2024-11-07T00:44:26.755Z"
+      "mensagem": "dfgdfgfdgdgd",
+      "data": "2024-11-27T21:28:57.764Z"
     },
     {
       "id": "suporte2",
       "tipo": "suporte",
-      "mensagem": "\\dafFsdvdsvsdv",
-      "data": "2024-11-13T21:37:08.026Z"
+      "mensagem": "dfgdfgfdg",
+      "data": "2024-11-27T21:29:03.242Z"
     },
     {
       "id": "feedback2",
       "tipo": "feedback",
-      "mensagem": "vdsvsd",
-      "data": "2024-11-13T21:37:18.107Z"
+      "mensagem": "fdgdfgfdg",
+      "data": "2024-11-27T21:29:09.041Z"
     }
   ],
-  "suporte": [],
   "conteudo": {
     "dashboard": {
       "topicos": [

@@ -24,8 +24,7 @@ Informações básicas do projeto.
   - [Vitor de Freitas Rios](https://github.com/Vitorfrios)
 
 ### Documentos:
-| ✅ [Telas do projeto](codigo\README.md) | [✅ Código do projeto](https://github.com/Vitorfrios/Trabalho-TI-1-puc-minas/raw/main/docs/files/Trabalho-TI-1-puc-minas.zip)
- | ✅ [Documentação de Design Thinking (MIRO)](/docs/files/processo-dt-G5.pdf) |
+| ✅ [Telas do projeto](codigo\README.md) | ✅ [Documentação do Projeto (pdf)](/docs/files/Documentação%20G5-Dificuldade%20em%20otimizar%20o%20tempo.pdf) | ✅ [Documentação de Design Thinking (MIRO)](/docs/files/processo-dt-G5.pdf) |
 
 
 ## <a name="contexto"></a>**Contexto**
@@ -77,21 +76,21 @@ Nosso público-alvo principal são jovens adultos e adultos, entre 20 e 50 anos,
 
 | **Matriz CSD e Mapa de Stakeholders**                                    | **Entrevista Qualitativa**                                       | **Histórias de Usuários**                           |
 | ------------------------------------------------------------------------ | ---------------------------------------------------------------- | --------------------------------------------------- |
-| ![Matriz CSD e Mapa de Stakeholders](docs/images/matrizStakeholders.jpg) | ![Entrevista Qualitativa](docs/images/entrevistasHighlights.jpg) | ![Histórias de Usuários](docs/images/historias.jpg) |
+| ![Matriz CSD e Mapa de Stakeholders](/docs/images/matrizStakeholders.jpg) | ![Entrevista Qualitativa](/docs/images/entrevistasHighlights.jpg) | ![Histórias de Usuários](/docs/images/historias.jpg) |
 
 | **Brainstorming / Brainwriting**                               | **Mural de Possibilidades**                                         | **Priorização de Ideias**                                   |
 | -------------------------------------------------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------- |
-| ![Brainstorming / Brainwriting](docs/images/brainstorming.jpg) | ![Mural de Possibilidades](docs/images/mural_de_possibilidades.jpg) | ![Priorização de Ideias](docs/images/priorizaçãoIdeias.jpg) |
+| ![Brainstorming / Brainwriting](/docs/images/brainstorming.jpg) | ![Mural de Possibilidades](/docs/images/mural_de_possibilidades.jpg) | ![Priorização de Ideias](/docs/images/priorizaçãoIdeias.jpg) |
 
 ### **Fluxo de Usuários**
 
-![Fluxo de Usuários](docs/images/userflow.jpg)
+![Fluxo de Usuários](/docs/images/userflow.jpg)
 
 ## <a name="personas"></a>**Personas**
 
 |                **André Albuquerque**                |                **Aline Maia**                |                **Carlos Mendonça**                 |
 | :-------------------------------------------------: | :------------------------------------------: | :------------------------------------------------: |
-| ![André Albuquerque](docs/images/andré_persona.jpg) | ![Aline Maia](docs/images/aline_persona.jpg) | ![Carlos Mendonça](docs/images/carlos_persona.jpg) |
+| ![André Albuquerque](/docs/images/andre_persona.jpg) | ![Aline Maia](/docs/images/aline_persona.jpg) | ![Carlos Mendonça](/docs/images/carlos_persona.jpg) |
 
 ## <a name="requisitos"></a>**Requisitos**
 
@@ -146,18 +145,18 @@ Estes são os protótipos de telas do sistema.
 
 |           **Título**           |                                **Imagem**                                 | **Descrição**                                                                                                                                                                                                                                              |
 | :----------------------------: | :-----------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|       **Página Inicial**       |   ![Wireframe - Página inicial](docs/images/wireframePaginaInicial.png)   | Página inicial da plataforma, onde o usuário poderá ler sobre o projeto e acessar a página de acesso à conta.                                                                                                                                              |
-| **Página de Login e Registro** | ![Wireframe - Página de login e registro](docs/images/wireframeLogin.jpg) | Página que permite o usuário entrar na sua conta ou se registrar caso não possua uma conta. Possui um formulário simples para inserir os dados.                                                                                                            |
-|          **Tutorial**          |        ![Wireframe - Tutorial](docs/images/wireframeTutorial.jpg)         | Página que apresenta um guia interativo para os novos usuários, com explicações detalhadas sobre as funcionalidades do sistema, permitindo navegação entre os slides ou a opção de pular o tutorial.                                                       |
-|         **Dashboard**          |       ![Wireframe - Dashboard](docs/images/wireframeDashboard.png)        | Página principal após login, que exibe as tarefas a serem concluídas, junto da opção de criar ou deletar tarefas. Além disso, pode visualizar um calendário com as tarefas e uma breve preview da página de Análise.                                       |
-|         **Cronograma**         |      ![Wireframe - Cronograma](docs/images/wireframeCronograma.jpg)       | Página que exibe o cronograma de hora em hora dos dias da semana atual. Possui uma legenda de cor por nível de prioridade das tarefas e um botão de atalho para a criação de tarefas, página de sugestões e para inserir o horário em que o usuário dorme. |
-|     **Criação de Tarefas**     |    ![Wireframe - Criação de tarefas](docs/images/wireframeTarefas.jpg)    | Página dedicada à criação de tarefas. Permite ao usuário adicionar detalhes como nome, data/hora, prioridade e categoria. Também oferece a opção de definir notificações e criar tarefas recorrentes.                                                      |
-|         **Sugestões**          |   ![Wireframe - Sugestões e dicas](docs/images/wireframeSugestoes.jpg)    | Página com listas de sugestões e dicas para o usuário com a opção de selecionar o tema. Possui também um quadro de horários e dias mais vagos.                                                                                                             |
-|     **Dicas para Estudo**      |     ![Wireframe - Dicas para Estudo](docs/images/wireframeEstudo.jpg)     | Página dedicada a oferecer técnicas de estudo, como o método Pomodoro e uma roleta interativa com dias para ajudandar o usuário a organizar seu tempo de forma eficiente.                                                                                                        |
-|    **Dicas para Descansar**    |   ![Wireframe - Dicas para Descansar](docs/images/wireframeDormir.jpg)    | Página voltada ao bem-estar do usuário, com orientações sobre hábitos de sono saudáveis, cálculo de ciclos de sono e horários ideais para dormir e acordar, promovendo um descanso mais eficiente.                                                         |
-|    **Dicas de Desempenho**     |  ![Wireframe - Dicas de Desempenho](docs/images/wireframeDesempenho.jpg)  | Página que fornece sugestões para melhorar a produtividade, como técnicas de organização, foco em metas e priorização de tarefas, com base no desempenho atual e nos hábitos do usuário.                                                                   |
-|           **Perfil**           |     ![Wireframe - Perfil do usuário](docs/images/wireframePerfil.png)     | Página com as informações do perfil do usuário. Permitindo a opção de alterá-las ou deletar a conta.                                                                                                                                                       |
-|      **Suporte/Feedback**      | ![Wireframe - Suporte/Feedback](docs/images/wireframeSuporteFeedback.jpg) | Página destinada ao envio de dúvidas, sugestões ou relatórios de problemas. Oferece um formulário simples e eficiente, com campos obrigatórios para categoria e descrição, além de confirmação de recebimento.                                             |
+|       **Página Inicial**       |   ![Wireframe - Página inicial](/docs/images/wireframePaginaInicial.png)   | Página inicial da plataforma, onde o usuário poderá ler sobre o projeto e acessar a página de acesso à conta.                                                                                                                                              |
+| **Página de Login e Registro** | ![Wireframe - Página de login e registro](/docs/images/wireframeLogin.jpg) | Página que permite o usuário entrar na sua conta ou se registrar caso não possua uma conta. Possui um formulário simples para inserir os dados.                                                                                                            |
+|          **Tutorial**          |        ![Wireframe - Tutorial](/docs/images/wireframeTutorial.jpg)         | Página que apresenta um guia interativo para os novos usuários, com explicações detalhadas sobre as funcionalidades do sistema, permitindo navegação entre os slides ou a opção de pular o tutorial.                                                       |
+|         **Dashboard**          |       ![Wireframe - Dashboard](/docs/images/wireframeDashboard.png)        | Página principal após login, que exibe as tarefas a serem concluídas, junto da opção de criar ou deletar tarefas. Além disso, pode visualizar um calendário com as tarefas e uma breve preview da página de Análise.                                       |
+|         **Cronograma**         |      ![Wireframe - Cronograma](/docs/images/wireframeCronograma.jpg)       | Página que exibe o cronograma de hora em hora dos dias da semana atual. Possui uma legenda de cor por nível de prioridade das tarefas e um botão de atalho para a criação de tarefas, página de sugestões e para inserir o horário em que o usuário dorme. |
+|     **Criação de Tarefas**     |    ![Wireframe - Criação de tarefas](/docs/images/wireframeTarefas.jpg)    | Página dedicada à criação de tarefas. Permite ao usuário adicionar detalhes como nome, data/hora, prioridade e categoria. Também oferece a opção de definir notificações e criar tarefas recorrentes.                                                      |
+|         **Sugestões**          |   ![Wireframe - Sugestões e dicas](/docs/images/wireframeSugestoes.jpg)    | Página com listas de sugestões e dicas para o usuário com a opção de selecionar o tema. Possui também um quadro de horários e dias mais vagos.                                                                                                             |
+|     **Dicas para Estudo**      |     ![Wireframe - Dicas para Estudo](/docs/images/wireframeEstudo.jpg)     | Página dedicada a oferecer técnicas de estudo, como o método Pomodoro e uma roleta interativa com dias para ajudandar o usuário a organizar seu tempo de forma eficiente.                                                                                                        |
+|    **Dicas para Descansar**    |   ![Wireframe - Dicas para Descansar](/docs/images/wireframeDormir.jpg)    | Página voltada ao bem-estar do usuário, com orientações sobre hábitos de sono saudáveis, cálculo de ciclos de sono e horários ideais para dormir e acordar, promovendo um descanso mais eficiente.                                                         |
+|    **Dicas de Desempenho**     |  ![Wireframe - Dicas de Desempenho](/docs/images/wireframeDesempenho.jpg)  | Página que fornece sugestões para melhorar a produtividade, como técnicas de organização, foco em metas e priorização de tarefas, com base no desempenho atual e nos hábitos do usuário.                                                                   |
+|           **Perfil**           |     ![Wireframe - Perfil do usuário](/docs/images/wireframePerfil.png)     | Página com as informações do perfil do usuário. Permitindo a opção de alterá-las ou deletar a conta.                                                                                                                                                       |
+|      **Suporte/Feedback**      | ![Wireframe - Suporte/Feedback](/docs/images/wireframeSuporteFeedback.jpg) | Página destinada ao envio de dúvidas, sugestões ou relatórios de problemas. Oferece um formulário simples e eficiente, com campos obrigatórios para categoria e descrição, além de confirmação de recebimento.                                             |
 
 ## <a name="metodologia"></a>**Metodologia**
 
@@ -173,7 +172,7 @@ Relação de ferramentas empregadas pelo grupo durante o projeto.
 | Repositório de código PUC     | GitHub         | [ti-1-ppl-cc-m-2024-2-g5-dificuldade-em-otimizacao-do-tempo](https://github.com/ICEI-PUC-Minas-PPLCC-TI/ti-1-ppl-cc-m-2024-2-g5-dificuldade-em-otimizacao-do-tempo)          |
 | Repositório de código Pessoal | GitHub         | [Trabalho-TI-1-puc-minas](https://github.com/Vitorfrios/Trabalho-TI-1-puc-minas)                                                                                        |
 | Protótipo Interativo          | Figma          | [Tempo otimizado](https://www.figma.com/design/IEsgUebiFZGQOkeAWqdyTZ/Tempo-otimizado?node-id=0-1&node-type=canvas&t=I7xRj2ulRa4trN3M-0)                                |
-| Documentação inicial          | Google/Docs    | [Documentação do projeto-G5 - Dificuldade em otimizar o tempo](https:///docs.google.com/document/d/1Q8gyPVwmVyhmgnTF2TCXz3vqIcY56G-rgm00SgYForM/edit)                   |
+| Documentação inicial          | Google/Docs    | [Documentação do projeto-G5 - Dificuldade em otimizar o tempo](https://docs.google.com/document/d/1vbyFgfeXWQWgP9_bAkmBUbMSf4MOrN8Tjd5QwrTYiTo/edit?usp=sharing)                   |
 | Comunicação e reunião         | Discord        |                                                                                                                                                                           |
 | Listas e anotações            | DontPad        |                                                                                                                                                                           |
 
@@ -196,7 +195,7 @@ Divisão de papéis no grupo e apresentação da estrutura da ferramenta de cont
 
 |            **Kanban**             |               **Planejamento das Sprints**                |            **Notas e próximos passos**            |
 | :-------------------------------: | :-------------------------------------------------------: | :-----------------------------------------------: |
-| ![Kanban](docs/images/Kanban.jpg) | ![Planejamento das Sprints](docs/images/planejamento.jpg) | ![Notas e próximos passos](docs/images/notas.jpg) |
+| ![Kanban](/docs/images/Kanban.jpg) | ![Planejamento das Sprints](/docs/images/planejamento.jpg) | ![Notas e próximos passos](/docs/images/notas.jpg) |
 
 ---
 
@@ -225,6 +224,5 @@ A estrutura do projeto está organizada em pastas para facilitar a compreensão 
 ### Como Executar o Projeto
 
 - DIGITE " npm start " no terminal
-- Vá para o arquivo " about.html " e acione o live server
 - Leia sobre o projeto e inicie o app clicando no botao " Iniciar App "
 - Caso queira saber mais sobre o projeto clique em " Ver Informações ", você será encaminhado a uma pagina que contém todas as telas funcionando, entretanto em miniatura

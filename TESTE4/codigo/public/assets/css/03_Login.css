@@ -111,6 +111,12 @@ body {
     position: relative;
     text-align: left;
     padding-right: 0;
+
+}
+.form-group-N input:focus {
+    background-color: #E8F0F2; 
+    border-color: #00BFFF; 
+    box-shadow: none; 
 }
 .form-group-N .star {
     color: #00BFFF;

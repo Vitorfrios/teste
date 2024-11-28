@@ -279,6 +279,11 @@ button {
 .dicas h4{
     margin-top: 2px;
 }
+h4{
+    font-size: 1vw;
+    white-space: nowrap;
+    overflow: hidden;
+}
 .dicas .Dcategoria, .dicas .Dtempo {
     display: flex;
     flex-direction: column; 
@@ -299,11 +304,6 @@ button {
     white-space: nowrap;
     overflow: hidden;
     
-}
-h4{
-    font-size: 1vw;
-    white-space: nowrap;
-    overflow: hidden;
 }
 .Dcategoria .borda, .Dtempo .borda {
     border: 1px solid #00A4CC;

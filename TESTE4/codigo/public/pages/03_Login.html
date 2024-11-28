@@ -102,17 +102,57 @@ npm start
                         <input type="text" name="txt_email" id="txt_email" class="form-control">
                         <span class="star">✦</span>
                     </div>
-                    <div class="form-group-N">
+                    <div class="form-group-N password-container">
                         <label for="senha" class="text-info">Senha</label><br>
                         <input type="password" name="txt_senha" id="txt_senha" class="form-control">
+                        <i id="toggle-password-1" class="fa fa-eye"></i>
                         <span class="star">✦</span>
                     </div>
-                    <div class="form-group-N">
+                    <div class="form-group-N password-container">
                         <label for="senha2" class="text-info">Confirmação de Senha</label><br>
                         <input type="password" name="txt_senha2" id="txt_senha2" class="form-control">
+                        <i id="toggle-password-2" class="fa fa-eye"></i>
                         <span class="star">✦</span>
-                    </div>                    
+                    </div>
 
+                    <script>
+                        // Para o campo de senha
+                        const passwordField1 = document.getElementById('txt_senha');  
+                        const togglePasswordIcon1 = document.getElementById('toggle-password-1');
+                        togglePasswordIcon1.addEventListener('click', function() {
+                            const type = passwordField1.type === 'password' ? 'text' : 'password';
+                            passwordField1.type = type;
+                            this.classList.toggle('fa-eye');
+                            this.classList.toggle('fa-eye-slash');
+                        });
+
+                        // Para o campo de confirmação de senha
+                        const passwordField2 = document.getElementById('txt_senha2');  
+                        const togglePasswordIcon2 = document.getElementById('toggle-password-2');
+                        togglePasswordIcon2.addEventListener('click', function() {
+                            const type = passwordField2.type === 'password' ? 'text' : 'password';
+                            passwordField2.type = type;
+                            this.classList.toggle('fa-eye');
+                            this.classList.toggle('fa-eye-slash');
+                        });
+                    </script>
+                    <style>
+                        .password-container {
+                            position: relative;
+                        }
+                
+                        .password-container input {
+                            padding-right: 40px; /* Espaço para o ícone de olho */
+                        }
+                
+                        .password-container i {
+                            position: absolute;
+                            top: 50%;
+                            right: 10px;
+                            transform: translateY(-50%);
+                            cursor: pointer;
+                        }
+                    </style>
                 </form>
             </div>
         </div>

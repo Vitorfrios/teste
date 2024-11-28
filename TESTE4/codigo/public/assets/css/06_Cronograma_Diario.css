@@ -228,7 +228,7 @@ td#HOUR {
     z-index: 9998;  
     width: 500px;  
     height: auto;  
-    max-height: 85vh;  
+    max-height: 100vh;  
     padding: 20px;
     border-radius: 8px;  
     display: none;  

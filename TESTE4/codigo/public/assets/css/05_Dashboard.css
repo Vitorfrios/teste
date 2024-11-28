@@ -30,6 +30,7 @@ body {
     margin-left: 10px;
     margin-top: 10px;
     min-height: 96vh; 
+    
 }
 
 .sidebar h2 {
@@ -290,6 +291,8 @@ body {
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-left: 10px;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .calendar {

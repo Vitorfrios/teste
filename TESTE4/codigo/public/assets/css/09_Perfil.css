@@ -266,6 +266,11 @@ body {
     padding-right: 0;
     font-size: 24px;
 }
+.form-group-N input:focus {
+    background-color: #E8F0F2; 
+    border-color: #00BFFF; 
+    box-shadow: none; 
+}
 .form-group-N .star {
     color: #00BFFF;
     font-size: 20px;
