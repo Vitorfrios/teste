@@ -9,6 +9,7 @@ import win32clipboard
 from io import BytesIO  # Importando BytesIO corretamente
 from PIL import ImageGrab, Image  # Importando Image e ImageGrab corretamente
 import datetime
+import re
 
 from win32com.client import Dispatch
 from PIL import ImageGrab
