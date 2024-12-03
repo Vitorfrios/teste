@@ -1,3 +1,4 @@
+
 import time
 import random
 import threading
@@ -9,7 +10,6 @@ import win32clipboard
 from io import BytesIO  # Importando BytesIO corretamente
 from PIL import ImageGrab, Image  # Importando Image e ImageGrab corretamente
 import datetime
-import re
 
 from win32com.client import Dispatch
 from PIL import ImageGrab
@@ -146,41 +146,22 @@ def enviar_imagem():
     pyautogui.press('enter')
     print("Imagem enviada com sucesso!")
 
-
-def extrair_token(driver):
-    """
-    Extrai o token do elemento script localizado em `//*[@id="geral_home"]/script/text()`
-    """
-    try:
-        # Localiza o elemento do script
-        script_content = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="geral_home"]/script'))
-        ).get_attribute("innerText")
-
-        # Usa expressão regular para capturar o token
-        match = re.search(r'const token_correto = "(\d{4})";', script_content)
-        if match:
-            return match.group(1)  # Retorna o token extraído
-        else:
-            print("Token não encontrado no script.")
-            return None
-    except Exception as e:
-        print(f"Erro ao extrair token: {e}")
-        return None
-
-
+# Função para verificar o token
 def verificar_token(cpf, data_nascimento, index):
-    """
-    Realiza o login, navega na página e tenta validar a presença usando o token.
-    """
+    global token_encontrado
+
     # Caminho do executável do Chrome
-    chrome_driver_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+    chrome_driver_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"  # Caminho do Chrome
 
     # Configura as opções do Chrome
     options = Options()
     options.binary_location = chrome_driver_path
-    service = Service(executable_path="chromedriver.exe")
-    driver = webdriver.Chrome(service=service, options=options)
+
+    # Cria o driver com as opções especificadas
+    driver = webdriver.Chrome(options=options)
+
+    # Posiciona a janela antes de carregar a página
+    posicionar_janelas(driver, index)
 
     try:
         # Login
@@ -195,17 +176,15 @@ def verificar_token(cpf, data_nascimento, index):
 
         botao_acessar = driver.find_element(By.XPATH, "//button[contains(text(),'Acessar')]")
         botao_acessar.click()
-
         WebDriverWait(driver, 5).until(EC.url_to_be("https://www.infinityschool.app/handle_data"))
         print("Login bem-sucedido!")
 
-        # Navega até a página de presença
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(2)
 
         WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Marcar presença')]"))).click()
         WebDriverWait(driver, 5).until(EC.url_to_be("https://www.infinityschool.app/marcar_presenca"))
-        print("Clicando no botão de marcar presença")
+        print("Clicando no botao de marcar presença")
 
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(2)
@@ -214,67 +193,68 @@ def verificar_token(cpf, data_nascimento, index):
         WebDriverWait(driver, 5).until(EC.url_to_be("https://www.infinityschool.app/marcar_presenca_work"))
         print("Acesso à página de presença aula compartilhada bem-sucedido!")
 
-        token_correto = extrair_token(driver)
-        if token_correto:
-            print(f"Token extraído com sucesso: {token_correto}")
+        driver.execute_script("window.scrollBy(0, 200);")
+        time.sleep(2)
 
-            # Localiza o campo de entrada do token
-            campo_token = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.ID, "token"))
-            )
+        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "token")))
+
+        while not token_encontrado:
+            token = f"{random.randint(0, 9999):04d}"
+
+            with lock:
+                if token in testados:
+                    continue
+                testados.add(token)
+
+            campo_token = driver.find_element(By.ID, "token")
             campo_token.clear()
-            campo_token.send_keys(token_correto)
+            campo_token.send_keys(token)
+            campo_token.send_keys(Keys.RETURN)
 
-            # Submete o token para validação
-            botao_concluir = WebDriverWait(driver, 10).until(
-                EC.element_to_be_clickable((By.ID, "submit-button"))
-            )
-            botao_concluir.click()
+            time.sleep(0.0001)
 
-            # Aguarda mensagem de validação
-            mensagem_validacao = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.ID, "validation-message"))
-            ).text
+            try:
+                mensagem = driver.find_element(By.ID, "validation-message").text
+                if "token válido!" in mensagem.lower():
+                    print(f"Token Válido: {token}")
+                    token_encontrado = True
+                    time.sleep(3)
+                    driver.maximize_window()
+                    time.sleep(3)
 
-            if "Token válido!" in mensagem_validacao:
-                print("Presença registrada com sucesso!")
-                time.sleep(3)
-                driver.maximize_window()
-                time.sleep(3)
+                    botao_concluir = driver.find_element(By.ID, "submit-button")
+                    botao_concluir.click()
+                    print("Presença geral concluída!")
+                    time.sleep(2)
+                    rolar_para_baixo(200)  # Rola para baixo por 800 pixels
+                    time.sleep(2)
 
-                botao_concluir = driver.find_element(By.ID, "submit-button")
-                botao_concluir.click()
-                print("Presença geral concluída!")
-                time.sleep(2)
-                rolar_para_baixo(200)  # Rola para baixo por 800 pixels
-                time.sleep(2)
+                    dar_zoom_na_tela(3) 
+                    time.sleep(3)
 
-                dar_zoom_na_tela(3) 
-                time.sleep(3)
-
-                pyautogui.click()
-                time.sleep(3)
+                    pyautogui.click()
+                    time.sleep(3)
 
 
-                # Funções para capturar tela, abrir WhatsApp, localizar grupo e enviar imagem
-                capturar_tela()
-                time.sleep(3)
-                abrir_whatsapp()
-                time.sleep(3)
-                localizar_grupo("Aulas infinity")
-                time.sleep(2)
-                enviar_imagem()
-                time.sleep(2)
-                selecionar_extender()
-                return
-            else:
-                print("Falha ao registrar presença. Mensagem: ", mensagem_validacao)
+                    # Funções para capturar tela, abrir WhatsApp, localizar grupo e enviar imagem
+                    capturar_tela()
+                    time.sleep(3)
+                    abrir_whatsapp()
+                    time.sleep(3)
+                    localizar_grupo("Aulas infinity")
+                    time.sleep(2)
+                    enviar_imagem()
+                    time.sleep(2)
+                    selecionar_extender()
+                    driver.quit()
+                    return
+            except Exception as e:
+                print(f"Erro: {str(e)}")
 
-        else:
-            print("Falha ao extrair o token. Registro de presença não realizado.")
     finally:
-        print("Presença geral concluída!")
-
+        if not token_encontrado:
+            driver.quit()
+            print("Não achou token")
 
 # Criando as threads
 threads = []
@@ -293,7 +273,5 @@ for index in range(3):
 # Espera as threads terminarem
 for thread in threads:
     thread.join()
-
-
 
 
