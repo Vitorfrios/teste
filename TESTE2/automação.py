@@ -22,42 +22,42 @@ def executar_fluxo():
     # Realiza o clique do mouse
     pyautogui.click()
     
-    # Abrir duas instâncias do navegador
-    drivers = [webdriver.Chrome() for _ in range(2)]
-    for index, driver in enumerate(drivers):
-        driver.get(site_url)
-        posicionar_janelas(driver, index)
-
-        # Inserir dados e acessar
-        driver.find_element(By.XPATH, '//*[@id="geral_home"]/form/input[1]').send_keys(dados_usuario["cpf"])
-        driver.find_element(By.XPATH, '//*[@id="data_nascimento"]').send_keys(dados_usuario["data_nascimento"])
-        driver.find_element(By.XPATH, '//*[@id="geral_home"]/form/button').click()
-        time.sleep(2)
-
+    # Abrir a primeira instância do navegador
+    driver1 = webdriver.Chrome()
+    driver1.get(site_url)
+    # Inserir dados e acessar
+    driver1.find_element(By.XPATH, '//*[@id="geral_home"]/form/input[1]').send_keys(dados_usuario["cpf"])
+    driver1.find_element(By.XPATH, '//*[@id="data_nascimento"]').send_keys(dados_usuario["data_nascimento"])
+    driver1.find_element(By.XPATH, '//*[@id="geral_home"]/form/button').click()
+    time.sleep(2)
+    
     # Fluxo da primeira aba (presença)
-    driver1 = drivers[0]
     marcar_presenca(driver1)
 
+    # Fechar o primeiro navegador antes de abrir o segundo
+    driver1.quit()
+
+    # Abrir a segunda instância do navegador apenas após o fechamento da primeira
+    driver2 = webdriver.Chrome()
+    driver2.get(site_url)
+    # Inserir dados e acessar
+    driver2.find_element(By.XPATH, '//*[@id="geral_home"]/form/input[1]').send_keys(dados_usuario["cpf"])
+    driver2.find_element(By.XPATH, '//*[@id="data_nascimento"]').send_keys(dados_usuario["data_nascimento"])
+    driver2.find_element(By.XPATH, '//*[@id="geral_home"]/form/button').click()
+    time.sleep(2)
+
     # Fluxo da segunda aba (aulas compartilhadas)
-    driver2 = drivers[1]
     inscrever_em_aulas(driver2)
 
-    # Finaliza os navegadores
-    for driver in drivers:
-        driver.quit()
+    # Finaliza o segundo navegador
+    driver2.quit()
 
     selecionar_extender()
+        # Move o mouse para a posição desejada (x=500, y=300)
+    pyautogui.moveTo(500, 300)
+    # Realiza o clique do mouse
+    pyautogui.click()
 
-# Função para posicionar as janelas
-def posicionar_janelas(driver, index):
-    screen_width = 1920  # Largura da tela
-    screen_height = 1080  # Altura da tela
-    window_width = screen_width // 2  # Largura de cada janela (metade da tela para 2 janelas)
-
-    # Posiciona as janelas lado a lado
-    position_x = index * window_width  # Posições: 0 e 1 (lado a lado)
-    driver.set_window_size(window_width, screen_height)  # Define o tamanho da janela
-    driver.set_window_position(position_x, 0)  # Posiciona a janela na tela
 
 def marcar_presenca(driver):
     driver.find_element(By.XPATH, '//*[@id="geral_home"]/div[2]/form[1]/button').click()  # Botão "Marcar Presença"
@@ -110,6 +110,7 @@ def realizar_processamento_final(driver):
 
     enviar_imagem()
     time.sleep(2)
+
 
 def inscrever_em_aulas(driver):
     driver.find_element(By.XPATH, '//*[@id="geral_home"]/div[2]/div[2]/div[1]/form[2]/button').click()  # Botão "Aulas Compartilhadas"
@@ -205,10 +206,6 @@ def down():
     pyautogui.press('down')
 
     time.sleep(0.2)  # Breve pausa para garantir que a tecla foi registrada
-
-
-
-
 
 if __name__ == "__main__":
     executar_fluxo()
