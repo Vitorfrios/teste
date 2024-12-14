@@ -84,7 +84,6 @@ def processar_presenca(driver):
         driver.find_element(By.XPATH, '//*[@id="submit-button"]').click()
         return True
     else:
-        driver.find_element(By.XPATH, '//*[@id="geral_home"]/form[2]/button').click()  # Botão "Voltar"
         return False
 
 def realizar_processamento_final(driver):
