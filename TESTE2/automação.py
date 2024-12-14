@@ -13,14 +13,15 @@ dados_usuario = {
     "data_nascimento": "21102004"
 }
 
-import threading
-import time
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+
 
 def executar_fluxo():
     selecionar_tela1()
-
+    # Move o mouse para a posição desejada (x=500, y=300)
+    pyautogui.moveTo(500, 300)
+    # Realiza o clique do mouse
+    pyautogui.click()
+    
     # Abrir duas instâncias do navegador
     drivers = [webdriver.Chrome() for _ in range(2)]
     for index, driver in enumerate(drivers):
